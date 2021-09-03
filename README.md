@@ -1,4 +1,4 @@
-## Welcome!
+### Welcome!
 This is the repository for [Semi Aquatics](https://www.semiaquatics.com).
 
 ![Semi Aquatics](https://cdn.shopify.com/s/files/1/0276/3305/7867/files/big3_1410x.png?v=1575617303)
