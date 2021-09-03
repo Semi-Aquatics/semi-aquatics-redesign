@@ -1,0 +1,31 @@
+.homeContainer {
+    min-height: 100vh;
+    padding: 0 0.5rem;
+    padding-top: 5vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    a{
+        font-weight: 900;
+        font-size: 45px;
+        margin-bottom: 1rem;
+    }
+    img{
+        width: 100vw;
+    }
+    .animation{
+        position: absolute;
+        top: 1rem;
+        left: 5vw;
+        width: 92.963vw;
+        height: 48.3636vw;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+}
+  

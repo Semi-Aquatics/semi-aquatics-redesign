@@ -1,0 +1,23 @@
+.productPreviewContainer{
+    // card
+    text-align: center;
+    color: white;
+    width: 25%;
+    cursor: pointer;
+    
+
+
+    .cardTitle{
+        // text
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 14px;
+    }
+    .cardPrice {
+        // text
+        font-size: 18px;
+    }
+    img {
+        width: 100%;
+    }
+}

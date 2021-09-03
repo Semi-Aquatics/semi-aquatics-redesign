@@ -1,0 +1,12 @@
+.dropPageContainer{
+    text-align: center;
+    .dropTitle{
+        color: white;
+        font-weight: 600;
+        font-size: 36px;
+    }
+    .productsContainer{
+        display: flex;
+        justify-content: space-around;
+    }
+}

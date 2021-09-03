@@ -1,0 +1,32 @@
+.navbarContainer{
+    color: white;
+    width: 100vw;
+    display: flex;
+    padding: 18px;
+    padding-bottom: 0;
+    justify-content: space-between;
+    align-items: center;    
+    h2 {
+        cursor: pointer;
+        z-index: 1;
+        text-transform: capitalize;
+        font-size: 24px;
+        padding: 24px;
+        padding-bottom: 12px;
+        font-weight: 600;
+    }
+    .cartAndBars{
+        margin-right: 24px;
+        direction: rtl;
+        display: flex;
+        justify-content: space-between;
+        width: 100px;
+        .icon{
+            z-index: 1;
+            cursor: pointer;
+            svg {
+                font-size: 2rem;
+            }
+        }
+    }
+}
