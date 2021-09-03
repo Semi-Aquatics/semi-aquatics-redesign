@@ -1,8 +1,8 @@
-Welcome!
-This is the repository for [Semi Aquatics](semiaquatics.com).
+## Welcome!
+This is the repository for [Semi Aquatics](https://www.semiaquatics.com).
 
 ![Semi Aquatics](https://cdn.shopify.com/s/files/1/0276/3305/7867/files/big3_1410x.png?v=1575617303)
-
+---
 Contributors: 
 [Omer Geva](https://www.linkedin.com/in/omergeva/)
 
