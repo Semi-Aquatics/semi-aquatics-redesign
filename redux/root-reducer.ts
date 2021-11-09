@@ -4,6 +4,7 @@ import { combineReducers } from 'redux';
 // import hardSet from 'redux-persist/lib/stateReconciler/hardSet'
 
 import productReducer from './product/product.reducer';
+import cartReducer from './cart/cart.reducer';
 // import cartReducer from './cart/cart.reducer'
 // import styleReducer from './style/style.reducer'
 
@@ -15,7 +16,7 @@ import productReducer from './product/product.reducer';
 
 const rootReducer = combineReducers({
   product: productReducer,
-//   cart: cartReducer,
+  cart: cartReducer,
 //   style: styleReducer
 });
 

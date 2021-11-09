@@ -1,0 +1,81 @@
+
+.placeHolderDiv{
+    width: 25vw;
+    height: 25vw;
+    margin: 1.5rem;
+
+}
+.artistCardContainer{
+    transition: 700ms;
+    transform-style: preserve-3d; 
+    width: 25vw;
+    height: 25vw;
+    object-fit: fill;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    overflow: hidden;
+    .artistCardFront{
+        position: relative;
+        .artistName{
+            position: fixed;
+            overflow: hidden;
+            top: -10px;
+            left: -10px;
+            width: 114px;
+            height: 112px;
+            span {
+                position: absolute;
+                width: 160px;
+                padding: 10px 0;
+                background-color: #5C80BC;
+                box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+                text-transform: uppercase;
+                text-align: center;
+                left: -35px;
+                top: 25px;
+                transform: rotate(-45deg);
+            }
+        }
+
+    }
+    .artistCardBack{
+        display: none;
+    }
+}
+.flipped{
+    transform: rotateY(180deg);
+    overflow: visible;
+    position: fixed;
+    left: 60vw;
+    top: 10px;
+    z-index: 5;
+    .artistCardFront{
+        display: none;
+    }
+    .artistCardBack{
+        top: 20px;
+        width: 80vw;
+        height: 95vh;
+        transform: rotateY(-180deg);
+        background-color: #eee5e9;
+        color: black;
+        border: 1px solid #5C80BC;
+        display: block;
+        .cardHeader{
+            padding: 24px;
+            text-align: center;
+            img{
+                width: 25vh;
+                height: 25vh;
+            }
+        }
+        .artistContent{
+            p {
+                padding: 24px;
+            }
+            
+        }
+    }
+}

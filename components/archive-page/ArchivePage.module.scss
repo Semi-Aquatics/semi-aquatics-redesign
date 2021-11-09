@@ -1,0 +1,12 @@
+.archivePageContainer{
+    text-align: center;
+    .archiveTitle{
+        color: white;
+        font-weight: 600;
+        font-size: 36px;
+    }
+    .archiveProductContainer{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

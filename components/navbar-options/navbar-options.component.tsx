@@ -16,20 +16,34 @@ const NavbarOptions:React.FC<NavbarOptionsProps> = ({ setNavbarOpen }) => {
     useOnClickOutside(ref, () => setNavbarOpen(false));
 
     return (
-        <div className={styles.navbarOptionsContainer}>
-            <div ref={ref} className={styles.menuItemsContainer}>
+        <div className={styles.navbarOptionsContainer} ref={ref} >
+            <div className={styles.menuItemsContainer}>
                 <Link href="/drop">
                     <a>Next Drop</a>
                 </Link>
                 <Link href="/lookbook">
                     <a>Lookbook</a>
                 </Link>
-                <Link href="/drop">
+                <Link href="/archive">
                     <a>Archive</a>
                 </Link>
                 <Link href="/drop">
                     <a>Story</a>
                 </Link>
+            </div>
+            <div className={styles.menuItemsContainer}>
+                <Link href="/drop">
+                    <a>Artists</a>
+                </Link>
+                <Link href="/lookbook">
+                    <a>Faq</a>
+                </Link>
+                <Link href="/artists">
+                    <a>Artists</a>
+                </Link>
+                <a href="https://www.instagram.com/semiaquatics" target='_blank'>
+                    <a>Instagram</a>
+                </a>
             </div>
         </div>
     );

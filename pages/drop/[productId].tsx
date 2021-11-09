@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps, GetServerSideProps } from 'next'
-import { gql } from "@apollo/client";
+import { gql, useQuery } from '@apollo/client';
 import client from "../../apollo-client";
 import { useRouter } from 'next/router'
 import withLayout from '../../hocs/withLayout'
@@ -14,7 +14,6 @@ const Product = (props: { product: any }) => {
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   // const router = useRouter()
   // const { productId } = router.query
-  console.log(context);
   const { data } = await client.query({
       query: gql`
       query {

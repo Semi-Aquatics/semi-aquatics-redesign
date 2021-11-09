@@ -4,7 +4,7 @@ const INITIAL_STATE = {
   cartItemCount: 0,
   cartItems: []
 }
-const productReducer = (state = INITIAL_STATE, action: { type: string; payload: object }) => {
+const cartReducer = (state = INITIAL_STATE, action: { type: string; payload: object }) => {
   switch(action.type){
     // case productActionTypes.TOGGLE_PRODUCT_SIZE:
     //   return{

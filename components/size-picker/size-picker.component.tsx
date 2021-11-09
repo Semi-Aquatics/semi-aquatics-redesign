@@ -7,7 +7,6 @@ interface SizePickerProps {
     variants: any
 }
 const SizePicker:React.FC <SizePickerProps> = ({variants, chosenVariant, setChosenVariant}) => {
-    console.log(variants);
     return (
         <div className={styles.sizePickerContainer}>
             {

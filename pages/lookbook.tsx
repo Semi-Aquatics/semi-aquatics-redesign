@@ -1,19 +1,13 @@
-import { useState } from 'react'
-import Layout from '../components/layout/layout.component';
-import styles from '../styles/Lookbook.module.scss'
-
-import Image from "../components/image/image.component";
-import ImageSlider from "../components/image-slider/image-slider.component";
 import withLayout from '../hocs/withLayout';
+import LookbookPage from "../components/lookbook-page/lookbook-page.component";
 
-
-const LookbookPage = () => {
+const Lookbook = () => {
 
     return (
         <div>
-           Layout
+           <LookbookPage/>
         </div>
     );
 };
 
-export default withLayout(LookbookPage);
+export default withLayout(Lookbook);
