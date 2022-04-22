@@ -13,11 +13,12 @@ const DropPage:React.FC <DropPageProps> = ({products, dropName}) => {
             <div className={styles.productsContainer}>
               {
                 // @ts-ignore
-                products.edges.map(product => 
-                  <ProductPreview 
-                  image={product.node.images.edges[0].node.transformedSrc} 
-                  title={product.node.title} 
-                  price={product.node.variants.edges[0].node.priceV2.amount} 
+                products.edges.map(product =>
+                  <ProductPreview
+                  key={product.node.title}
+                  image={product.node.images.edges[0].node.transformedSrc}
+                  title={product.node.title}
+                  price={product.node.variants.edges[0].node.priceV2.amount}
                   id={product.node.id}/>
                   )
                 }

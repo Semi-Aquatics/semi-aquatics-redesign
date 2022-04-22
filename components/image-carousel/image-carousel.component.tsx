@@ -32,7 +32,7 @@ const ImageCarousel:React.FC <ImageCarouselProps> = ({images, altText}) => {
                 />
             </div>
 
-            <div className={styles.productImagesPreview}>
+            {/* <div className={styles.productImagesPreview}>
                 {
                     images.map((image:any) => 
                     <div className={image.node.transformedSrc === selectedImage ? styles.smallImageSelected : styles.smallImage} 
@@ -42,7 +42,7 @@ const ImageCarousel:React.FC <ImageCarouselProps> = ({images, altText}) => {
                     </div>
                     )
                 }
-            </div>
+            </div> */}
 
         </div>
     );

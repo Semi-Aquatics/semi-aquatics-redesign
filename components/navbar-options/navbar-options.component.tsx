@@ -1,10 +1,17 @@
 import { Dispatch, SetStateAction, useRef } from "react";
 
+import { capitalize } from "../../helpers/formatters";
 import styles from './NavbarOptions.module.scss'
 import Link from 'next/link'
 
+import { IconContext } from "react-icons";
+import { SiInstagram } from 'react-icons/si';
+
 // Hooks
 import { useOnClickOutside } from "../../hooks/use-on-click-outside";
+
+const ROUTES = ['drop', 'lookbook', 'archive', 'story', 'artists', 'faq']
+const CURRENT_ROUTES = ['drop', 'archive', 'faq']
 
 interface NavbarOptionsProps {
     setNavbarOpen: Dispatch<SetStateAction<boolean>>
@@ -16,35 +23,23 @@ const NavbarOptions:React.FC<NavbarOptionsProps> = ({ setNavbarOpen }) => {
     useOnClickOutside(ref, () => setNavbarOpen(false));
 
     return (
-        <div className={styles.navbarOptionsContainer} ref={ref} >
-            <div className={styles.menuItemsContainer}>
-                <Link href="/drop">
-                    <a>Next Drop</a>
-                </Link>
-                <Link href="/lookbook">
-                    <a>Lookbook</a>
-                </Link>
-                <Link href="/archive">
-                    <a>Archive</a>
-                </Link>
-                <Link href="/drop">
-                    <a>Story</a>
-                </Link>
-            </div>
-            <div className={styles.menuItemsContainer}>
-                <Link href="/drop">
-                    <a>Artists</a>
-                </Link>
-                <Link href="/lookbook">
-                    <a>Faq</a>
-                </Link>
-                <Link href="/artists">
-                    <a>Artists</a>
-                </Link>
+        <div className={styles.navbarOptionsContainer} >
+            <div className={styles.menuItemsContainer} ref={ref}>
+
+                {
+                    ROUTES.map(route => 
+                        <Link href={`\\${route}`} key={route}>
+                            <a>{capitalize(route)}</a>
+                        </Link>
+                    )
+                }
                 <a href="https://www.instagram.com/semiaquatics" target='_blank'>
-                    <a>Instagram</a>
+                    <IconContext.Provider value={{ className: "arrow-right-email" }}>
+                        <SiInstagram />
+                    </IconContext.Provider>
                 </a>
             </div>
+
         </div>
     );
 };

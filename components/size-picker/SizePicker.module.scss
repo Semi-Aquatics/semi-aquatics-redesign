@@ -27,4 +27,7 @@
         font-weight: 700;
         opacity: 40%;
     }
+    @media (max-width: 768px) {
+        // justify-content: space-around;
+    }
 }

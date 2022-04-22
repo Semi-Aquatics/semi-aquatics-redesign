@@ -6,7 +6,7 @@ interface ProductPreviewProps {
     title: string,
     price: string,
     id: string,
-    noPrice: boolean | undefined
+    // noPrice: boolean | undefined
 }
 
 const ProductPreview:React.FC<ProductPreviewProps> = ({image, title, price, id, noPrice}) => {
@@ -15,7 +15,7 @@ const ProductPreview:React.FC<ProductPreviewProps> = ({image, title, price, id, 
             <div className={styles.productPreviewContainer}>
                 <img src={image} alt={title}/>
                 <h3 className={styles.cardTitle}>{title}</h3>
-                { noPrice && <p className={styles.cardPrice}>${price}</p> } 
+                { noPrice && <p className={styles.cardPrice}>${price}</p> }
             </div>
         </Link>
     );

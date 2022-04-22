@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Fade from "../../hooks/fade";
@@ -6,15 +6,19 @@ import Fade from "../../hooks/fade";
 import styles from './Layout.module.scss'
 import Navbar from '../navbar/navbar.component'
 import NavbarOptions from '../navbar-options/navbar-options.component'
+import Sidebar from '../sidebar/sidebar.component';
+
 
 
 const Layout: React.FC = (props) => {
     const router = useRouter();
+    const ref = useRef();
     const [navbarOpen, setNavbarOpen] = useState(false);
+    const [sidebarOpen, setSidebarOpen] = useState(false);
     const typeOfPage = router.pathname.substring(1);
 
     return (
-        <div className={styles.layoutContainer}>
+      <div className={styles.layoutContainer}>
             <Head>
                 <title>Semi Aquatics</title>
                 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -23,14 +27,18 @@ const Layout: React.FC = (props) => {
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="manifest" href="/site.webmanifest" />
             </Head>
-            <Navbar title={typeOfPage} setNavbarOpen={setNavbarOpen} navbarOpen={navbarOpen} />
+            <Navbar title={typeOfPage} setNavbarOpen={setNavbarOpen} navbarOpen={navbarOpen} setSidebarOpen={setSidebarOpen} />
             {
-                navbarOpen && 
+                navbarOpen &&
                 <Fade show={navbarOpen}>
                     <NavbarOptions setNavbarOpen={setNavbarOpen}/>
                 </Fade>
             }
-            {props.children}
+            <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
+          {/* @ts-ignore */}
+          <div>
+              {props.children}
+            </div>
         </div>
     );
 };

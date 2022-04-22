@@ -1,8 +1,10 @@
 .productImagesContainer{
     overflow: hidden;
     width: 100%;
+    background-color: transparent;
     .topImage{
-        width: 100%;
+        width: 70%;
+        margin: auto;
     }
     
     .productImagesPreview{

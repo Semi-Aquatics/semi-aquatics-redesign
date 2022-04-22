@@ -54,7 +54,7 @@ export async function getStaticProps(context: { query?: any; store?: any; }) {
           }
         `,
       });
-  
+
       return {
         props: {
           drop: data.collections.edges[0].node

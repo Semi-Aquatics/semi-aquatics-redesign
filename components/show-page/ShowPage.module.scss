@@ -1,37 +1,151 @@
 .showPageContainer{
     // padding: 0 32px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 16px;
-
-    .productDescription{
-        margin-left: 42px;
-        padding: 48px;
-        h1{
-            display:inline-block; 
-            font-size: 18px;
-
-            padding-bottom: 32px;
-            border-bottom: 1px solid white;
+    .leftSide{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(244, 244, 244);
+        .imageContainer{
+            margin: auto;
         }
+    }
+    .productDescription{
+        padding: 3.5rem 4rem;
+        .priceAndTitle{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            h1{
+                font-size: 24px;
+                font-weight: 400;
+            }
+            h2{
+                font-size: 24px;
+                margin-left: 24px;
+                font-weight: 400;
+            }
+        }
+        margin-left: 42px;
         .description {
             font-size: 12px;
         }
-        
+        .productAddToCart{
+            .productPrice{
+                font-size: 24px;
+            }
+            .sizeAndNumber{
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                margin-bottom: 8px;
+            }
+        }
+
     }
-    
-    .productAddToCart{
-        padding: 48px;
-        .productPrice{
-            font-size: 24px;
+}
+
+.showPageMobile{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    .imageContainer{
+        text-align: center;
+        transition: 0.4s;
+        img{
+            transition: 0.4s;
+            margin: auto;
+            width: 40vh;
+        }
+    }
+    .closed{
+        text-align: center;
+        img{
+            transition: 0.4s;
+            margin: auto;
+            width: calc(18vh);
+        }
+        flex-grow: 1;
+    }
+    .mobileInfo{
+        .titlePrice{
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            h1{
+                font-size: 18px;
+                width: 60%;
+            }
+            p{
+                font-size: 22px;
+            }
+        }
+        .description{
+            height: 40vh;
+            padding: 0 1rem;
+            transition: 0.4s;
+            overflow: hidden;
+            .openDescriptionBtn{
+                -webkit-touch-callout: none; /* iOS Safari */
+                -webkit-user-select: none; /* Safari */
+                 -khtml-user-select: none; /* Konqueror HTML */
+                   -moz-user-select: none; /* Old versions of Firefox */
+                    -ms-user-select: none; /* Internet Explorer/Edge */
+                        user-select: none; /* Non-prefixed version, currently */
+                margin: auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 30%;
+                font-size: 16px;
+                cursor: pointer;
+                .icon{
+                    display: flex;
+                    align-items: center;
+                    transition: 0.4s;
+                    font-size: 24px;
+                    cursor: pointer;
+                }
+            }
+            .descriptionInner{
+                text-align: left;
+            }
+        }
+        .closed{
+            transition: 0.4s;
+            height: 34px;
+            .icon{
+                transform: rotate(-180deg);
+            }
+        }
+
+    }
+    .flexGrow1{
+        flex-grow: 1;
+    }
+    .sizePickerContainer{
+        width: 90%;
+        margin: auto;
+    }
+    .addToCart{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid black;
+        width: 90%;
+        margin: 1rem auto;
+        height: 40px;
+        .half{
+            height: 100%;
+            width: 50%;
+            button{
+              font-size: 14px;
+
+            }
         }
     }
 }
 
-@media (max-width: 800px) {
-    .showPageContainer{
-        // padding: 0 32px;
-        grid-template-columns: 1fr;
-    }
-}
- 

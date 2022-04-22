@@ -5,11 +5,14 @@ import App, { AppProps } from 'next/app';
 import withRedux from '../hocs/withRedux';
 import { ApolloProvider } from "@apollo/client";
 import client from "../apollo-client";
+import { CookiesProvider } from 'react-cookie';
 
 const MyApp:React.FC = ({ Component, pageProps }: AppProps) => {
   return (
     <ApolloProvider client={client}>
-      <Component {...pageProps} />
+      <CookiesProvider>    
+        <Component {...pageProps} />
+      </CookiesProvider>
     </ApolloProvider>
   );
 }
