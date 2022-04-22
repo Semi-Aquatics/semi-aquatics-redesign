@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import styles from './ImageSlider.module.scss'
-// import Image from "../image/image.component";
 
 interface ImageSliderProps {
     index: number,
@@ -13,7 +12,6 @@ const ImageSlider: React.FC<ImageSliderProps> = ({index, changeImage}) => {
             {
                 [1,2,3,4].map(picNumber =>
                     <div key={picNumber} className={styles.individualPic} onClick={() => changeImage(picNumber)}>
-                        {/* <Image  src={`lookbook-pic-${picNumber}.JPG`} selected={index == picNumber}/> */}
                         <img  src={`lookbook-pic-${picNumber}.JPG`} />
                     </div>
                 )
