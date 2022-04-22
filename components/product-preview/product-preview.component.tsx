@@ -6,7 +6,7 @@ interface ProductPreviewProps {
     title: string,
     price: string,
     id: string,
-    // noPrice: boolean | undefined
+    noPrice: boolean | undefined
 }
 
 const ProductPreview:React.FC<ProductPreviewProps> = ({image, title, price, id, noPrice}) => {

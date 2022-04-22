@@ -1,6 +1,6 @@
 import styles from './Sidebar.module.scss'
 import { GrClose } from 'react-icons/gr'
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import Link from 'next/link';
 import { useOnClickOutside } from '../../hooks/use-on-click-outside';
 import { useRef } from 'react'

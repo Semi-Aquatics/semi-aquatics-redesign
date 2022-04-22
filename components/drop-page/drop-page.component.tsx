@@ -19,7 +19,8 @@ const DropPage:React.FC <DropPageProps> = ({products, dropName}) => {
                   image={product.node.images.edges[0].node.transformedSrc}
                   title={product.node.title}
                   price={product.node.variants.edges[0].node.priceV2.amount}
-                  id={product.node.id}/>
+                  id={product.node.id}
+                  noPrice={false}/>
                   )
                 }
               </div>
