@@ -12,9 +12,7 @@ const SizePicker:React.FC <SizePickerProps> = ({variants, chosenVariant, setChos
             {
                 variants.map((variant: any) =>
                     <div
-                    className={chosenVariant == variant ?
-                                styles.sizeSelected :
-                                variant.node.availableForSale ? styles.size : styles.sizeUnavailable}
+                    className={chosenVariant == variant ? styles.sizeSelected : styles.sizeUnavailable}
                     // onClick={() => variant.node.availableForSale ? setChosenVariant(variant) : ''}
                     onClick={() => setChosenVariant(variant)}
                     key={variant.node.title}>

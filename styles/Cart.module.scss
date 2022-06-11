@@ -14,6 +14,9 @@
           width: 20%;
           margin: 8px;
         }
+        .itemInfo{
+          width: 80%
+        }
       }
     }
     .cartProductContainer{
@@ -23,6 +26,22 @@
       border: .8px solid rgba(0,0,0,0.5);
       display: flex;
       flex-direction: column;
+      .flexBoxPriceSize{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        .sizeText{
+          margin-left: 10%;
+        }
+        .removeItem{
+          color: red;
+          cursor: pointer;
+          &:hover {
+            color: rgb(247, 62, 62);
+          }
+        }
+      }
       .flex_grower{
         flex-grow: 1;
       }

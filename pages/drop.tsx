@@ -8,7 +8,6 @@ import withLayout from '../hocs/withLayout';
 const Drop = (props: { drop: any }) => {
     const drop = props.drop;
     return (
-      // @ts-ignore
       <DropPage products={drop.products} dropName={drop.title}/>
     );
 };

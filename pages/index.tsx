@@ -34,3 +34,9 @@ const Home: React.FC = ({}) => {
 
 export default withLayout(Home);
 
+{/* <div className={styles.homeContainer} dangerouslySetInnerHTML={{
+  __html: `
+        <video style="width: 100%" loop autoplay>
+          <source src="/home-video.mp4" type="video/mp4"/>
+        </video>
+      ` }}></div> */}

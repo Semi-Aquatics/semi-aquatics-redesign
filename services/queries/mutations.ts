@@ -1,19 +1,51 @@
-import { gql } from 'graphql-tag';
+import gql from 'graphql-tag';
 
 
-export const createCartMutation = (merchId: string) => gql`
-mutation  {
-  cartCreate(
-    input: {
+export const cartCreate = gql`
+  mutation cartCreate($quantity: Int!, $merchandiseId: ID!) {
+    cartCreate(input: {
       lines: [
         {
-          quantity: 1
-          merchandiseId: "${merchId}"
+          quantity: $quantity
+          merchandiseId: $merchandiseId
         }
       ]
       attributes: { key: "cart_attribute", value: "This is a cart attribute" }
     }
   ) {
+      cart {
+        id
+        createdAt
+        updatedAt
+        lines(first: 10) {
+          edges {
+            node {
+              id
+              merchandise {
+                ... on ProductVariant {
+                  id
+                }
+              }
+            }
+          }
+        }
+        attributes {
+          key
+          value
+        }
+      }
+    }
+  }
+`;
+
+export const cartLineItemsAdd = gql`
+mutation cartLinesAdd($cartId: ID!, $quantity: Int!, $merchandiseId: ID!) {
+  cartLinesAdd(cartId: $cartId, lines: [
+    {
+      quantity: $quantity
+      merchandiseId: $merchandiseId
+    }
+  ]) {
     cart {
       id
       createdAt
@@ -30,41 +62,23 @@ mutation  {
           }
         }
       }
-      attributes {
-        key
-        value
-      }
-      estimatedCost {
-        totalAmount {
-          amount
-          currencyCode
-        }
-        subtotalAmount {
-          amount
-          currencyCode
-        }
-        totalTaxAmount {
-          amount
-          currencyCode
-        }
-        totalDutyAmount {
-          amount
-          currencyCode
-        }
-      }
+    }
+    userErrors {
+      field
+      message
     }
   }
 }
 
-`;
+`
 
-export const createLinesUpdate = (cartId: string, lineId: string, quantity: number) => gql`
-mutation {
+export const cartLinesUpdate = gql`
+mutation cartLinesUpdate($cartId: ID!, $quantity: Int!, $lineItemId: ID!) {
   cartLinesUpdate(
-    cartId: "${cartId}"
+    cartId: $cartId
     lines: {
-      id: "${lineId}"
-      quantity: ${quantity}
+      id: $lineItemId
+      quantity: $quantity
     }
   ) {
     cart {
@@ -82,24 +96,7 @@ mutation {
           }
         }
       }
-      estimatedCost {
-        totalAmount {
-          amount
-          currencyCode
-        }
-        subtotalAmount {
-          amount
-          currencyCode
-        }
-        totalTaxAmount {
-          amount
-          currencyCode
-        }
-        totalDutyAmount {
-          amount
-          currencyCode
-        }
-      }
+
     }
   }
 }

@@ -31,12 +31,12 @@
         }
     }
 }
-  
+
 
 .fishContainer{
       $color-a: darkorange;
       $color-b: orange;
-        
+
       #toggleSpeed {
         background: tomato;
         border: none;
@@ -49,7 +49,7 @@
         position: fixed;
         width: 90vw;
       }
-      
+
       .fish {
         animation: fish .8s ease-in-out infinite alternate;
         font-size: 10px;
@@ -66,7 +66,7 @@
           transform: translateX(-50%) translateY(-50%);
           width: 12em;
         }
-        
+
         .body {
           background: $color-a;
           border-radius: 50%;
@@ -93,7 +93,7 @@
             transform: rotate(-8deg);
           }
         }
-        
+
         .fins {
           div {
             position: absolute;
@@ -130,11 +130,11 @@
             }
           }
         }
-        
+
         .tail {
           animation: tailSlow 1.2s ease-in-out infinite alternate;
           border-radius: 50%;
-          box-shadow: 
+          box-shadow:
             2.5em .5em 1em -1em rgba(black, .1),
             2.5em 0 0 0 $color-b,
             2.75em -.15em 0 .05em $color-a,
@@ -148,7 +148,7 @@
           transform-style: preserve-3d;
           width: 7em;
         }
-        
+
         .side {
           animation: sideFinSlow 3.2s linear infinite alternate;
           border-bottom: .4em solid transparent;
@@ -185,7 +185,7 @@
             width: .6em;
           }
         }
-      
+
         .eye {
           animation: eye 4s linear infinite;
           background: black;
@@ -198,7 +198,7 @@
           width: 2em;
           z-index: 10;
         }
-        
+
         .bubbles {
           .bubble {
             animation: bubbleOne 3s ease-in infinite;
@@ -229,7 +229,7 @@
           }
         }
       }
-      
+
       @keyframes bubbleOne {
         0% {
           transform: scale(0) translateY(0);
@@ -241,7 +241,7 @@
           transform: scale(1) translateX(.2em) translateY(-60vh);
         }
       }
-      
+
       @keyframes bubbleTwo {
         0% {
           transform: scale(0) translateY(0);
@@ -253,7 +253,7 @@
           transform: scale(1) translateX(-.2em) translateY(-60vh);
         }
       }
-      
+
       @keyframes bubbleThree {
         0% {
           transform: scale(0) translateY(0);
@@ -265,7 +265,7 @@
           transform: scale(1) translateX(.4em) translateY(-60vh);
         }
       }
-      
+
       @keyframes bubbleFour {
         0% {
           transform: scale(0) translateY(0);
@@ -277,7 +277,7 @@
           transform: scale(1) translateX(-.4em) translateY(-60vh);
         }
       }
-      
+
       @keyframes fish {
         from {
           top: calc(50% - .25em);
@@ -286,7 +286,7 @@
           top: calc(50% + .25em);
         }
       }
-      
+
       @keyframes sideFinSlow {
         0% {
           transform: rotateZ(-8deg) rotateY(2deg);
@@ -301,7 +301,7 @@
           transform: rotateZ(-28deg) rotateY(50deg);
         }
       }
-      
+
       @keyframes tailSlow {
         from {
           transform: rotateY(45deg) skewX(7deg);
@@ -310,7 +310,7 @@
           transform: rotateY(-45deg) skewX(7deg);
         }
       }
-      
+
       @keyframes finTop {
         from {
           transform: rotate(-6deg);
@@ -319,7 +319,7 @@
           transform: rotate(0deg);
         }
       }
-      
+
       @keyframes finBottom {
         from {
           transform: rotate(6deg);
@@ -328,7 +328,7 @@
           transform: rotate(0deg);
         }
       }
-      
+
       @keyframes eye {
         0% {
           box-shadow: inset .35em 0 0 .5em white;
@@ -371,6 +371,6 @@
           transform: rotate(0deg);
         }
       }
-      
+
 
 }

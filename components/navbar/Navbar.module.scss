@@ -10,7 +10,6 @@
     align-items: center;
     max-width: 100vw;
     max-width: 100vw;
-
     top: 0;
     h2 {
         cursor: pointer;
@@ -53,7 +52,8 @@
     .navbarContainer{
         padding: 12px;
         padding-bottom: 0;
-        position: relative;
+            position: sticky;
+        // position: relative;
         height: 10vh;
         overflow: scroll;
         h2 {

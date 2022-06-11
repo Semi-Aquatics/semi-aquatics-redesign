@@ -9,7 +9,7 @@ import { useQuery } from '@apollo/client';
 
 import { useCookies } from 'react-cookie';
 import { getCartQuery } from '../../services/queries/queries';
-import { getOrderedCart } from '../../utils/cartHelper';
+import { getCartCounts } from '../../utils/cartHelper';
 
 
 interface NavbarProps {
@@ -23,11 +23,13 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({title, date, setNavbarOpen, navbarOpen, setSidebarOpen}) => {
     const router = useRouter();
     const [cookies, setCookie] = useCookies(['cartId']);
-    const cart = useQuery(getCartQuery(cookies.cartId));
+  const cart = useQuery(getCartQuery, { variables: { cartId: cookies.cartId } });
 
     let itemCount = 0;
     if(cart){
-      itemCount = getOrderedCart(cart, null).reduce((acc: number, curr: any) => acc + curr.quantity, 0)
+      const cartCounts: Number[] = (Object.values(getCartCounts(cart)));
+      // @ts-ignore
+      itemCount = cartCounts.reduce((acc: number, curr: number) => acc + curr, 0)
     }
     return (
     <div className={styles.navbarContainer}>
