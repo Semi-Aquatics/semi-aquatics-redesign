@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import EmailForm from '../components/email-form/email-form.component';
 import withLayout from '../hocs/withLayout';
 
 import styles from '../styles/Home.module.scss'
@@ -27,6 +28,9 @@ const Home: React.FC = ({}) => {
             <div className={styles.bubble}></div>
         </div>
         </div>
+      </div>
+      <div className={styles.emailFormContainer}>
+        <EmailForm />
       </div>
     </div>
   )

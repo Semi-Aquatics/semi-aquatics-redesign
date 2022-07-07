@@ -24,9 +24,10 @@ export async function getStaticProps(context: { query?: any; store?: any; }) {
                     products(first: 5) {
                         edges {
                             node {
-                                id
-                                title
-                                images(first: 1) {
+                              id
+                              title
+                              availableForSale
+                                images(first: 5) {
                                     edges {
                                       node {
                                         altText

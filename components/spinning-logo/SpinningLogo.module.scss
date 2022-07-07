@@ -1,0 +1,30 @@
+.spinningLogoContainer {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  img {
+    margin-bottom: 0;
+    width: 10vh;
+    margin: auto;
+    transform-origin: 45% 43%;
+    animation: spin 8s linear infinite;
+    transform: spin 8s linear infinite;
+    -ms-transform: spin 8s linear infinite;
+    -webkit-animation: spin 8s linear infinite;
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+      }
+    }
+  }
+  // mobile
+  @media (max-width: 768px) {
+    top: 4%;
+    left: 57%;
+    height: 20%;
+    transform: translate(-55%, -13%)
+  }
+}

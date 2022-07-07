@@ -7,18 +7,19 @@ interface DropPageProps {
 }
 
 const DropPage:React.FC <DropPageProps> = ({products, dropName}) => {
+  console.log(products);
     return (
         <div className={styles.dropPageContainer}>
             <h1 className={styles.dropTitle}>{dropName}</h1>
             <div className={styles.productsContainer}>
               {
-                // @ts-ignore
-                products.edges.map(product =>
+                products.edges.map((product: any) =>
                   <ProductPreview
                   key={product.node.title}
                   image={product.node.images.edges[0].node.transformedSrc}
                   title={product.node.title}
                   price={product.node.variants.edges[0].node.priceV2.amount}
+                    isSoldOut={!product.node.availableForSale}
                   id={product.node.id}
                   noPrice={false}/>
                   )

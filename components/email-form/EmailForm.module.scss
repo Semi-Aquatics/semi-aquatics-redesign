@@ -6,7 +6,7 @@
     margin-top: 5vh;
     #emailInput {
         width: 82%;
-        border: 5px solid black;
+        border: 2px solid black;
         font-size: 16px;
         padding-left: 4px;
         font-weight: bold;
@@ -18,13 +18,18 @@
         cursor: pointer;
         width: 20%;
         color: black;
-        border: 5px solid black;
+        border: 2px solid black;
+        border-left: none;
         display: flex;
         align-items: center;
         justify-content: center;
         .arrow-right-email{
             width: 40px;
+            font-size: 24px;
             color: black;
-        }
+          }
+          &:hover {
+            background-color: rgba(0,0,0,.1);
+          }
     }
 }

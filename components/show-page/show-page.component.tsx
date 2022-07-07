@@ -5,6 +5,8 @@ import { ShowPageProps } from '../../interfaces/page_interface';
 import React, { useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { useQuery, useMutation, ApolloError } from '@apollo/client';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // queries
 import { getCartQuery } from '../../services/queries/queries';
@@ -40,7 +42,14 @@ const ShowPage:React.FC<ShowPageProps> = ({product}) => {
   const [updateCartLineItems, updateCartLineItemsData] = useMutation(cartLinesUpdate);
   const [addCartLineItems, addCartLineItemsData] = useMutation(cartLineItemsAdd);
   const cart = useQuery(getCartQuery, { variables: { cartId: cookies.cartId } });
-
+  const notify = () => toast('Item added to cart!', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: true,
+  });
 
   const setNewCartCookie = async (data: any) => {
     if(!data) return;
@@ -52,6 +61,7 @@ const ShowPage:React.FC<ShowPageProps> = ({product}) => {
     if (cookies.cartId){
       const existing_items = getCartCounts(cart);
       const quantity = existing_items[selected.node.id] ? existing_items[selected.node.id] + numberToAdd : numberToAdd;
+      // If the product is already in cart, and we are adding more, update the cart
       if (existing_items[selected.node.id]) {
         const lineItemId = merchandiseIdToLineItemId(cart.data, selected.node.id);
         console.log(lineItemId)
@@ -64,7 +74,11 @@ const ShowPage:React.FC<ShowPageProps> = ({product}) => {
         }
         await updateCartLineItems(cartInput)
         await console.log(updateCartLineItemsData)
-      }else{
+        await notify();
+
+      }
+      // If the product is not in cart, add it
+      else{
         const cartInput = {
           variables: {
             cartId: cookies.cartId,
@@ -74,8 +88,11 @@ const ShowPage:React.FC<ShowPageProps> = ({product}) => {
         }
         await addCartLineItems(cartInput)
         await console.log(addCartLineItemsData)
+        await notify();
       }
-    }else{
+    }
+    // If the cart doesn't exist, create it
+    else{
       const cartInput = {
         variables: {
           quantity: numberToAdd,
@@ -84,6 +101,7 @@ const ShowPage:React.FC<ShowPageProps> = ({product}) => {
       }
       await createCart(cartInput)
       await setNewCartCookie(createCartData.data);
+      await notify();
     }
   }
 
@@ -180,7 +198,17 @@ const ShowPage:React.FC<ShowPageProps> = ({product}) => {
     </Button>
     </div>
     </div>
-
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          draggablePercent={0}
+          closeOnClick
+          rtl={false}
+          draggable
+          pauseOnHover={false}
+        />
     </div>
     );
   };

@@ -4,8 +4,21 @@
     color: white;
     width: 100%;
     cursor: pointer;
-    
-
+    .soldOut{
+      width: 5rem;
+      height: 2rem;
+      margin-left: auto;
+      margin-right: 5%;
+      background: #fff;
+      color: #d2d8db;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #d2d8db;
+      h3{
+        margin: 0
+      }
+    }
 
     .cardTitle{
         // text

@@ -7,6 +7,7 @@ import styles from './Layout.module.scss'
 import Navbar from '../navbar/navbar.component'
 import NavbarOptions from '../navbar-options/navbar-options.component'
 import Sidebar from '../sidebar/sidebar.component';
+import SpinningLogo from '../spinning-logo/spinning-logo.component';
 
 
 
@@ -37,8 +38,9 @@ const Layout: React.FC = (props) => {
             <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
           {/* @ts-ignore */}
           <div>
-              {props.children}
-            </div>
+            {props.children}
+          </div>
+          <SpinningLogo />
         </div>
     );
 };
