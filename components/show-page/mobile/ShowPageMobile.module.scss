@@ -1,0 +1,130 @@
+.showPageMobile {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+
+  .imageContainer {
+    text-align: center;
+    transition: 0.4s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90%;
+
+    img {
+      transition: 0.4s;
+      margin: auto;
+      width: 40vh;
+    }
+  }
+
+  .closed {
+    text-align: center;
+
+    img {
+      transition: 0.4s;
+      margin: auto;
+      width: calc(13vh);
+    }
+
+    flex-grow: 1;
+  }
+
+  .mobileInfo {
+    .titlePrice {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+
+      h1 {
+        font-size: 18px;
+        width: 60%;
+      }
+
+      p {
+        font-size: 22px;
+      }
+    }
+
+    .description {
+      height: 40vh;
+      padding: 0 1rem;
+      transition: 0.4s;
+      overflow: hidden;
+
+      .openDescriptionBtn {
+        -webkit-touch-callout: none;
+        /* iOS Safari */
+        -webkit-user-select: none;
+        /* Safari */
+        -khtml-user-select: none;
+        /* Konqueror HTML */
+        -moz-user-select: none;
+        /* Old versions of Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer/Edge */
+        user-select: none;
+        /* Non-prefixed version, currently */
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 30%;
+        font-size: 16px;
+        cursor: pointer;
+
+        .icon {
+          display: flex;
+          align-items: center;
+          transition: 0.4s;
+          font-size: 24px;
+          cursor: pointer;
+        }
+      }
+
+      .descriptionInner {
+        text-align: left;
+      }
+    }
+
+    .closed {
+      transition: 0.4s;
+      height: 34px;
+
+      .icon {
+        transform: rotate(-180deg);
+      }
+    }
+
+  }
+
+  .flexGrow1 {
+    flex-grow: 1;
+  }
+
+  .sizePickerContainer {
+    width: 90%;
+    margin: auto;
+  }
+
+  .addToCart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    width: 90%;
+    margin: 1rem auto;
+    height: 40px;
+
+    .half {
+      height: 100%;
+      width: 50%;
+
+      button {
+        font-size: 14px;
+
+      }
+    }
+  }
+}

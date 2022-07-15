@@ -73,7 +73,17 @@
     }
     }
     transition: .5s;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
+    &:focus {
+      outline: none !important;
+    }
 }
 
 .sidebarContainerClosed{
@@ -84,8 +94,8 @@
 // css for mobile
 @media (max-width: 768px) {
     .sidebarContainer{
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
         position: fixed;
         top: 0;
         left: 0;

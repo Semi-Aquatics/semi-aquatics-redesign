@@ -27,9 +27,9 @@ const Sidebar: React.FC <SidebarProps> = ({sidebarOpen, setSidebarOpen}) =>  {
                 <Link href="/drop">
                     <p onClick={() => setSidebarOpen(false)}>Drop</p>
                 </Link>
-                <Link href="/artists">
+                {/* <Link href="/artists">
                     <p onClick={() => setSidebarOpen(false)}>Art</p>
-                </Link>
+                </Link> */}
                 <Link href="/story">
                     <p onClick={() => setSidebarOpen(false)}>Story</p>
                 </Link>

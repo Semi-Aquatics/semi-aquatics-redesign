@@ -1,5 +1,5 @@
 .homeContainer {
-    min-height: 100vh;
+    height: 100vh;
     padding: 0 0.5rem;
     padding-top: 5vh;
 
@@ -18,7 +18,7 @@
 @media (max-width: 600px) {
     .homeContainer {
         width: 100vw;
-        height: 100vw;
+        height: 90vh;
         overflow: hidden;
         padding-top: 0;
         text-align: right;
@@ -29,6 +29,7 @@
             transform: rotate(90deg);
             margin-bottom: auto;
         }
+    overflow: hidden;
     }
 }
 .emailFormContainer{

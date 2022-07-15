@@ -23,10 +23,11 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({title, date, setNavbarOpen, navbarOpen, setSidebarOpen}) => {
     const router = useRouter();
     const [cookies, setCookie] = useCookies(['cartId']);
-  const cart = useQuery(getCartQuery, { variables: { cartId: cookies.cartId } });
+    const cart = useQuery(getCartQuery, { variables: { cartId: cookies.cartId } });
 
     let itemCount = 0;
-    if(cart){
+    if(cart && cart.data && cart.data.cart){
+      console.log(cart)
       const cartCounts: Number[] = (Object.values(getCartCounts(cart)));
       // @ts-ignore
       itemCount = cartCounts.reduce((acc: number, curr: number) => acc + curr, 0)
