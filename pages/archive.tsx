@@ -65,4 +65,3 @@ export async function getStaticProps(context: { query?: any; store?: any; }) {
 
 export default withLayout(Archive);
 
- 

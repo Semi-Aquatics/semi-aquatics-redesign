@@ -2,11 +2,9 @@ import FaqPage from '../components/faq-page/faq-page.component';
 import withLayout from '../hocs/withLayout';
 
 // @ts-ignore
-const Artist: React.FC = ({questions}) => {
-  return (
-    <FaqPage questions={questions}/>
-  )
-}
+const Artist: React.FC = ({questions}) => (
+  <FaqPage questions={questions} />
+)
 
 export async function getStaticProps(context: { query?: any; store?: any; }) {
     const questions = [

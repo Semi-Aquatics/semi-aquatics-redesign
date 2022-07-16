@@ -4,26 +4,27 @@ import Link from 'next/link'
 interface ProductPreviewProps {
     image: string,
     title: string,
-    price: string,
     id: string,
     isSoldOut: boolean,
-    noPrice: boolean | undefined
+    isArchive: boolean | undefined
 }
 
-const ProductPreview:React.FC<ProductPreviewProps> = ({image, title, price, id, noPrice, isSoldOut}) => {
+const ProductPreview:React.FC<ProductPreviewProps> = ({image, title, id, isArchive, isSoldOut}) => {
     return (
       <div className={styles.productPreviewContainer}>
         <Link href={`drop/${id}`}>
           <div>
             {
-              isSoldOut &&
+              isSoldOut && !isArchive &&
               <div className={styles.soldOut}>
                     <h3>Sold Out</h3>
                 </div>
             }
             <img src={image} alt={title}/>
-            <h3 className={styles.cardTitle}>{title}</h3>
-            { noPrice && <p className={styles.cardPrice}>${price}</p> }
+            {
+              !isArchive &&
+              <h3 className={styles.cardTitle}>{title}</h3>
+            }
           </div>
         </Link>
       </div>

@@ -17,10 +17,9 @@ const DropPage:React.FC <DropPageProps> = ({products, dropName}) => {
                   key={product.node.title}
                   image={product.node.images.edges[0].node.transformedSrc}
                   title={product.node.title}
-                  price={product.node.variants.edges[0].node.priceV2.amount}
-                    isSoldOut={!product.node.availableForSale}
+                  isSoldOut={!product.node.availableForSale}
                   id={product.node.id}
-                  noPrice={false}/>
+                  isArchive={false}/>
                   )
                 }
               </div>

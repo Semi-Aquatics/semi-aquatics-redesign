@@ -1,7 +1,5 @@
 .productPreviewContainer{
-    // card
     text-align: center;
-    color: white;
     width: 100%;
     cursor: pointer;
     .soldOut{
@@ -21,13 +19,11 @@
     }
 
     .cardTitle{
-        // text
         text-transform: uppercase;
         font-weight: 700;
         font-size: 14px;
     }
     .cardPrice {
-        // text
         font-size: 18px;
     }
     img {

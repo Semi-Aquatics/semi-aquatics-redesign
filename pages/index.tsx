@@ -1,4 +1,3 @@
-import { useSelector } from 'react-redux';
 import EmailForm from '../components/email-form/email-form.component';
 import withLayout from '../hocs/withLayout';
 
@@ -7,7 +6,6 @@ import styles from '../styles/Home.module.scss'
 // Components
 
 const Home: React.FC = ({}) => {
-  const state = useSelector(state => state);
   return (
     <div className={styles.homeContainer}>
       <div className={styles.fishContainer}>
