@@ -1,4 +1,5 @@
 .navbarContainer{
+    z-index: 1;
     color: black;
     background-color: rgba(0,0,0,0);
     position: fixed;
@@ -61,6 +62,7 @@
 // for mobile
 @media (max-width: 768px) {
     .navbarContainer{
+        background-color: white;
         padding: 12px;
         padding-bottom: 0;
             position: sticky;
@@ -86,5 +88,8 @@
             cursor: pointer;
         }
 
+    }
+    .navbarContainerHome{
+      background-color: #F4F3F4;
     }
 }

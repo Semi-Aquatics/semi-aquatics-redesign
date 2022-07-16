@@ -25,6 +25,7 @@ const Navbar: React.FC<NavbarProps> = ({title, date, setNavbarOpen, navbarOpen, 
     const [cookies, setCookie] = useCookies(['cartId']);
     const cart = useQuery(getCartQuery, { variables: { cartId: cookies.cartId } });
 
+    const isHomePage = router.pathname === '/';
     let itemCount = 0;
     if(cart && cart.data && cart.data.cart){
       console.log(cart)
@@ -32,8 +33,9 @@ const Navbar: React.FC<NavbarProps> = ({title, date, setNavbarOpen, navbarOpen, 
       // @ts-ignore
       itemCount = cartCounts.reduce((acc: number, curr: number) => acc + curr, 0)
     }
+
     return (
-    <div className={styles.navbarContainer}>
+      <div className={isHomePage ? `${styles.navbarContainer} ${styles.navbarContainerHome}` : `${styles.navbarContainer}`}>
         <div className={styles.leftNavbar}>
             <div className={styles.menuIcon} onClick={() => setSidebarOpen(true)}>
                 <HiOutlineMenuAlt4 />
