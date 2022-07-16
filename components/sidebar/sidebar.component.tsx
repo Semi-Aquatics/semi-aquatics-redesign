@@ -1,13 +1,19 @@
 import styles from './Sidebar.module.scss'
+
+// Packages
 import { GrClose } from 'react-icons/gr'
-import { Dispatch, SetStateAction, useState } from 'react';
+import { FaInstagram } from 'react-icons/fa'
+import { Dispatch, SetStateAction, } from 'react';
 import Link from 'next/link';
-import { useOnClickOutside } from '../../hooks/use-on-click-outside';
 import { useRef } from 'react'
 
+
+// Hooks
+import { useOnClickOutside } from '../../hooks/use-on-click-outside';
+
 interface SidebarProps {
-    sidebarOpen: boolean,
-    setSidebarOpen: Dispatch<SetStateAction<boolean>>
+  sidebarOpen: boolean,
+  setSidebarOpen: Dispatch<SetStateAction<boolean>>
 }
 
 const Sidebar: React.FC <SidebarProps> = ({sidebarOpen, setSidebarOpen}) =>  {
@@ -36,6 +42,13 @@ const Sidebar: React.FC <SidebarProps> = ({sidebarOpen, setSidebarOpen}) =>  {
                 <Link href="/archive">
                     <p onClick={() => setSidebarOpen(false)}>Archive</p>
                 </Link>
+                <div className={styles.flexGrow}></div>
+                <div className={styles.bottomNavbar}>
+                  <a>
+                    <FaInstagram />
+                  </a>
+                  <h6 className="footer-item copyright">© 2022 Semi Aquatics</h6>
+                </div>
             </div>
 
         </div>
