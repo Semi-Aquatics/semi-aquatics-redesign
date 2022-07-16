@@ -32,19 +32,16 @@ const Cart: React.FC = ({}) => {
 
 
     if (loading) return <p>Loading data...</p>;
-    if (error) return (
-      <React.Fragment>
-        <p>Oops, error! </p>
-        <button onClick={() => refetch()}>Please try again!</button>
-      </React.Fragment>
-    );
+
+
+  const items: any[] = data && data.cart ? data.cart.lines.edges : []
     return (
     <div className={styles.cartContainer}>
       <h1>Your Cart</h1>
         <div className={styles.cartProductContainer}>
           <div className={styles.lineItems}>
             {
-              data.cart.lines.edges.map((li: any) =>
+              items.map((li: any) =>
                 <div className={styles.lineItem}>
                   <img src={li.node.merchandise.image.transformedSrc} alt={li.node.merchandise.product.title} />
                   <div className={styles.itemInfo}>
@@ -67,7 +64,7 @@ const Cart: React.FC = ({}) => {
           <div className={styles.checkoutBottomContainer}>
             <div className={styles.checkoutText}>
               <p>Subtotal:</p>
-              <p>${totalCost}</p>
+              <p>${totalCost}0</p>
             </div>
             <a href={checkoutUrl.data?.cart?.checkoutUrl}>
               <div className={styles.checkoutBtn}>
