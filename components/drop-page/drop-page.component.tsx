@@ -7,7 +7,6 @@ interface DropPageProps {
 }
 
 const DropPage:React.FC <DropPageProps> = ({products, dropName}) => {
-  console.log(products);
     return (
         <div className={styles.dropPageContainer}>
             <h1 className={styles.dropTitle}>{dropName}</h1>
@@ -26,7 +25,7 @@ const DropPage:React.FC <DropPageProps> = ({products, dropName}) => {
                 }
               </div>
         </div>
-                );
+    );
 };
 
 export default DropPage;

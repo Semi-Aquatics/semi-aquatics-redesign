@@ -12,6 +12,7 @@ import { faAngleDoubleLeft, faAngleLeft, faAngleDoubleRight, faAngleRight } from
 // Components
 import Button from "../../button/button.component";
 import Dropdown from '../../dropdown/dropdown.component';
+import Link from 'next/link';
 
 
 
@@ -44,6 +45,9 @@ const ShowPageDesktop: React.FC<ShowPageChildProps> = ({ product, selected, setS
         </div>
 
         <div className={styles.description} dangerouslySetInnerHTML={{ __html: description }}></div>
+        <p className={styles.sizingLink}>
+          <Link href='/sizing'>Sizing</Link>
+        </p>
         <div className={styles.productAddToCart}>
             <div className={styles.sizeAndNumber}>
               <Dropdown items={product.node.variants.edges} selectItem={setSelected} selectedItem={selected} />

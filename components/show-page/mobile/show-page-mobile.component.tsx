@@ -16,6 +16,7 @@ import { MdKeyboardArrowDown } from 'react-icons/md';
 import Button from "../../button/button.component";
 import SizePicker from "../../size-picker/size-picker.component";
 import NumberPicker from "../../number-picker/number-picker.component";
+import Link from 'next/link';
 
 
 const ShowPageMobile: React.FC<ShowPageChildProps> = ({ product, selected, setSelected, setNumberToAdd, numberToAdd, handleOnAddToCart }) => {
@@ -54,12 +55,15 @@ const ShowPageMobile: React.FC<ShowPageChildProps> = ({ product, selected, setSe
 
         <div className={`${styles.description} ${descriptionOpen ? '' : styles.closed}`}>
           <div className={styles.openDescriptionBtn} onClick={() => setDescriptionOpen(!descriptionOpen)}>
-            Description
             <div className={styles.icon}>
               <MdKeyboardArrowDown />
             </div>
+            Description
           </div>
           <div className={styles.descriptionInner} dangerouslySetInnerHTML={{ __html: description }}></div>
+          <p className={styles.sizingLink}>
+            <Link href='/sizing'>Sizing</Link>
+          </p>
         </div>
       </div>
       <div className={styles.sizePickerContainer}>
