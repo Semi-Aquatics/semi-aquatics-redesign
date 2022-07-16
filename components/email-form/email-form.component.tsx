@@ -1,21 +1,76 @@
 import React from 'react';
 import styles from  './EmailForm.module.scss';
 
+// Packages
+import axios from 'axios';
 import { IconContext } from "react-icons";
 import { BsArrowRight } from 'react-icons/bs';
 
 
 const EmailForm: React.FC = () => {
-    return (
-        <form className={styles.emailFormContainer}>
-            <input type="text" placeholder='Subscribe' id={styles.emailInput}/>
-            <div className={styles.submitButton}>
-                <IconContext.Provider value={{ className: "arrow-right-email" }}>
-                    <BsArrowRight />
-                </IconContext.Provider>
-            </div>
-        </form>
-    );
+  const [email, setEmail] = React.useState('');
+  const [errorMessage, setErrorMessage] = React.useState('');
+  const [successMessage, setSuccessMessage] = React.useState('');
+  const handleSuccessResponse = (response: any) => {
+    setEmail('');
+    setErrorMessage('');
+    setSuccessMessage('Thank you for subscribing!');
+    setTimeout(() => {
+      setSuccessMessage('');
+    }, 5000);
+  }
+
+  const handleErrorResponse = (error: any) => {
+    console.log(error)
+    setSuccessMessage('');
+    setErrorMessage(error.message);
+    setTimeout(() => {
+      setErrorMessage('');
+    }, 5000);
+  }
+
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
+    if (!email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)) {
+      setSuccessMessage('');
+      setErrorMessage('Please enter a valid email address.');
+      setTimeout(() => {
+        setErrorMessage('');
+      }, 5000);
+      return;
+    }
+
+    const apiUrl = `https://proxy-semi-aquatics.herokuapp.com/api/subscribe/${email}`;
+    try {
+      const response = await axios.post(apiUrl, {})
+      await handleSuccessResponse(response);
+    } catch (error: any) {
+      await handleErrorResponse(error);
+    }
+  }
+
+  return (
+    <div className={styles.emailFormContainer}>
+      <form className={styles.emailForm}>
+        <input type="text" placeholder='Subscribe' id={styles.emailInput} value={email} onChange={(e) => setEmail(e.target.value)}/>
+        <button type='submit' className={styles.submitButton} onClick={handleSubmit}>
+          <IconContext.Provider value={{ className: "arrow-right-email" }}>
+            <BsArrowRight />
+          </IconContext.Provider>
+        </button>
+      </form>
+      <div className={styles.messageContainer}>
+        {
+          errorMessage.length > 0 &&
+          <p className={styles.errorMessage}>{errorMessage}</p>
+        }
+        {
+          successMessage.length > 0 &&
+          <p className={styles.successMessage}>{successMessage}</p>
+        }
+      </div>
+    </div>
+  );
 }
 
 export default EmailForm;

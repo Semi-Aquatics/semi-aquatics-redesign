@@ -1,35 +1,54 @@
 .emailFormContainer{
-    color: black;
-    display: flex;
-    width: 300px;
-    height: 50px;
-    margin-top: 5vh;
-    #emailInput {
-        width: 82%;
-        border: 2px solid black;
-        font-size: 16px;
-        padding-left: 4px;
-        font-weight: bold;
-        &:focus{
+  .emailForm{
+      color: black;
+      display: flex;
+      width: 300px;
+      height: 50px;
+      #emailInput {
+          width: 82%;
+          border: 2px solid black;
+          font-size: 16px;
+          padding-left: 4px;
+          font-weight: bold;
+          &:focus{
             outline:none;
-        }
-    }
-    .submitButton{
-        cursor: pointer;
-        width: 20%;
-        color: black;
-        border: 2px solid black;
-        border-left: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        .arrow-right-email{
-            width: 40px;
-            font-size: 24px;
-            color: black;
           }
-          &:hover {
-            background-color: rgba(0,0,0,.1);
-          }
+      }
+      .submitButton{
+          cursor: pointer;
+          width: 20%;
+          color: black;
+          border: 2px solid black;
+          border-left: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .arrow-right-email{
+              width: 40px;
+              font-size: 24px;
+              color: black;
+            }
+            &:hover {
+              background-color: rgba(0,0,0,.1);
+            }
+      }
     }
-}
+
+    .messageContainer{
+      height: 25px;
+      .errorMessage{
+        text-align: left;
+        color: red;
+        font-size: 12px;
+        margin-top: 5px;
+        margin-bottom: 0px;
+      }
+      .successMessage {
+        text-align: left;
+        color: green;
+        font-size: 12px;
+        margin-top: 5px;
+        margin-bottom: 0px;
+      }
+    }
+  }
