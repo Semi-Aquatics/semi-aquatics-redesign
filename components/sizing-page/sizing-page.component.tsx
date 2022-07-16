@@ -1,10 +1,17 @@
 import styles from './SizingPage.module.scss';
+// @ts-ignore
 import crewneck from '../../public/sizing-chart-crewneck.jpg'
+// @ts-ignore
 import boxyTee from '../../public/sizing-boxy.jpg';
+// @ts-ignore
 import sweatpants from '../../public/sweatpants-chart.jpg';
+// @ts-ignore
 import shorts from '../../public/sizing-chart-shorts.jpg';
+// @ts-ignore
 import tShirt from '../../public/sizing-chart-tshirt.jpg';
+// @ts-ignore
 import hoodie from '../../public/sizing-chart-hoodie.jpg';
+// @ts-ignore
 import longSleeve from '../../public/sizing-chart-long-sleeve.jpg';
 
 const SizingPage: React.FC = () =>  (
