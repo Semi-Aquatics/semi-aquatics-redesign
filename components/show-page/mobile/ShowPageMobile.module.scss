@@ -15,7 +15,7 @@
     img {
       transition: 0.4s;
       margin: auto;
-      width: 40vh;
+      width: 100vw;
     }
   }
 
@@ -36,14 +36,17 @@
       display: flex;
       justify-content: space-between;
       padding: 1rem;
+      padding-top: 0;
 
       h1 {
         font-size: 18px;
         width: 60%;
+        margin-top: 0;
       }
 
       p {
         font-size: 22px;
+        margin-top: 0;
       }
     }
 
@@ -89,8 +92,8 @@
 
     .closed {
       transition: 0.4s;
-      height: 34px;
-
+      height: 30px;
+      text-align: left;
       .icon {
         transform: rotate(-180deg);
       }
@@ -114,7 +117,8 @@
     border: 1px solid black;
     width: 90%;
     margin: 1rem auto;
-    height: 40px;
+    margin-top: 0;
+    height: 45px;
 
     .half {
       height: 100%;

@@ -6,10 +6,11 @@ import { ShowPageChildProps } from '../../../interfaces/page_interface';
 
 // Packages
 import Carousel from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import '@brainhubeu/react-carousel/lib/style.css';
 import { faAngleDoubleLeft, faAngleLeft, faAngleDoubleRight, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { MdKeyboardArrowDown } from 'react-icons/md';
+
 
 // Components
 import Button from "../../button/button.component";

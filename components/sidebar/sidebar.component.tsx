@@ -47,7 +47,8 @@ const Sidebar: React.FC <SidebarProps> = ({sidebarOpen, setSidebarOpen}) =>  {
                   <a>
                     <FaInstagram />
                   </a>
-                  <h6 className="footer-item copyright">© 2022 Semi Aquatics</h6>
+                  <h6 className="footer-item">info@semiaquatics.com</h6>
+                  <h6 className="footer-item">© 2022 Semi Aquatics</h6>
                 </div>
             </div>
 

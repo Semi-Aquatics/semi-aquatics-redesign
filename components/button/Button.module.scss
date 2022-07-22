@@ -1,24 +1,17 @@
 .buttonContainer{
-    height: 62px;
+    height: 48px;
     background-color: black;
     color: white;
     border-radius: 4px;
-    font-size: 24px;
+    font-size: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
 }
-.soldOutButton {
-    height: 62px;
-    background-color: black;
-    color: white;
-    border-radius: 4px;
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.soldOut{
     opacity: 60%;
+    cursor: default;
 }
 .mobileButtonContainer{
     height: 100%;

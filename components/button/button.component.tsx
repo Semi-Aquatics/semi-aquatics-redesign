@@ -10,15 +10,15 @@ interface ButtonProps {
 
 const Button:React.FC <ButtonProps> = ({children, soldOut, isSelected, onClick, selected, mobile}) => (
     mobile ?
-        <div className={soldOut || !isSelected ? styles.mobileSoldOutButton : styles.mobileButtonContainer}
-                onClick={() => onClick(selected)}>
-            <p>{children}</p>
-        </div>
+      <div className={soldOut || !isSelected ? styles.mobileSoldOutButton : styles.mobileButtonContainer}
+              onClick={() => onClick(selected)}>
+          <p>{children}</p>
+      </div>
     :
-        <div className={soldOut || !isSelected ? styles.soldOutButton : styles.buttonContainer}
-            onClick={() => onClick(selected)}>
-            <p>{children}</p>
-        </div>
+      <div className={`${styles.buttonContainer} ${soldOut || !isSelected ? styles.soldOut : ''}`}
+          onClick={() => onClick(selected)}>
+          <p>{children}</p>
+      </div>
 );
 
 
