@@ -17,9 +17,17 @@ import Button from "../../button/button.component";
 import SizePicker from "../../size-picker/size-picker.component";
 import NumberPicker from "../../number-picker/number-picker.component";
 import Link from 'next/link';
+import { BsCircleFill } from 'react-icons/bs';
 
 
-const ShowPageMobile: React.FC<ShowPageChildProps> = ({ product, selected, setSelected, setNumberToAdd, numberToAdd, handleOnAddToCart }) => {
+const ShowPageMobile: React.FC<ShowPageChildProps> = ({ product,
+  selected,
+  setSelected,
+  setNumberToAdd,
+  numberToAdd,
+  handleOnAddToCart,
+  slideNumber,
+  setSlideNumber }) => {
   const [descriptionOpen, setDescriptionOpen] = useState(false);
 
   const description = product.node.descriptionHtml;
@@ -39,9 +47,18 @@ const ShowPageMobile: React.FC<ShowPageChildProps> = ({ product, selected, setSe
             arrowRight={<FontAwesomeIcon icon={faAngleDoubleRight} />}
             arrowRightDisabled={<FontAwesomeIcon icon={faAngleRight} />}
             addArrowClickHandler
+            onChange={setSlideNumber}
             slides={slides}
           >
           </Carousel>
+          <div className={styles.dotsContainer}>
+            {
+              slides.map((_: any, index: any) => (
+                <div className={`${styles.dot} ${index == slideNumber ? styles.colored : ''}`} key={index}>
+                  <BsCircleFill />
+                </div>
+              ))}
+          </div>
         </div>
 
       </div>

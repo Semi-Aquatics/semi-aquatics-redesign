@@ -27,6 +27,7 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
   const [cookies, setCookie] = useCookies(['cartId']);
   const [numberToAdd, setNumberToAdd] = useState(1);
   const [selected, setSelected] = useState(product.node.variants.edges[0]);
+  const [slideNumber, setSlideNumber] = useState(0);
   const isMobile = useIsMobile();
   const [createCart, createCartData] = useMutation(cartCreate);
   const [updateCartLineItems, updateCartLineItemsData] = useMutation(cartLinesUpdate);
@@ -109,6 +110,8 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
           setSelected={setSelected}
           handleOnAddToCart={handleOnAddToCart}
           setNumberToAdd={setNumberToAdd}
+          slideNumber={slideNumber}
+          setSlideNumber={setSlideNumber}
           numberToAdd={numberToAdd} />
       :
         <ShowPageDesktop
@@ -117,6 +120,8 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
           setSelected={setSelected}
           handleOnAddToCart={handleOnAddToCart}
           setNumberToAdd={setNumberToAdd}
+          slideNumber={slideNumber}
+          setSlideNumber={setSlideNumber}
           numberToAdd={numberToAdd} />
     }
 

@@ -12,8 +12,6 @@ const Product = (props: { product: any }) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
-  // const router = useRouter()
-  // const { productId } = router.query
   const { data } = await client.query({
       query: gql`
       query {
@@ -54,7 +52,6 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
           }
       }
     }
-
     }
       `,
     });

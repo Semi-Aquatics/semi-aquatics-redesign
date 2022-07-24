@@ -9,5 +9,7 @@ export interface ShowPageChildProps {
   setSelected: any
   handleOnAddToCart: any,
   setNumberToAdd: any,
-  numberToAdd: any
+  numberToAdd: number,
+  slideNumber: number,
+  setSlideNumber: any
 }

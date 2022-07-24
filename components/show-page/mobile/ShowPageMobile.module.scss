@@ -17,6 +17,24 @@
       margin: auto;
       width: 100vw;
     }
+    .dotsContainer {
+      display: flex;
+      justify-content: center;
+
+      .dot {
+        font-size: 6px;
+        border-radius: 50%;
+        background-color: rgb(255, 255, 255);
+        margin: 8px 4px;
+        color: rgba(0, 0, 0, 0.5);
+        opacity: 1;
+        transition: 0.4s;
+      }
+
+      .colored {
+        color: rgba(0, 0, 0, 0.8);
+      }
+    }
   }
 
   .closed {
@@ -27,7 +45,14 @@
       margin: auto;
       width: calc(13vh);
     }
+    .dotsContainer{
 
+      .dot{
+        opacity: 0;
+        transition: 0.4s;
+        height: 0;
+      }
+    }
     flex-grow: 1;
   }
 
@@ -35,8 +60,7 @@
     .titlePrice {
       display: flex;
       justify-content: space-between;
-      padding: 1rem;
-      padding-top: 0;
+      padding: 0 1rem;
 
       h1 {
         font-size: 18px;

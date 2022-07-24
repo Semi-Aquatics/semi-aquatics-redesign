@@ -1,13 +1,16 @@
 .buttonContainer{
-    height: 48px;
-    background-color: black;
-    color: white;
-    border-radius: 4px;
-    font-size: 16px;
+    height: 40px;
+    font-size: 14px;
     display: flex;
+    border: 1px solid black;
     justify-content: center;
     align-items: center;
+    width: 100%;
     cursor: pointer;
+    &:hover{
+      color: white;
+      background-color: black;
+    }
 }
 .soldOut{
     opacity: 60%;
