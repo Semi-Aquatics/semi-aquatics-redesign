@@ -1,6 +1,56 @@
 .storyPageContainer {
+  text-align: center;
+  height: 90vh;
+  margin-top: 10vh;
+  overflow: scroll;
+  font-size: 14px;
   h1{
-    text-align: center;
-    margin-top: 15vh;
+    margin-bottom: 5vh;
+  }
+  h2{
+    width: 60%;
+    margin: 5vh auto;
+    font-size: 16px;
+    text-align: left;
+  }
+  .emailFormContainer{
+    display: flex;
+    justify-content: center;
+  }
+  .textContainer{
+    margin: auto;
+    text-align: left;
+    width: 60%;
+    .question{
+      margin-top: 12px;
+      margin-bottom: 12px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .quote{
+      padding: 16px;
+      width: 60%;
+      margin: 4% auto;
+      border-left: 2px solid black;
+      margin-bottom: 5%;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    margin-top: 0vh;
+    h1{
+      width: 90%;
+      margin: 5vh auto;
+      font-size: 18px;
+    }
+    h2{
+      width: 90%;
+    }
+    .textContainer{
+      width: 90%;
+      .quote{
+        width: 90%;
+        margin: 8% auto;
+      }
+    }
   }
 }

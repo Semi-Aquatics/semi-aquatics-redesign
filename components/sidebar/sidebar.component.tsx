@@ -33,9 +33,6 @@ const Sidebar: React.FC <SidebarProps> = ({sidebarOpen, setSidebarOpen}) =>  {
                 <Link href="/drop">
                     <p onClick={() => setSidebarOpen(false)}>Drop</p>
                 </Link>
-                {/* <Link href="/artists">
-                    <p onClick={() => setSidebarOpen(false)}>Art</p>
-                </Link> */}
                 <Link href="/story">
                     <p onClick={() => setSidebarOpen(false)}>Story</p>
                 </Link>
@@ -44,10 +41,12 @@ const Sidebar: React.FC <SidebarProps> = ({sidebarOpen, setSidebarOpen}) =>  {
                 </Link>
                 <div className={styles.flexGrow}></div>
                 <div className={styles.bottomNavbar}>
-                  <a>
-                    <FaInstagram />
-                  </a>
-                  <h6 className="footer-item">info@semiaquatics.com</h6>
+                  <div className={styles.flexer} >
+                    <a>
+                      <FaInstagram />
+                    </a>
+                  <a href='mailto:info@semiaquatics.com' className={styles.footerEmail}>info@semiaquatics.com</a>
+                  </div>
                   <h6 className="footer-item">© 2022 Semi Aquatics</h6>
                 </div>
             </div>

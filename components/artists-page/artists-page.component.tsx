@@ -9,11 +9,11 @@ interface ArtistsPageProps {
 const ArtistsPage:React.FC <ArtistsPageProps> = ({artists}) => {
     return (
         <div className={styles.artistsPageContainer}>
-            <h1>Artists</h1>
-            <div className={styles.allCards}>
+            <h1>Coming soon.</h1>
+            {/* <div className={styles.allCards}>
                 {
-                    artists.map((artist:any) => 
-                        <ArtistCard 
+                    artists.map((artist:any) =>
+                        <ArtistCard
                             key={artist.id}
                             artistImage={artist.image}
                             artistName={artist.name}
@@ -21,7 +21,7 @@ const ArtistsPage:React.FC <ArtistsPageProps> = ({artists}) => {
                         />
                     )
                 }
-            </div>
+            </div> */}
         </div>
     )
 };

@@ -94,8 +94,19 @@
     }
 
     .bottomNavbar{
+      .flexer{
+        display: flex;
+        align-items: center;
+      }
       a{
         font-size: 18px;
+        margin-right: 16px;
+        display: flex;
+        align-items: center;
+      }
+      .footerEmail{
+        font-size: 14px;
+        margin: 16px 0;
       }
       h6{
         font-size: 14px;
