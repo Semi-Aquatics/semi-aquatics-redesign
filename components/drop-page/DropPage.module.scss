@@ -1,8 +1,9 @@
 .dropPageContainer{
     text-align: center;
     .dropTitle{
+        margin-top: 5vh;
         font-weight: 600;
-        font-size: 36px;
+        font-size: 28px;
     }
     .productsContainer{
         display: grid;
@@ -12,14 +13,18 @@
 
 @media only screen and (max-width: 900px) {
     .dropPageContainer{
-        .productsContainer{
-            grid-template-columns: 1fr 1fr;
-        }
+      .productsContainer{
+        grid-template-columns: 1fr 1fr;
+      }
     }
-}
+  }
 
-@media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 600px) {
     .dropPageContainer{
+      .dropTitle {
+          margin-top: 5vh;
+          font-size: 24px;
+        }
         .productsContainer{
             grid-template-columns: 1fr;
         }

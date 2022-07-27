@@ -62,7 +62,6 @@
 // for mobile
 @media (max-width: 768px) {
     .navbarContainer{
-        background-color: white;
         padding: 12px;
         padding-bottom: 0;
             position: sticky;
@@ -88,8 +87,5 @@
             cursor: pointer;
         }
 
-    }
-    .navbarContainerHome{
-      background-color: #F4F3F4;
     }
 }
