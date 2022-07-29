@@ -39,7 +39,7 @@ const Sidebar: React.FC <SidebarProps> = ({sidebarOpen, setSidebarOpen}) =>  {
                 <Link href="/archive">
                     <p onClick={() => setSidebarOpen(false)}>Archive</p>
                 </Link>
-                <div className={styles.flexGrow}></div>
+                <span className={styles.flexGrow}></span>
                 <div className={styles.bottomNavbar}>
                   <div className={styles.flexer} >
                     <a>
