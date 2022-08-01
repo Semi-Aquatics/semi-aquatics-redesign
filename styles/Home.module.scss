@@ -6,11 +6,17 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background-color: #fff;
     .videoContainer{
       margin-top: 25vh;
+      margin-bottom: 8px;
       display: flex;
       height: 80vh;
       align-items: center;
+      video{
+        height: 50%;
+        object-fit: cover;
+      }
     }
 
     a{
