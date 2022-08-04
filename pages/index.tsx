@@ -9,10 +9,11 @@ import ReactPlayer from 'react-player'
 const Home: React.FC = ({}) => {
   return (
     <div className={styles.homeContainer}>
-      <div className={styles.videoContainer} >
+      {/* <div className={styles.videoContainer} >
         <ReactPlayer loop={true} playing={true} controls={true} url='https://res.cloudinary.com/daf8abic5/video/upload/v1659369952/home-video_l5cqny.mp4' />
-      </div>
+      </div> */}
       <div className={styles.emailFormContainer}>
+        <h1>Semi Aquatics</h1>
         <EmailForm />
       </div>
     </div>
