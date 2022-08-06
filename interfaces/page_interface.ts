@@ -13,3 +13,23 @@ export interface ShowPageChildProps {
   slideNumber: number,
   setSlideNumber: any
 }
+
+export interface CountdownTimerProps {
+  timeLeftObj: {
+    days: number,
+    hours: number,
+    minutes: number,
+    seconds: number
+  }
+}
+
+export interface UpcomingDropPreviewProps {
+  timeLeftObj: {
+    days: number,
+    hours: number,
+    minutes: number,
+    seconds: number
+  },
+  products: any,
+  dropTitle: string
+}
