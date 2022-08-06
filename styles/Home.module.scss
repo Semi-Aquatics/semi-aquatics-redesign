@@ -6,19 +6,12 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-color: #fff;
-    .videoContainer{
-      margin-top: 25vh;
-      margin-bottom: 8px;
-      display: flex;
-      height: 80vh;
-      align-items: center;
-      video{
-        height: 50%;
-        object-fit: cover;
-      }
+    h1{
+      font-weight: 400;
     }
-
+    .spinningLogoContainer{
+      width: 15vw;
+    }
     a{
         font-weight: 900;
         font-size: 45px;
@@ -42,8 +35,11 @@
             margin-bottom: auto;
         }
     overflow: hidden;
+    .spinningLogoContainer{
+      width: 30vh;
+    }
     .emailFormContainer {
-      padding-top: 70%;
+      padding-top: 30%;
       padding-bottom: 20%;
     }
     }

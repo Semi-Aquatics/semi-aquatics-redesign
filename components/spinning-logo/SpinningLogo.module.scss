@@ -1,11 +1,8 @@
 .spinningLogoContainer {
-  position: fixed;
-  bottom: 50px;
-  z-index: 2;
-  right: 50px;
+  width: 100%;
   img {
     margin-bottom: 0;
-    width: 10vh;
+    width: 100%;
     margin: auto;
     transform-origin: 45% 43%;
     animation: spin 15s linear infinite;
@@ -20,12 +17,5 @@
         -webkit-transform: rotate(360deg);
       }
     }
-  }
-  // mobile
-  @media (max-width: 768px) {
-    top: 4%;
-    left: 57%;
-    height: 20%;
-    transform: translate(-55%, -13%)
   }
 }

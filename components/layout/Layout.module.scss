@@ -3,4 +3,19 @@
     min-height: 100vh;
     margin: 0;
     color: black;
+    .spinningLogoContainer{
+      position: fixed;
+      bottom: 50px;
+      z-index: 2;
+      right: 50px;
+      width: 7vw;
+        // mobile
+          @media (max-width: 768px) {
+            top: 4%;
+            left: 53%;
+            height: 20%;
+            transform: translate(-55%, -13%);
+            width: 10vh;
+          }
+    }
 }

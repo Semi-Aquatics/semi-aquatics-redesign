@@ -40,7 +40,12 @@ const Layout: React.FC = (props) => {
           <div>
             {props.children}
           </div>
-          <SpinningLogo />
+          {
+            router.pathname !== '/' &&
+              <div className={styles.spinningLogoContainer}>
+                <SpinningLogo />
+              </div>
+          }
         </div>
     );
 };
