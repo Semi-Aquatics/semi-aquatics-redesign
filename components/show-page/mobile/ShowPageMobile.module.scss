@@ -9,7 +9,7 @@
     transition: 0.4s;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     height: 90%;
 
     img {
@@ -20,6 +20,7 @@
     .dotsContainer {
       display: flex;
       justify-content: center;
+      margin-bottom: 30px;
 
       .dot {
         font-size: 6px;
@@ -43,10 +44,9 @@
     img {
       transition: 0.4s;
       margin: auto;
-      width: calc(25vh);
+      width: 20vh;
     }
     .dotsContainer{
-
       .dot{
         opacity: 0;
         transition: 0.4s;
