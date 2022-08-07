@@ -28,6 +28,7 @@ const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
   const slides = product.node.images.edges.map((image: any) =>
   (<img src={image.node.transformedSrc} alt={image.node.altText} />)
   )
+
   const description = product.node.descriptionHtml;
 
   return (
@@ -35,26 +36,15 @@ const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
       <div className={styles.leftSide}>
         <div className={styles.productCarousel}>
           <Carousel
-            // @ts-ignore
-            arrowLeft={<FontAwesomeIcon icon={faAngleDoubleLeft} />}
-            arrowLeftDisabled={<FontAwesomeIcon icon={faAngleLeft} />}
-            arrowRight={<FontAwesomeIcon icon={faAngleDoubleRight} />}
-            arrowRightDisabled={<FontAwesomeIcon icon={faAngleRight} />}
-            addArrowClickHandler
+            value={slideNumber}
             onChange={setSlideNumber}
             slides={slides}>
           </Carousel>
-          <div className={styles.dotsContainer}>
-            {
-            slides.map((_: any, index: any) => (
-              <div className={`${styles.dot} ${index == slideNumber ? styles.colored : ''}`} key={index}>
-                <BsCircleFill />
-              </div>
-            ))}
-          </div>
         </div>
       </div>
       <div className={styles.productDescription}>
+        <div className={styles.flex_growers}></div>
+
         <div className={styles.priceAndTitle}>
           <h1>{product.node.title.split(' -')[0]}</h1>
           <h2>${product.node.variants.edges[0].node.priceV2.amount}0</h2>
@@ -100,6 +90,20 @@ const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
           <p className={styles.sizingLink}>
             <Link href='/faq'>FAQ</Link>
           </p>
+        </div>
+        <div className={styles.flex_growers}></div>
+        <div className={styles.changeImagesContainer}>
+          {
+            slides.map((slide: any, index: number) => (
+              <div key={index} className={`${styles.changeImage} ${index === slideNumber ? styles.selected : ''}`} onClick={() => setSlideNumber(index)}>
+                  <img src={slide.props.src} alt={slide.props.alt} />
+                </div>
+              )
+            )
+          }
+          {/* <div className={styles.smallImageNotSelected}>
+
+            </div> */}
         </div>
       </div>
     </div>

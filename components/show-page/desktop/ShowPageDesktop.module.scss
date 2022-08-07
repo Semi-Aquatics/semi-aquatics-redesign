@@ -19,7 +19,7 @@
       width: 100%;
 
       img {
-        width: 80%;
+        width: 100%;
       }
       .dotsContainer{
         display: flex;
@@ -43,8 +43,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-
+    .flex_growers{
+      flex-grow: 1;
+    }
     .priceAndTitle {
       display: flex;
       align-items: center;
@@ -111,6 +112,22 @@
             opacity: 0.8;
           }
         }
+    }
+    .changeImagesContainer{
+        display: flex;
+      .changeImage{
+        opacity: 40%;
+        cursor: pointer;
+        img{
+          width: 4vw;
+        }
+        &:hover{
+          opacity: 100%;
+        }
+      }
+      .selected{
+        opacity: 100%;
+      }
     }
   }
 }
