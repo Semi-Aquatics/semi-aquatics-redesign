@@ -1,49 +1,77 @@
 .homeContainer {
-    height: 100vh;
-    padding: 0 0.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    h1{
-      font-weight: 400;
-    }
-    .spinningLogoContainer{
-      width: 15vw;
-    }
-    a{
-        font-weight: 900;
-        font-size: 45px;
-        margin-bottom: 1rem;
-    }
+  background: linear-gradient(to right, #f4f3f4, #ebe9ed);
+  height: 100vh;
+  width: 100%;
+  // padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  h1 {
+    font-weight: 400;
+  }
+
+  .spinningLogoContainer {
+    width: 15vw;
+  }
+
+  a {
+    font-weight: 900;
+    font-size: 45px;
+    margin-bottom: 1rem;
+  }
 }
 
+.videoContainer {
+  width: 100%;
+}
+
+.mainVideo {
+  width: 100%;
+  height: 100%;
+  margin-top: -20px;
+}
+
+.mainContainer {
+  position: fixed;
+  margin-top: 550px;
+  justify-content: center;
+  text-align: center;
+}
 
 @media (max-width: 600px) {
-    .homeContainer {
-        width: 100vw;
-        height: 90vh;
-        overflow: hidden;
-        padding-top: 0;
-        text-align: right;
-        .animation{
-            position: relative;
-            width: 80vh;
-            height: 90vw;
-            transform: rotate(90deg);
-            margin-bottom: auto;
-        }
+  .homeContainer {
+    // width: 100vw;
+    height: 100%;
+    width: 100%;
+    // height: 90vh;
     overflow: hidden;
-    .spinningLogoContainer{
+    // padding-top: 0;
+    text-align: right;
+
+    .animation {
+      position: relative;
+      width: 80vh;
+      height: 90vw;
+      transform: rotate(90deg);
+      margin-bottom: auto;
+    }
+
+    overflow: hidden;
+
+    .spinningLogoContainer {
       width: 30vh;
     }
+
     .emailFormContainer {
       padding-top: 30%;
       padding-bottom: 20%;
     }
-    }
+  }
 }
-.emailFormContainer{
+
+.emailFormContainer {
   padding-bottom: 15%;
 }
