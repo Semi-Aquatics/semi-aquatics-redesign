@@ -33,3 +33,10 @@ export interface UpcomingDropPreviewProps {
   products: any,
   dropTitle: string
 }
+
+export type TimeLeftObj = {
+  days: number,
+  hours: number,
+  minutes: number,
+  seconds: number
+}

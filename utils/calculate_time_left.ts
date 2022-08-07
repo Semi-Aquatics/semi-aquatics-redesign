@@ -1,4 +1,6 @@
-export const calculateTimeLeft = (dropDate: Date) => {
+import { TimeLeftObj } from '../interfaces/page_interface';
+
+export const calculateTimeLeft = (dropDate: Date): TimeLeftObj => {
   const startDate = new Date();
 
   const startDateInUTC = new Date(startDate.getUTCFullYear(), startDate.getUTCMonth(), startDate.getUTCDate(), startDate.getUTCHours(), startDate.getUTCMinutes(), startDate.getUTCSeconds());
@@ -6,7 +8,12 @@ export const calculateTimeLeft = (dropDate: Date) => {
   // @ts-ignore
   const difference = Date.parse(endDateInUTC) - Date.parse(startDateInUTC);
 
-  let timeLeft = {};
+  let timeLeft = {
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  };
 
   if (difference > 0) {
     timeLeft = {
@@ -14,13 +21,6 @@ export const calculateTimeLeft = (dropDate: Date) => {
       hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
       minutes: Math.floor((difference / 1000 / 60) % 60),
       seconds: Math.floor((difference / 1000) % 60)
-    };
-  } else {
-    timeLeft = {
-      days: 0,
-      hours: 0,
-      minutes: 0,
-      seconds: 0
     };
   }
 

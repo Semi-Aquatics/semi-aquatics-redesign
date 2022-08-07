@@ -1,5 +1,6 @@
 import styles from './DropPage.module.scss'
 import ProductPreview from '../product-preview/product-preview.component';
+import CountdownTimer from '../countdown-timer/countdown-timer.component';
 
 interface DropPageProps {
     products: any,
@@ -9,7 +10,11 @@ interface DropPageProps {
 const DropPage:React.FC <DropPageProps> = ({products, dropName}) => {
     return (
         <div className={styles.dropPageContainer}>
-            <h1 className={styles.dropTitle}>{dropName}</h1>
+            <div className={styles.gridder}>
+              <span></span>
+              <h1 className={styles.dropTitle}>{dropName}</h1>
+              <CountdownTimer />
+            </div>
             <div className={styles.productsContainer}>
               {
                 products.edges.map((product: any) =>
