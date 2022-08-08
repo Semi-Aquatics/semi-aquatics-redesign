@@ -55,7 +55,7 @@ const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
           <div className={styles.quantity}>
             <div className={styles.quantityTitle}>QUANTITY</div>
             <div className={styles.quantityPicker}>
-              <div onClick={() => numberToAdd == 0 ? '' : setNumberToAdd(numberToAdd - 1)} className={styles.changeQuantityDown}><AiOutlineMinus /></div>
+              <div onClick={() => numberToAdd == 1 ? '' : setNumberToAdd(numberToAdd - 1)} className={styles.changeQuantityDown}><AiOutlineMinus /></div>
               {numberToAdd}
               <div onClick={() => setNumberToAdd(numberToAdd + 1)} className={styles.changeQuantityUp}><AiOutlinePlus /></div>
             </div>

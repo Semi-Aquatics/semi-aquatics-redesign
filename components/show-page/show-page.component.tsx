@@ -99,7 +99,7 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
 
   // @brainhubeu/react-carousel uses window, so during ssr this prevents code to break.
   if (typeof window === 'undefined') return <React.Fragment>loading</React.Fragment>;
-
+  console.log(product)
   return (
     <React.Fragment>
     {
@@ -108,7 +108,7 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
           product={product}
           selected={selected}
           setSelected={setSelected}
-          handleOnAddToCart={handleOnAddToCart}
+          handleOnAddToCart={product.availableForSale ? handleOnAddToCart : () => {}}
           setNumberToAdd={setNumberToAdd}
           slideNumber={slideNumber}
           setSlideNumber={setSlideNumber}
@@ -118,7 +118,7 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
           product={product}
           selected={selected}
           setSelected={setSelected}
-          handleOnAddToCart={handleOnAddToCart}
+          handleOnAddToCart={product.availableForSale ? handleOnAddToCart : () => {}}
           setNumberToAdd={setNumberToAdd}
           slideNumber={slideNumber}
           setSlideNumber={setSlideNumber}

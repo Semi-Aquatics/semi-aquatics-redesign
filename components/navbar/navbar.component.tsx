@@ -28,7 +28,6 @@ const Navbar: React.FC<NavbarProps> = ({title, date, setNavbarOpen, navbarOpen, 
     const isHomePage = router.pathname === '/';
     let itemCount = 0;
     if(cart && cart.data && cart.data.cart){
-      console.log(cart)
       const cartCounts: Number[] = (Object.values(getCartCounts(cart)));
       // @ts-ignore
       itemCount = cartCounts.reduce((acc: number, curr: number) => acc + curr, 0)
