@@ -18,7 +18,7 @@ const Home: React.FC = ({ }) => {
       <div className={styles.mainContainer}>
 
         <div className={styles.emailFormContainer}>
-          <EmailForm />
+          <EmailForm isSidebar={false} />
         </div>
       </div>
     </div>

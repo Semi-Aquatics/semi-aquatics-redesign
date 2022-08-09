@@ -11,9 +11,7 @@ const DropPage:React.FC <DropPageProps> = ({products, dropName}) => {
     return (
         <div className={styles.dropPageContainer}>
             <div className={styles.gridder}>
-              <span></span>
               <h1 className={styles.dropTitle}>{dropName}</h1>
-              <CountdownTimer />
             </div>
             <div className={styles.productsContainer}>
               {

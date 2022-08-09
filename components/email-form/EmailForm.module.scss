@@ -8,6 +8,7 @@
           width: 82%;
           border: 2px solid black;
           font-size: 16px;
+          font-family: 'Space Mono', monospace;
           padding-left: 4px;
           font-weight: bold;
           &:focus{
@@ -52,3 +53,37 @@
       }
     }
   }
+
+.sidebarEmailFormContainer{
+  .emailForm{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+    margin-bottom: 24px;
+    input{
+      background-color: transparent;
+      border: 0;
+      // placeholder color to white
+      color: white;
+      letter-spacing: .05em;
+      padding: 0;
+      border: none;
+      margin: 0;
+      background: none;
+      border-radius: 0;
+      font-size: 1.05rem;
+      font-family: 'Space Mono', monospace;
+      right: 0;
+      top: 4px;
+      &:focus {
+          outline: none !important;
+        }
+    }
+    ::placeholder {
+      color: #999591;
+    }
+    .submitButtonText{
+
+    }
+  }
+}

@@ -8,15 +8,23 @@ import Navbar from '../navbar/navbar.component'
 import NavbarOptions from '../navbar-options/navbar-options.component'
 import Sidebar from '../sidebar/sidebar.component';
 import SpinningLogo from '../spinning-logo/spinning-logo.component';
-
-
+import CountdownTimer from '../countdown-timer/countdown-timer.component';
+import { calculateTimeLeft } from '../../utils/calculate_time_left';
 
 const Layout: React.FC = (props) => {
     const router = useRouter();
-    const ref = useRef();
     const [navbarOpen, setNavbarOpen] = useState(false);
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const typeOfPage = router.pathname.substring(1);
+
+    const DROP_DATE = new Date("2022/08/15 17:00:00 EST");
+    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(DROP_DATE));
+    const totalTimeLeft: number = Object.values(timeLeft).reduce((a: any, b: any) => a + b);
+    if (totalTimeLeft > 0) {
+      setTimeout(() => {
+        setTimeLeft(calculateTimeLeft(DROP_DATE));
+      }, 1000);
+    }
 
     return (
       <div className={styles.layoutContainer}>
@@ -42,10 +50,16 @@ const Layout: React.FC = (props) => {
           </div>
           {
             router.pathname !== '/' &&
-              <div className={styles.spinningLogoContainer}>
-                <SpinningLogo />
+            <div className={`${styles.spinningLogoContainer} ${totalTimeLeft > 0 ? styles.countdown : ''}`}>
+              {
+                totalTimeLeft > 0 ?
+                      <CountdownTimer />
+                  :
+                    <SpinningLogo />
+                }
               </div>
           }
+          <script src="https://cdn.attn.tv/semiaquatics/dtag.js"></script>
         </div>
     );
 };

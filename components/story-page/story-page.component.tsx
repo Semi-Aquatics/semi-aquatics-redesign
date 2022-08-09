@@ -22,7 +22,7 @@ const StoryPage: React.FC = () => (
     </div>
     <h2 className={styles.storyTitle}>To join our cause, sign up with your email to get notified when our next collection become available:</h2>
     <div className={styles.emailFormContainer}>
-      <EmailForm />
+      <EmailForm isSidebar={false} />
     </div>
 
   </div>

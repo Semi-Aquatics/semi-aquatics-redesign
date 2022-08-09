@@ -2,14 +2,11 @@
     text-align: center;
     .gridder{
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
       width: calc(20vw + 20vh);
       margin: auto;
       margin-top: 8vh;
       align-items: center;
       .dropTitle{
-        margin-right: 1rem;
-        font-weight: 400;
         font-size: 28px;
       }
     }
@@ -31,10 +28,8 @@
     .dropPageContainer{
       .gridder {
         margin-top: 0;
-        grid-template-columns: 1fr;
         .dropTitle {
           margin-top: 0;
-          margin-right: 0;
           font-size: 24px;
         }
       }

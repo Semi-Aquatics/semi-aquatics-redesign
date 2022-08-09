@@ -18,4 +18,14 @@
             width: 10vh;
           }
     }
+    .countdown{
+      right: calc(1vw + 8vh);
+      @media (max-width: 768px) {
+          top: 6%;
+          left: 50%;
+          height: 20%;
+          transform: translate(-55%, -13%);
+          width: auto;
+        }
+    }
 }

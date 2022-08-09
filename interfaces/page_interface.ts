@@ -34,6 +34,10 @@ export interface UpcomingDropPreviewProps {
   dropTitle: string
 }
 
+export interface EmailFormProps {
+  isSidebar: boolean
+}
+
 export type TimeLeftObj = {
   days: number,
   hours: number,

@@ -10,6 +10,7 @@ import { useRef } from 'react'
 
 // Hooks
 import { useOnClickOutside } from '../../hooks/use-on-click-outside';
+import EmailForm from '../email-form/email-form.component';
 
 interface SidebarProps {
   sidebarOpen: boolean,
@@ -41,6 +42,9 @@ const Sidebar: React.FC <SidebarProps> = ({sidebarOpen, setSidebarOpen}) =>  {
                 </Link>
                 <span className={styles.flexGrow}></span>
                 <div className={styles.bottomNavbar}>
+                  <div className={styles.emailFormContainer}>
+                    <EmailForm isSidebar={true}/>
+                  </div>
                   <div className={styles.flexer} >
                     <a>
                       <FaInstagram />
