@@ -11,6 +11,7 @@
           font-family: 'Space Mono', monospace;
           padding-left: 4px;
           font-weight: bold;
+          background: transparent;
           &:focus{
             outline:none;
           }
@@ -71,7 +72,7 @@
       margin: 0;
       background: none;
       border-radius: 0;
-      font-size: 1.05rem;
+      font-size: 0.9rem;
       font-family: 'Space Mono', monospace;
       right: 0;
       top: 4px;
@@ -81,9 +82,6 @@
     }
     ::placeholder {
       color: #999591;
-    }
-    .submitButtonText{
-
     }
   }
 }

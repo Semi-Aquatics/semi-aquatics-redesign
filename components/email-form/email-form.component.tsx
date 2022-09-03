@@ -21,7 +21,6 @@ const EmailForm: React.FC<EmailFormProps> = ({ isSidebar }) => {
   }
 
   const handleErrorResponse = (error: any) => {
-    console.log(error)
     setSuccessMessage('');
     setErrorMessage(error.message);
     setTimeout(() => {
@@ -56,6 +55,16 @@ const EmailForm: React.FC<EmailFormProps> = ({ isSidebar }) => {
           <input type="text" placeholder='Enter your email' id={styles.emailInput} value={email} onChange={(e) => setEmail(e.target.value)} />
           <p className={styles.submitButtonText} onClick={handleSubmit}>Subscribe</p>
         </form>
+        <div className={styles.messageContainer}>
+          {
+            errorMessage.length > 0 &&
+            <p className={styles.errorMessage}>{errorMessage}</p>
+          }
+          {
+            successMessage.length > 0 &&
+            <p className={styles.successMessage}>{successMessage}</p>
+          }
+        </div>
       </div>
     :
       <div className={styles.emailFormContainer}>
