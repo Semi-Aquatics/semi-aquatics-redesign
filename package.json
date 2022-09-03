@@ -42,6 +42,7 @@
     "redux-persist": "^6.0.0",
     "redux-starter-kit": "^2.0.0",
     "sass": "^1.32.7",
+    "sharp": "^0.30.7",
     "shopify-buy": "^2.11.0",
     "video-react": "^0.15.0"
   },
