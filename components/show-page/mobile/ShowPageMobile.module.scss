@@ -15,7 +15,7 @@
     img {
       transition: 0.4s;
       margin: auto;
-      width: 100vw;
+      width: calc(55vw + 20vh);
     }
     .dotsContainer {
       display: flex;
@@ -75,7 +75,7 @@
     }
 
     .description {
-      height: 40vh;
+      height: calc(30vh + 10vw);
       padding: 0 1rem;
       transition: 0.4s;
       overflow: hidden;
