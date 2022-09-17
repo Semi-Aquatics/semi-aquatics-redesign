@@ -58,37 +58,40 @@
           outline: none !important;
         }
 }
+
 // for mobile
 @media (max-width: 768px) {
-    .navbarContainer{
-        padding: 12px;
-        padding-bottom: 0;
-        position: sticky;
-        // position: relative;
-        height: 10vh;
-        background-color: #f2f2f1;
-        overflow: scroll;
-        h2 {
-            font-size: 18px;
-            padding: 12px;
-            padding-bottom: 0;
-        }
-        .cartAndBars{
-            margin-right: 4px;
-            width: 80px;
-            .icon{
-                svg {
-                    font-size: 1.5rem;
-                }
-            }
-        }
-        p{
-          padding-right: 8px;
-        }
-        .menuIcon{
-            font-size: 24px;
-            cursor: pointer;
-        }
-
+  .navbarContainer{
+      padding: 12px;
+      padding-bottom: 0;
+      position: sticky;
+      // position: relative;
+      height: 10vh;
+      background-color: #f2f2f1;
+      overflow: scroll;
+      h2 {
+          font-size: 18px;
+          padding: 12px;
+          padding-bottom: 0;
+      }
+      .cartAndBars{
+          margin-right: 4px;
+          width: 80px;
+          .icon{
+              svg {
+                  font-size: 1.5rem;
+              }
+          }
+      }
+      p{
+        padding-right: 8px;
+      }
+      .menuIcon{
+          font-size: 24px;
+          cursor: pointer;
+      }
+    }
+    .navbarContainerHome {
+      background: transparent;
     }
 }

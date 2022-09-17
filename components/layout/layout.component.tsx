@@ -38,10 +38,10 @@ const Layout: React.FC = (props) => {
             </Head>
             <Navbar title={typeOfPage} setNavbarOpen={setNavbarOpen} navbarOpen={navbarOpen} setSidebarOpen={setSidebarOpen} />
             {
-                navbarOpen &&
-                <Fade show={navbarOpen}>
-                    <NavbarOptions setNavbarOpen={setNavbarOpen}/>
-                </Fade>
+              navbarOpen &&
+              <Fade show={navbarOpen}>
+                  <NavbarOptions setNavbarOpen={setNavbarOpen}/>
+              </Fade>
             }
             <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
           {/* @ts-ignore */}
@@ -53,7 +53,7 @@ const Layout: React.FC = (props) => {
             <div className={`${styles.spinningLogoContainer} ${totalTimeLeft > 0 ? styles.countdown : ''}`}>
               {
                 totalTimeLeft > 0 ?
-                      <CountdownTimer />
+                    <CountdownTimer />
                   :
                     <SpinningLogo />
                 }
