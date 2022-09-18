@@ -10,5 +10,6 @@ export function useIsMobile() {
       updateSize();
       return () => window.removeEventListener('resize', updateSize);
     }, []);
+
     return size < 720;
   }
