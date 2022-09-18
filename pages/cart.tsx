@@ -37,7 +37,7 @@ const Cart: React.FC = ({}) => {
   const items: any[] = data && data.cart ? data.cart.lines.edges : []
     return (
     <div className={styles.cartContainer}>
-      <h1>Your Cart</h1>
+      <h1>Your Bag</h1>
         <div className={styles.cartProductContainer}>
           <div className={styles.lineItems}>
             {

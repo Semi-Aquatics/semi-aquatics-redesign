@@ -100,7 +100,7 @@ const ShowPageMobile: React.FC<ShowPageChildProps> = ({ product,
             onClick={handleOnAddToCart}>
             {
               selected.node.availableForSale ?
-                "Add to cart"
+                "Add to bag"
                 :
                 "Sold out"
             }

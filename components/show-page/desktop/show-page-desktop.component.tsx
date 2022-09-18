@@ -72,7 +72,7 @@ const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
                   onClick={handleOnAddToCart}>
                   {
                     selected.node.availableForSale ?
-                      "Add to cart"
+                      "Add to bag"
                       :
                       "Sold out"
                   }
@@ -101,9 +101,6 @@ const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
               )
             )
           }
-          {/* <div className={styles.smallImageNotSelected}>
-
-            </div> */}
         </div>
       </div>
     </div>
