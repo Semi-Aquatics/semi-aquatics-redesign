@@ -15,7 +15,6 @@ import { getCartQuery } from '../../services/queries/queries';
 import { useOnClickOutside } from '../../hooks/use-on-click-outside';
 import EmailForm from '../email-form/email-form.component';
 import { useQuery } from '@apollo/client';
-import { getCartCounts } from '../../utils/cartHelper';
 import { useCookies } from 'react-cookie';
 
 interface SidebarProps {
@@ -28,12 +27,6 @@ const Sidebar: React.FC <SidebarProps> = ({sidebarOpen, setSidebarOpen}) =>  {
     const [cookies, setCookie] = useCookies(['cartId']);
     const cart = useQuery(getCartQuery, { variables: { cartId: cookies.cartId } });
 
-    let itemCount = 0;
-    if (cart && cart.data && cart.data.cart) {
-      const cartCounts: Number[] = (Object.values(getCartCounts(cart)));
-      // @ts-ignore
-      itemCount = cartCounts.reduce((acc: number, curr: number) => acc + curr, 0)
-    }
     //  icon for sdiebar
     useOnClickOutside(ref, () => setSidebarOpen(false));
     return (
@@ -55,9 +48,6 @@ const Sidebar: React.FC <SidebarProps> = ({sidebarOpen, setSidebarOpen}) =>  {
                 </Link>
                 <Link href="/archive">
                     <p onClick={() => setSidebarOpen(false)}>Archive</p>
-                </Link>
-                <Link href="/cart">
-              <p onClick={() => setSidebarOpen(false)}>Bag ({itemCount})</p>
                 </Link>
                 <span className={styles.flexGrow}></span>
                 <div className={styles.bottomNavbar}>

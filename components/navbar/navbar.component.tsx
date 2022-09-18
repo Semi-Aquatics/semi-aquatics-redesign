@@ -40,15 +40,11 @@ const Navbar: React.FC<NavbarProps> = ({title, date, setNavbarOpen, navbarOpen, 
                 <VscMenu />
             </div>
         </div>
-          <div className={styles.rightNavbar}>
-        {
-          !isHomePage && !isCartPage &&
-            <Link href="/cart">
+        <div className={styles.rightNavbar}>
+          <Link href="/cart">
             <p>Bag ({itemCount ? itemCount : 0})</p>
-            </Link>
-
-        }
-        </div>
+          </Link>
+      </div>
     </div>
   )
 }
