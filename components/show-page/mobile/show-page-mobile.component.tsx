@@ -72,10 +72,10 @@ const ShowPageMobile: React.FC<ShowPageChildProps> = ({ product,
 
         <div className={`${styles.description} ${descriptionOpen ? '' : styles.closed}`}>
           <div className={styles.openDescriptionBtn} onClick={() => setDescriptionOpen(!descriptionOpen)}>
+            Description
             <div className={styles.icon}>
               <MdKeyboardArrowDown />
             </div>
-            Description
           </div>
           <div className={styles.descriptionInner} dangerouslySetInnerHTML={{ __html: description }}></div>
           <p className={styles.sizingLink}>

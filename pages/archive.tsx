@@ -9,8 +9,9 @@ import ArchivePage from '../components/archive-page/archive-page.component';
 // Components
 // @ts-ignore
 const Archive: React.FC = ({drops}) => {
+  const sorted_drops = drops.sort((dropA: any, dropB: any) => parseInt(dropB.title.split(' ')[1]) -  parseInt(dropA.title.split(' ')[1]));
   return (
-    <ArchivePage drops={drops}/>
+    <ArchivePage drops={sorted_drops}/>
   )
 }
 

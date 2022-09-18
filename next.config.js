@@ -1,6 +1,9 @@
 const withImages = require('next-images');
-module.exports = withImages({
+const withVideos = require('next-videos');
+
+module.exports = withVideos(withImages({
     env: {
       SHOPIFY_ACCESS_TOKEN: process.env.SHOPIFY_ACCESS_TOKEN
     }
-  });
+  }));
+

@@ -15,7 +15,7 @@
     img {
       transition: 0.4s;
       margin: auto;
-      width: calc(55vw + 20vh);
+      width: calc(28vw + 33vh);
     }
     .dotsContainer {
       display: flex;
@@ -45,7 +45,7 @@
       transition: 0.4s;
       margin: auto;
       width: 20vh;
-    }
+  }
     .dotsContainer{
       .dot{
         opacity: 0;
@@ -75,7 +75,7 @@
     }
 
     .description {
-      height: calc(30vh + 10vw);
+      height: calc(30vh + 5vw);
       padding: 0 1rem;
       transition: 0.4s;
       overflow: hidden;
@@ -88,9 +88,8 @@
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-        margin: auto;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
         width: 30%;
         font-size: 16px;
@@ -107,6 +106,8 @@
 
       .descriptionInner {
         text-align: left;
+        height: 24vh;
+        overflow: scroll;
       }
 
       .sizingLink {
@@ -118,6 +119,7 @@
       transition: 0.4s;
       height: 30px;
       text-align: left;
+      overflow: hidden;
       .icon {
         transform: rotate(-180deg);
       }

@@ -4,9 +4,6 @@ import { useIsMobile } from '../hooks/use-is-mobile';
 // @ts-ignore
 import homepagePic from '../public/homepage-image.jpg';
 
-
-const DESKTOP_VIDEO_URL = "https://res.cloudinary.com/daf8abic5/video/upload/v1659977833/video-semi-aquatics_oqkd2d.mp4";
-
 const Home: React.FC = ({ }) => {
   const isMobile = useIsMobile();
   return (
@@ -20,7 +17,7 @@ const Home: React.FC = ({ }) => {
           <div className={styles.videoContainer}>
             <video autoPlay muted loop className={styles.mainVideo}>
               <source
-                src={DESKTOP_VIDEO_URL}
+                src={require('../public/video-home.mp4')}
                 type="video/mp4"
               />
             </video>

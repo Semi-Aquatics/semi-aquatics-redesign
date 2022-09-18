@@ -26,6 +26,7 @@ const Navbar: React.FC<NavbarProps> = ({title, date, setNavbarOpen, navbarOpen, 
     const cart = useQuery(getCartQuery, { variables: { cartId: cookies.cartId } });
 
     const isHomePage = router.pathname === '/';
+    const isCartPage = router.pathname === '/cart';
     let itemCount = 0;
     if(cart && cart.data && cart.data.cart){
       const cartCounts: Number[] = (Object.values(getCartCounts(cart)));
@@ -39,14 +40,15 @@ const Navbar: React.FC<NavbarProps> = ({title, date, setNavbarOpen, navbarOpen, 
             <div className={styles.menuIcon} onClick={() => setSidebarOpen(true)}>
                 <HiOutlineMenuAlt4 />
             </div>
-            {/* <Link href="/" passHref>
-                <h2>Semi Aquatics</h2>
-            </Link> */}
         </div>
-        <div className={styles.rightNavbar}>
+          <div className={styles.rightNavbar}>
+        {
+          !isHomePage && !isCartPage &&
             <Link href="/cart">
-            <p>Cart ({itemCount ? itemCount : 0})</p>
+            <p>Bag ({itemCount ? itemCount : 0})</p>
             </Link>
+
+        }
         </div>
     </div>
   )

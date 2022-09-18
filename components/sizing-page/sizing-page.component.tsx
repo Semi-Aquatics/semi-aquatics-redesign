@@ -2,8 +2,6 @@ import styles from './SizingPage.module.scss';
 // @ts-ignore
 import crewneck from '../../public/sizing-chart-crewneck.jpg'
 // @ts-ignore
-import boxyTee from '../../public/sizing-boxy.jpg';
-// @ts-ignore
 import sweatpants from '../../public/sweatpants-chart.jpg';
 // @ts-ignore
 import shorts from '../../public/sizing-chart-shorts.jpg';
@@ -25,8 +23,6 @@ const SizingPage: React.FC = () =>  (
       <img src={sweatpants} alt="sweatpants sizing chart" />
       <h3>Tee</h3>
       <img src={tShirt} alt="tshirt sizing chart" />
-      <h3>Boxy Tee</h3>
-      <img src={boxyTee} alt="boxy tshirt sizing chart" />
       <h3>Long Sleeve</h3>
       <img src={longSleeve} alt="long sleeve sizing chart" />
       <h3>Shorts</h3>

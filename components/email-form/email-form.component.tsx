@@ -52,7 +52,7 @@ const EmailForm: React.FC<EmailFormProps> = ({ isSidebar }) => {
     isSidebar ?
       <div className={styles.sidebarEmailFormContainer}>
         <form className={styles.emailForm}>
-          <input type="text" placeholder='Enter your email' id={styles.emailInput} value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input type="text" placeholder='enter your email' id={styles.emailInput} value={email} onChange={(e) => setEmail(e.target.value)} />
           <p className={styles.submitButtonText} onClick={handleSubmit}>Subscribe</p>
         </form>
         <div className={styles.messageContainer}>
