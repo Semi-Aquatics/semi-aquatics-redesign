@@ -9,7 +9,7 @@ const Home: React.FC = ({ }) => {
   return (
     <div className={styles.homeContainer}>
       <div className={styles.videoContainer}>
-        <video autoPlay muted loop className={styles.mainVideo} key={`${isMobile}`}>
+        <video autoPlay muted playsInline loop className={styles.mainVideo} key={`${isMobile}`}>
           <source
             src={video}
             type="video/mp4"

@@ -3,8 +3,7 @@ import { Dispatch, SetStateAction } from 'react';
 import Link from 'next/link'
 import styles from './Navbar.module.scss'
 
-import { HiOutlineMenuAlt4 } from 'react-icons/hi';
-import { FiShoppingCart } from 'react-icons/fi';
+import { VscMenu } from 'react-icons/vsc';
 import { useQuery } from '@apollo/client';
 
 import { useCookies } from 'react-cookie';
@@ -38,7 +37,7 @@ const Navbar: React.FC<NavbarProps> = ({title, date, setNavbarOpen, navbarOpen, 
       <div className={isHomePage ? `${styles.navbarContainer} ${styles.navbarContainerHome}` : `${styles.navbarContainer}`}>
         <div className={styles.leftNavbar}>
             <div className={styles.menuIcon} onClick={() => setSidebarOpen(true)}>
-                <HiOutlineMenuAlt4 />
+                <VscMenu />
             </div>
         </div>
           <div className={styles.rightNavbar}>
