@@ -19,8 +19,9 @@
           }
     }
     .countdown{
-      right: calc(1vw + 8vh);
+      right: calc(2vw + 8vh);
       @media (max-width: 768px) {
+          right: calc(8vh);
           top: 6%;
           left: 50%;
           height: 20%;

@@ -102,9 +102,10 @@ const ShowPageMobile: React.FC<ShowPageChildProps> = ({ product,
               selected.node.availableForSale ?
                 "Add to bag"
                 :
-                "Sold out"
+                "Coming soon"
             }
           </Button>
+          {/* TOOD MAKE IT EITHER COMING SOON OR SOLD OUT BASED ON TIMER */}
         </div>
       </div>
 

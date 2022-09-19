@@ -74,7 +74,7 @@ const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
                     selected.node.availableForSale ?
                       "Add to bag"
                       :
-                      "Sold out"
+                      "Coming soon"
                   }
                 </Button>
               </div>
