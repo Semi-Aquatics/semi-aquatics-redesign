@@ -17,7 +17,8 @@ const ProductPreview:React.FC<ProductPreviewProps> = ({image, title, id, isArchi
             {
               isSoldOut && !isArchive &&
               <div className={styles.soldOut}>
-                    <h3>Sold Out</h3>
+                    <h3>COMING SOON</h3>
+                    {/* todoo fixxxxx */}
                 </div>
             }
             <img src={image} alt={title}/>
