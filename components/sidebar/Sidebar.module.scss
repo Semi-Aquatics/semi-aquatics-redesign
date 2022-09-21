@@ -45,6 +45,16 @@
             flex-direction: column;
             height: calc(100vh - 20px);
             color: #D7D6D4;
+            .dropLink {
+              p {
+                margin-bottom: 0px;
+              }
+              p.newDrop{
+                  font-size: 14px;
+                  color: red;
+                  margin-top: 0px;
+              }
+            }
         }
         &:before {
             width: 450px;
