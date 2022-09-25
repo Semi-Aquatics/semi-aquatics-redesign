@@ -1,12 +1,91 @@
 .storyPageContainer {
   text-align: center;
-  height: 90vh;
-  margin-top: 10vh;
-  overflow: scroll;
+  height: 100vh;
   font-size: 14px;
+  overflow: scroll;
   h1{
+    font-size: 42px;
     margin-bottom: 5vh;
   }
+  p{
+    font-size: 28px;
+    margin-bottom: 5vh;
+  }
+  .slideContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+    .slide{
+      width: 80vw;
+      height: 80vh;
+      object-fit: cover;
+    }
+    .imageSlide {
+      display: grid;
+      grid-template-columns: 2.5fr 1fr;
+      align-items: center;
+      padding: 9vw;
+      .itemContainer{
+        padding-right: 2rem;
+        text-align: left;
+      }
+      img {
+        width: calc(100% + 10vw);
+      }
+      h2 {
+        margin: 0;
+        width: 100%;
+        font-size: 42px;
+      }
+    }
+    .textSlide{
+      text-align: left;
+      font-size: 32px;
+      padding: 0 12rem;
+      color: #272726;
+      h2{
+        margin: 0;
+        width: 100%;
+        font-size: 42px;
+      }
+    }
+  }
+  .slideContainer2{
+    background-color: #C1C3CC;
+  }
+  .slideContainer3{
+    background-color: #8BB0B6;
+  }
+  .slideContainer4{
+    background-color: #211F20;
+    position: relative;
+    .bottomLeftText{
+      h2{
+        color: white;
+        position: absolute;
+        width: 50%;
+        font-size: 52px;
+        bottom: 15vh;
+        left: 10vw;
+      }
+    }
+  }
+  .slideContainer5{
+    background-color: #A19AC3;
+  }
+  .slideContainer6{
+    background-color: #E7C5E0;
+  }
+  .slideContainer7{
+    background-color: #CBBFC9;
+  }
+  .slideContainer8{
+    background-color: #BECAC0;
+  }
+
   h2{
     width: 60%;
     margin: 5vh auto;
@@ -36,20 +115,30 @@
     }
   }
   @media screen and (max-width: 768px) {
-    margin-top: 0vh;
-    h1{
-      width: 90%;
-      margin: 5vh auto;
-      font-size: 18px;
-    }
-    h2{
-      width: 90%;
-    }
-    .textContainer{
-      width: 90%;
-      .quote{
-        width: 90%;
-        margin: 8% auto;
+    text-align: center;
+    .slideContainer{
+      h1{
+        font-size: 24px;
+      }
+      h2{
+        font-size: 24px;
+      }
+      p{
+        font-size: 14px;
+      }
+      .itemContainer{
+        width: 95vw;
+        margin: auto;
+      }
+      .imageSlide{
+        display: block;
+        padding: 0;
+        img{
+          width: 90vw;
+        }
+      }
+      .textSlide{
+        padding: 0;
       }
     }
   }
