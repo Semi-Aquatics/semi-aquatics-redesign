@@ -15,7 +15,7 @@ const ArtistsPage:React.FC <ArtistsPageProps> = () => {
             <h1>Our Artists</h1>
             <div className={styles.topBorder}></div>
             {
-              artists.map(artist =>
+          artists.sort((artistA, artistB) => artistA.name > artistB.name ? 1 : -1).map(artist =>
                 <div >
                   <ArtistCard artistName={artist.name} artworks={artist.artwork} key={artist.name} />
                 </div>
