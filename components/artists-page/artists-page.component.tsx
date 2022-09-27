@@ -1,27 +1,26 @@
 import { useState } from 'react';
-import ArtistCard from '../artist-card/artist-card.component';
 import styles from './ArtistsPage.module.scss'
+import ArtistCard from '../artist-card/artist-card.component'
+import { artists } from './artists'
 
 interface ArtistsPageProps {
     artists: any[]
 }
 
-const ArtistsPage:React.FC <ArtistsPageProps> = ({artists}) => {
+
+
+const ArtistsPage:React.FC <ArtistsPageProps> = () => {
     return (
         <div className={styles.artistsPageContainer}>
-            <h1>Coming soon.</h1>
-            {/* <div className={styles.allCards}>
-                {
-                    artists.map((artist:any) =>
-                        <ArtistCard
-                            key={artist.id}
-                            artistImage={artist.image}
-                            artistName={artist.name}
-                            artistContent={artist.content}
-                        />
-                    )
-                }
-            </div> */}
+            <h1>Our Artists</h1>
+            <div className={styles.topBorder}></div>
+            {
+          artists.sort((artistA, artistB) => artistA.name > artistB.name ? 1 : -1).map(artist =>
+                <div >
+                  <ArtistCard artistName={artist.name} artworks={artist.artwork} key={artist.name} />
+                </div>
+                )
+            }
         </div>
     )
 };

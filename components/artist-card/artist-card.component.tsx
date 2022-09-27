@@ -1,38 +1,49 @@
-import { useRef, useState } from 'react';
-import { useOnClickOutside } from '../../hooks/use-on-click-outside';
-import styles from './ArtistCard.module.scss'
+import { useState } from 'react';
+import styles from './ArtistCard.module.scss';
+import Link from 'next/link';
+
+// Icons
+import { BsArrowUp } from 'react-icons/bs';
 
 interface ArtistCardProps {
-    artistName: string,
-    artistImage: string,
-    artistContent: string
+  artistName: string;
+  artworks: {
+    name: string,
+    id: string,
+    image: string,
+    drop: number
+  }[];
 }
 
-const ArtistCard:React.FC <ArtistCardProps> = ({artistName, artistImage, artistContent}) => {
-    const ref = useRef();
-    const [isFlipped, setIsFlipped] = useState(false);
-    useOnClickOutside(ref, () => setIsFlipped(false));
-    return (
-        // @ts-ignore
-        <div className={styles.placeHolderDiv} ref={ref}>
-            <div className={`${styles.artistCardContainer}  ${isFlipped ? styles.flipped : ''}`} onClick={() => setIsFlipped(!isFlipped)}>
-                <div className={styles.artistCardFront}>
-                    <img src={artistImage} alt={artistName}/>
-                    <div className={styles.artistName}><span>{artistName}</span></div>  
-                </div>
-                <div className={styles.artistCardBack}>
-                    <div className={styles.cardHeader}>
-                        <img src={artistImage} alt={artistName}/>
-                        <h2>{artistName}</h2>
-                    </div>
-                    <div className={styles.artistContent}>
-                        <p>{artistContent}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-};
+const ArtistCard: React.FC<ArtistCardProps> = ({ artistName, artworks }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
+  return (
+    <div className={`${styles.artistCardContainer} ${isOpen ? styles.open : ''}`}>
+      <div className={`${styles.artistAndIcon} ${isOpen ? styles.isOpenColor : '' }`} onClick={() => setIsOpen(!isOpen)}>
+        <h2 className={styles.artist}>{artistName}</h2>
+        <div className={`${styles.icon} ${isOpen ? styles.isOpenIcon : '' }`}>
+          <BsArrowUp />
+        </div>
+      </div>
+
+      <div className={styles.artworkContainer}>
+        {
+          artworks.map(artwork =>
+            <div className={styles.linkImageText}>
+              <Link href={`/drop/${artwork.id}`}>
+                <div>
+                  <img src={artwork.image} alt={artwork.name} />
+                  <p>{artwork.name}</p>
+                </div>
+              </Link>
+            </div>
+            )
+        }
+
+      </div>
+    </div>
+  )
+}
 
 export default ArtistCard;
