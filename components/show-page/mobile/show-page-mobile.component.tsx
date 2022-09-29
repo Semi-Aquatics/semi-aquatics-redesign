@@ -40,7 +40,7 @@ const ShowPageMobile: React.FC<ShowPageChildProps> = ({ product,
       <div className={`${styles.imageContainer} ${!descriptionOpen ? '' : styles.closed}`}>
         <div className={styles.sliderSides}>
           <div className={styles.changeImage} onClick={() => setSlideNumber(slideNumber === 0 ? 0 : slideNumber - 1)}></div>
-          <div className={styles.changeImage} onClick={() => setSlideNumber(slideNumber === slides.length ? slides.length : slideNumber + 1)}></div>
+          <div className={styles.changeImage} onClick={() => setSlideNumber(slideNumber === slides.length - 1 ? slides.length - 1 : slideNumber + 1)}></div>
         </div>
         <div className={styles.productCarousel}>
           <Carousel
