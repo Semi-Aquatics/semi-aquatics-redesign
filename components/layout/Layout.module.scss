@@ -21,7 +21,7 @@
     .countdown{
       right: calc(2vw + 8vh);
       @media (max-width: 768px) {
-          top: 6%;
+          top: calc(4% +  1.3vh);
           left: 50%;
           height: 20%;
           transform: translate(-55%, -13%);

@@ -2,7 +2,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  height: 90.5vh;
 
   .imageContainer {
     text-align: center;
@@ -27,7 +27,7 @@
     img {
       transition: 0.4s;
       margin: auto;
-      width: calc(28vw + 33vh);
+      width: calc(18vw + 33vh);
         }
     .dotsContainer {
       display: flex;
