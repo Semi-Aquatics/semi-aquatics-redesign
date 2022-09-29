@@ -63,11 +63,9 @@
 // for mobile
 @media (max-width: 768px) {
   .navbarContainer{
-      padding: 12px;
-      padding-bottom: 0;
+      padding-bottom: 0 12px;
       position: sticky;
-      // position: relative;
-      height: 10vh;
+      height: 9.5vh;
       background-color: #f2f2f1;
       overflow: scroll;
       h2 {

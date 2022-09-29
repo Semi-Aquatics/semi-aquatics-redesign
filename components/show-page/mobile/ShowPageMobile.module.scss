@@ -2,7 +2,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  height: 90.5vh;
 
   .imageContainer {
     text-align: center;
@@ -10,17 +10,29 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 90%;
-
+    height: 65%;
+    position: relative;
+    .sliderSides{
+      position: absolute;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+      height: 100%;
+      .changeImage{
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+      }
+    }
     img {
       transition: 0.4s;
       margin: auto;
-      width: calc(28vw + 33vh);
-    }
+      width: calc(18vw + 33vh);
+        }
     .dotsContainer {
       display: flex;
       justify-content: center;
-      margin-bottom: 30px;
+      margin-bottom: 8px;
 
       .dot {
         font-size: 6px;
@@ -46,6 +58,7 @@
       margin: auto;
       width: 20vh;
   }
+
     .dotsContainer{
       .dot{
         opacity: 0;

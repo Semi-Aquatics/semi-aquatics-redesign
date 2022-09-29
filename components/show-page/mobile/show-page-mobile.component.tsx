@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '@brainhubeu/react-carousel/lib/style.css';
 import { faAngleDoubleLeft, faAngleLeft, faAngleDoubleRight, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { MdKeyboardArrowDown } from 'react-icons/md';
-
+import { BiLeftArrow, BiRightArrow } from 'react-icons/bi';
 
 // Components
 import Button from "../../button/button.component";
@@ -38,7 +38,10 @@ const ShowPageMobile: React.FC<ShowPageChildProps> = ({ product,
   return(
     <div className={styles.showPageMobile}>
       <div className={`${styles.imageContainer} ${!descriptionOpen ? '' : styles.closed}`}>
-
+        <div className={styles.sliderSides}>
+          <div className={styles.changeImage} onClick={() => setSlideNumber(slideNumber === 0 ? 0 : slideNumber - 1)}></div>
+          <div className={styles.changeImage} onClick={() => setSlideNumber(slideNumber === slides.length - 1 ? slides.length - 1 : slideNumber + 1)}></div>
+        </div>
         <div className={styles.productCarousel}>
           <Carousel
             // @ts-ignore
@@ -49,8 +52,10 @@ const ShowPageMobile: React.FC<ShowPageChildProps> = ({ product,
             addArrowClickHandler
             onChange={setSlideNumber}
             slides={slides}
+            value={slideNumber}
           >
           </Carousel>
+
           <div className={styles.dotsContainer}>
             {
               slides.map((_: any, index: any) => (
