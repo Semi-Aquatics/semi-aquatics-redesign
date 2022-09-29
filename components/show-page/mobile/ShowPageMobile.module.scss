@@ -11,16 +11,28 @@
     flex-direction: column;
     justify-content: flex-end;
     height: 90%;
-
+    position: relative;
+    .sliderSides{
+      position: absolute;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+      height: 100%;
+      .changeImage{
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+      }
+    }
     img {
       transition: 0.4s;
       margin: auto;
-      width: calc(28vw + 33vh);
+      width: calc(10vw + 33vh);
     }
     .dotsContainer {
       display: flex;
       justify-content: center;
-      margin-bottom: 30px;
+      margin-bottom: 8px;
 
       .dot {
         font-size: 6px;
@@ -44,8 +56,9 @@
     img {
       transition: 0.4s;
       margin: auto;
-      width: 20vh;
+      width: 15vh;
   }
+
     .dotsContainer{
       .dot{
         opacity: 0;
