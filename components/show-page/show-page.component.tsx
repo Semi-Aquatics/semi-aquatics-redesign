@@ -49,6 +49,7 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
   }
 
   const handleOnAddToCart = async (selected: any) => {
+    return;
     // todo: if result returns with same number, notify user that there isn't enough in quantity AND/OR limit to what's available
     if (cookies.cartId) {
       const existing_items = getCartCounts(cart);
