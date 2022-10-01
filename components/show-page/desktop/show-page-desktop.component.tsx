@@ -6,15 +6,18 @@ import { ShowPageChildProps } from '../../../interfaces/page_interface';
 // Packages
 import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDoubleLeft, faAngleLeft, faAngleDoubleRight, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { AiOutlinePlus, AiOutlineMinus  } from 'react-icons/ai'
-import { BsCircleFill  } from 'react-icons/bs'
 import Link from 'next/link';
 
 // Components
 import Button from "../../button/button.component";
 import Dropdown from '../../dropdown/dropdown.component';
+
+// TODO: get these from the cms
+const UPCOMING_ITEMS = ['Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3Njc2ODM4OTUzNzE=',
+  'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3Njc2ODI5Nzc4Njc=',
+  'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3Njc2ODA5MTM0ODM=',
+  'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3Njc2ODIxNTg2Njc=']
 
 const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
   product,
@@ -28,7 +31,6 @@ const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
   const slides = product.node.images.edges.map((image: any) =>
   (<img src={image.node.transformedSrc} alt={image.node.altText} />)
   )
-
   const description = product.node.descriptionHtml;
 
   return (
@@ -74,7 +76,10 @@ const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
                     selected.node.availableForSale ?
                       "Add to bag"
                       :
-                      "Coming soon"
+                      UPCOMING_ITEMS.includes(product.node.id) ?
+                        "Coming soon"
+                        :
+                        "Sold Out"
                   }
                 </Button>
               </div>

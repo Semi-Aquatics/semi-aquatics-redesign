@@ -18,6 +18,7 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
         node(id: "${context.params.productId}") {
           ...on Product {
           title
+          id
           description
           descriptionHtml
           availableForSale
