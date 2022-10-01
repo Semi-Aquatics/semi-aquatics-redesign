@@ -42,14 +42,12 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
     draggable: true,
   });
 
-
   const setNewCartCookie = async (data: any) => {
     if (!data) return;
     setCookie('cartId', data.cartCreate.cart.id, { path: '/' });
   }
 
   const handleOnAddToCart = async (selected: any) => {
-    return;
     // todo: if result returns with same number, notify user that there isn't enough in quantity AND/OR limit to what's available
     if (cookies.cartId) {
       const existing_items = getCartCounts(cart);
@@ -100,7 +98,6 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
 
   // @brainhubeu/react-carousel uses window, so during ssr this prevents code to break.
   if (typeof window === 'undefined') return <React.Fragment>loading</React.Fragment>;
-
   return (
     <React.Fragment>
     {
@@ -109,7 +106,7 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
           product={product}
           selected={selected}
           setSelected={setSelected}
-          handleOnAddToCart={product.availableForSale ? handleOnAddToCart : () => {}}
+          handleOnAddToCart={product.node.availableForSale ? handleOnAddToCart : () => {}}
           setNumberToAdd={setNumberToAdd}
           slideNumber={slideNumber}
           setSlideNumber={setSlideNumber}
@@ -119,7 +116,7 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
           product={product}
           selected={selected}
           setSelected={setSelected}
-          handleOnAddToCart={product.availableForSale ? handleOnAddToCart : () => {}}
+          handleOnAddToCart={product.node.availableForSale ? handleOnAddToCart : () => {}}
           setNumberToAdd={setNumberToAdd}
           slideNumber={slideNumber}
           setSlideNumber={setSlideNumber}

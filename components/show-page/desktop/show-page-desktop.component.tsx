@@ -70,13 +70,13 @@ const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
                 <Button soldOut={!selected.node.availableForSale}
                   isSelected={selected !== ''}
                   selected={selected}
-                  {/* onClick={handleOnAddToCart}> */}
-                  mobile={false}>
+                  mobile={false}
+                  onClick={() => handleOnAddToCart(selected)}>
                   {
                     selected.node.availableForSale ?
                       "Add to bag"
                       :
-                      UPCOMING_ITEMS.includes(product.node.id) ?
+                      UPCOMING_ITEMS.includes(product.node.id) && selected.node.availableForSale ?
                         "Coming soon"
                         :
                         "Sold Out"
