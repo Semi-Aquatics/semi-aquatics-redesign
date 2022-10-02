@@ -9,7 +9,7 @@ export const getCartCounts = (cart: any) => {
 }
 
 export const merchandiseIdToLineItemId = (cart: any, merchandiseId: string) => {
-  if (!cart || !cart.data || !cart.data.cart) return null;
+  if (!cart || !cart.cart || !cart.cart.lines) return null;
   const lineItem = cart.cart.lines.edges.find((li: any) => li.node.merchandise.id === merchandiseId);
 
   return lineItem.node.id;
