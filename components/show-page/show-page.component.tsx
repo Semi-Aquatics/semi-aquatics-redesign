@@ -33,7 +33,7 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
   const [updateCartLineItems, updateCartLineItemsData] = useMutation(cartLinesUpdate);
   const [addCartLineItems, addCartLineItemsData] = useMutation(cartLineItemsAdd);
   const cart = useQuery(getCartQuery, { variables: { cartId: cookies.cartId } });
-  const notify = () => toast('Item added to cart!', {
+  const notify = (message = 'Item added to cart!') => toast(message, {
     position: "top-right",
     autoClose: 5000,
     hideProgressBar: false,
@@ -48,7 +48,6 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
   }
 
   const handleOnAddToCart = async (selected: any) => {
-    return;
     // todo: if result returns with same number, notify user that there isn't enough in quantity AND/OR limit to what's available
     if (cookies.cartId && cart.data.cart) {
       const existing_items = getCartCounts(cart);
@@ -56,7 +55,6 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
       // If the product is already in cart, and we are adding more, update the cart
       if (existing_items[selected.node.id]) {
         const lineItemId = merchandiseIdToLineItemId(cart.data, selected.node.id);
-        console.log(lineItemId)
         const cartInput = {
           variables: {
             cartId: cookies.cartId,
@@ -65,8 +63,24 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
           }
         }
         await updateCartLineItems(cartInput)
-        await console.log(updateCartLineItemsData)
-        await notify();
+        const itemIsAdded = (updateCartLineItemsData: any) => {
+          if (!updateCartLineItemsData.data) return;
+
+          console.log(updateCartLineItemsData);
+          console.log(cart);
+          const updatedLine = updateCartLineItemsData.data.cartLinesUpdate.cart.lines.edges.find((li: any) => li.node.id === lineItemId);
+          const updatedQuantity = updatedLine.quantity;
+
+          const wasAdded = false;
+          if (updatedQuantity === quantity) {
+            notify();
+          } else {
+            notify('There are no more available stock for this item.');
+          }
+
+
+        }
+        await itemIsAdded(updateCartLineItemsData);
 
       }
       // If the product is not in cart, add it
