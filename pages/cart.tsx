@@ -12,8 +12,8 @@ import { cartLinesUpdate } from '../services/queries/mutations';
 
 const Cart: React.FC = ({}) => {
     const [cookies] = useCookies(['cartId']);
-    const { data, loading, refetch } = useQuery(getCartQuery, { variables: { cartId: cookies.cartId || '1' } });
-    const checkoutUrl = useQuery(getCheckoutUrl(cookies.cartId ));
+    const { data, loading, refetch } = useQuery(getCartQuery, { variables: { cartId: cookies.cartId } });
+    const checkoutUrl = useQuery(getCheckoutUrl(cookies.cartId));
     const [updateCartLineItems, updateCartLineItemsData] = useMutation(cartLinesUpdate);
 
     const handleRemoveFromCart = async (quantityRemoved: number, price: string, lineItemId: number) => {

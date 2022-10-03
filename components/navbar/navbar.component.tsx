@@ -22,7 +22,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({title, date, setNavbarOpen, navbarOpen, setSidebarOpen}) => {
     const router = useRouter();
     const [cookies, setCookie] = useCookies(['cartId']);
-    const cart = useQuery(getCartQuery, { variables: { cartId: cookies.cartId || '1' } });
+    const cart = useQuery(getCartQuery, { variables: { cartId: cookies.cartId } });
     const isHomePage = router.pathname === '/';
     let itemCount = 0;
     if(cart && cart.data && cart.data.cart){

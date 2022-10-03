@@ -76,7 +76,7 @@ const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
                     selected.node.availableForSale ?
                       "Add to bag"
                       :
-                      UPCOMING_ITEMS.includes(product.node.id) && selected.node.availableForSale ?
+                      UPCOMING_ITEMS.includes(product.node.id) ?
                         "Coming soon"
                         :
                         "Sold Out"
