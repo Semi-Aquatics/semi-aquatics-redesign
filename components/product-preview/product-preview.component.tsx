@@ -15,9 +15,9 @@ const ProductPreview:React.FC<ProductPreviewProps> = ({image, title, id, isArchi
         <Link href={`drop/${id}`}>
           <div>
             {
-              isSoldOut && false &&
+              isSoldOut &&
               <div className={styles.soldOut}>
-                    <h3>COMING SOON</h3>
+                    <h3>SOLD OUT</h3>
                 </div>
             }
             <img src={image} alt={title}/>
