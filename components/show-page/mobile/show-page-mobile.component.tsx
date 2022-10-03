@@ -109,9 +109,9 @@ const ShowPageMobile: React.FC<ShowPageChildProps> = ({ product,
             mobile={true}
             onClick={() => handleOnAddToCart(selected)}>
             {
-              // selected.node.availableForSale ?
-              //   "Add to bag"
-              //   :
+              selected.node.availableForSale ?
+                "Add to bag"
+                :
                 UPCOMING_ITEMS.includes(product.node.id) ?
                 "Coming soon"
                 :
