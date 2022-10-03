@@ -20,10 +20,7 @@ import Link from 'next/link';
 import { BsCircleFill } from 'react-icons/bs';
 
 // TODO: get these from the cms
-const UPCOMING_ITEMS = ['Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3Njc2ODM4OTUzNzE=',
-                        'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3Njc2ODI5Nzc4Njc=',
-                        'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3Njc2ODA5MTM0ODM=',
-                        'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3Njc2ODIxNTg2Njc=']
+const UPCOMING_ITEMS = []
 
 const ShowPageMobile: React.FC<ShowPageChildProps> = ({ product,
   selected,
