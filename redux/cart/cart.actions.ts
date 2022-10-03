@@ -9,3 +9,7 @@ export const setCartId = (cartId: string) => ({
     type: cartActionTypes.SET_CART_ID,
     payload: cartId
 })
+export const setCartQuantity = (quantity: number) => ({
+  type: cartActionTypes.SET_CART_QUANTITY,
+  payload: quantity
+})

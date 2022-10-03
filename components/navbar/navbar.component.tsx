@@ -23,9 +23,7 @@ const Navbar: React.FC<NavbarProps> = ({title, date, setNavbarOpen, navbarOpen, 
     const router = useRouter();
     const [cookies, setCookie] = useCookies(['cartId']);
     const cart = useQuery(getCartQuery, { variables: { cartId: cookies.cartId } });
-
     const isHomePage = router.pathname === '/';
-    const isCartPage = router.pathname === '/cart';
     let itemCount = 0;
     if(cart && cart.data && cart.data.cart){
       const cartCounts: Number[] = (Object.values(getCartCounts(cart)));

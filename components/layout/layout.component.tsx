@@ -59,6 +59,7 @@ const Layout: React.FC = (props) => {
               </div>
           }
           <script src="https://cdn.attn.tv/semiaquatics/dtag.js"></script>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154479709-1"></script>
         </div>
     );
 };

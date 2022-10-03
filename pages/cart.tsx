@@ -8,14 +8,13 @@ import {useQuery, useMutation } from '@apollo/client';
 
 // queries
 import { getCartQuery, getCheckoutUrl } from '../services/queries/queries';
-import { cartCreate, cartLinesUpdate, cartLineItemsAdd } from '../services/queries/mutations';
+import { cartLinesUpdate } from '../services/queries/mutations';
 
 const Cart: React.FC = ({}) => {
     const [cookies] = useCookies(['cartId']);
-    const { data, loading, error, refetch } = useQuery(getCartQuery, { variables: { cartId: cookies.cartId } });
+    const { data, loading, refetch } = useQuery(getCartQuery, { variables: { cartId: cookies.cartId } });
     const checkoutUrl = useQuery(getCheckoutUrl(cookies.cartId));
     const [updateCartLineItems, updateCartLineItemsData] = useMutation(cartLinesUpdate);
-    const [totalCost, setTotalCost] = useState((data?.cart?.estimatedCost?.subtotalAmount?.amount));
 
     const handleRemoveFromCart = async (quantityRemoved: number, price: string, lineItemId: number) => {
       const cartInput = {
@@ -25,9 +24,9 @@ const Cart: React.FC = ({}) => {
           lineItemId: lineItemId
         }
       }
-      await updateCartLineItems(cartInput)
-      await console.log(updateCartLineItemsData)
-      await setTotalCost(totalCost - (quantityRemoved * parseInt(price)) )
+      await updateCartLineItems(cartInput);
+      await console.log(updateCartLineItemsData);
+      await refetch();
     }
 
 
@@ -64,7 +63,7 @@ const Cart: React.FC = ({}) => {
           <div className={styles.checkoutBottomContainer}>
             <div className={styles.checkoutText}>
               <p>Subtotal:</p>
-              <p>${totalCost}0</p>
+              <p>${data?.cart?.estimatedCost?.subtotalAmount?.amount}0</p>
             </div>
             <a href={checkoutUrl.data?.cart?.checkoutUrl}>
               <div className={styles.checkoutBtn}>

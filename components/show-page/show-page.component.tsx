@@ -46,10 +46,16 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
     if (!data) return;
     setCookie('cartId', data.cartCreate.cart.id, { path: '/' });
   }
+  const itemIsAdded = (resData: any) => {
+    if (!resData.data) return;
+    cart.refetch();
 
+    createCartData.reset();
+    notify();
+  }
   const handleOnAddToCart = async (selected: any) => {
-    return;
     // todo: if result returns with same number, notify user that there isn't enough in quantity AND/OR limit to what's available
+    try{
     if (cookies.cartId && cart.data.cart) {
       const existing_items = getCartCounts(cart);
       const quantity = existing_items[selected.node.id] ? existing_items[selected.node.id] + numberToAdd : numberToAdd;
@@ -63,26 +69,21 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
             lineItemId: lineItemId
           }
         }
-        await updateCartLineItems(cartInput)
-        const itemIsAdded = (updateCartLineItemsData: any) => {
-          if (!updateCartLineItemsData.data) return;
+        const res = await updateCartLineItems(cartInput)
+        const anotherItemIsAdded = (resData: any) => {
+          if (!resData.data) return;
 
-          console.log(updateCartLineItemsData);
-          console.log(cart);
-          const updatedLine = updateCartLineItemsData.data.cartLinesUpdate.cart.lines.edges.find((li: any) => li.node.id === lineItemId);
-          const updatedQuantity = updatedLine.quantity;
+          const updatedLine = resData.data.cartLinesUpdate.cart.lines.edges.find((li: any) => li.node.id === lineItemId);
+          const updatedQuantity = updatedLine.node.quantity;
 
-          const wasAdded = false;
           if (updatedQuantity === quantity) {
             notify();
           } else {
             notify('There are no more available stock for this item.');
           }
-
-
         }
-        await itemIsAdded(updateCartLineItemsData);
-
+        anotherItemIsAdded(res);
+        await updateCartLineItemsData.reset();
       }
       // If the product is not in cart, add it
       else {
@@ -93,9 +94,9 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
             merchandiseId: selected.node.id
           }
         }
-        await addCartLineItems(cartInput)
-        await console.log(addCartLineItemsData)
-        await notify();
+        const res = await addCartLineItems(cartInput);
+        itemIsAdded(res);
+        await addCartLineItemsData.reset();
       }
     }
     // If the cart doesn't exist, create it
@@ -106,9 +107,14 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
           merchandiseId: selected.node.id
         }
       }
-      await createCart(cartInput)
-      await setNewCartCookie(createCartData.data);
-      await notify();
+      const res = await createCart(cartInput);
+      await setNewCartCookie(res.data);
+      itemIsAdded(res);
+      await createCartData.reset();
+    }
+  }
+  catch(e) {
+    console.log('error', e);
     }
   }
 
