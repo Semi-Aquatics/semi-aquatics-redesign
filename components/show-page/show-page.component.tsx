@@ -54,7 +54,6 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
     notify();
   }
   const handleOnAddToCart = async (selected: any) => {
-    return;
     try{
     if (cookies.cartId && cart.data.cart) {
       const existing_items = getCartCounts(cart);

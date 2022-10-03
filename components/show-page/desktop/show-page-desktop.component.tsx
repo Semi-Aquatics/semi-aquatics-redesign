@@ -73,9 +73,9 @@ const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
                   mobile={false}
                   onClick={() => handleOnAddToCart(selected)}>
                   {
-                    // selected.node.availableForSale ?
-                    //   "Add to bag"
-                    //   :
+                    selected.node.availableForSale ?
+                      "Add to bag"
+                      :
                       UPCOMING_ITEMS.includes(product.node.id) ?
                         "Coming soon"
                         :
