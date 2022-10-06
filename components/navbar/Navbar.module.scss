@@ -66,8 +66,7 @@
       padding-bottom: 0 12px;
       position: sticky;
       height: 9.5vh;
-      background-color: #f2f2f1;
-      overflow: scroll;
+      background-color: rgba(242, 242, 241, 0.4);
       h2 {
           font-size: 18px;
           padding: 12px;
@@ -77,13 +76,16 @@
           margin-right: 4px;
           width: 80px;
           .icon{
-              svg {
-                  font-size: 1.5rem;
-              }
+            svg {
+              font-size: 1.5rem;
+            }
           }
-      }
-      p{
-        padding-right: 8px;
+        }
+        p{
+          padding-right: 8px;
+          padding-top: 0;
+          padding-bottom: 0;
+          margin-bottom: 0;
       }
       .menuIcon{
           font-size: 24px;
