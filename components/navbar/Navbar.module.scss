@@ -12,24 +12,24 @@
     max-width: 100vw;
     top: 0;
     h2 {
-        cursor: pointer;
-        z-index: 1;
-        text-transform: capitalize;
-        font-size: 24px;
-        padding: 24px;
-        padding-bottom: 12px;
-        font-weight: 600;
-        margin-top: 0;
+      cursor: pointer;
+      z-index: 1;
+      text-transform: capitalize;
+      font-size: 24px;
+      padding: 24px;
+      padding-bottom: 12px;
+      font-weight: 600;
+      margin-top: 0;
     }
     p{
-        cursor: pointer;
-        z-index: 1;
-        text-transform: capitalize;
-        font-size: 14px;
-        padding: 24px;
-        padding-bottom: 12px;
-        margin-top: 0;
-        margin-left: 32px;
+      cursor: pointer;
+      z-index: 1;
+      text-transform: capitalize;
+      font-size: 14px;
+      padding: 24px;
+      padding-bottom: 12px;
+      margin-top: 0;
+      margin-left: 32px;
     }
 
     .leftNavbar{
@@ -47,24 +47,25 @@
         font-size: 24px;
         cursor: pointer;
     }
-        -webkit-tap-highlight-color: transparent;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
-        &:focus {
-          outline: none !important;
-        }
+    &:focus {
+      outline: none !important;
+    }
 }
 
 // for mobile
 @media (max-width: 768px) {
   .navbarContainer{
-      padding-bottom: 0 12px;
-      position: sticky;
+      padding: 12px;
+      padding-bottom: 0;
+      position: fixed;
       height: 9.5vh;
       background-color: rgba(242, 242, 241, 0.4);
       h2 {

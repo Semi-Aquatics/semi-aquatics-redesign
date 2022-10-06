@@ -102,7 +102,7 @@ const slideEight = <React.Fragment>
   </div>
 </React.Fragment>
 const slideNine = <React.Fragment>
-  <div className={`${styles.slideContainer}`}>
+  <div className={`${styles.slideContainer} ${styles.slideContainer9}`}>
     <div className={styles.textSlide}>
       <div className={styles.itemContainer}>
         <h2>To join our cause, sign up with your email to get notified when our next collection become available:</h2>

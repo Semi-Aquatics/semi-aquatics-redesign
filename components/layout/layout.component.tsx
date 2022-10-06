@@ -45,8 +45,7 @@ const Layout: React.FC = (props) => {
             }
             <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
             {props.children}
-            {/* TODO: ADD BACK!!!! */}
-          {/* {
+          {
             <div className={`${styles.spinningLogoContainer} ${totalTimeLeft > 0 ? styles.countdown : ''}`}>
               {
                 totalTimeLeft > 0 ?
@@ -55,7 +54,7 @@ const Layout: React.FC = (props) => {
                     <SpinningLogo />
                 }
               </div>
-          } */}
+          }
           <script src="https://cdn.attn.tv/semiaquatics/dtag.js"></script>
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154479709-1"></script>
         </div>
