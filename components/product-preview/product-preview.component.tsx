@@ -10,12 +10,14 @@ interface ProductPreviewProps {
 }
 
 const ProductPreview:React.FC<ProductPreviewProps> = ({image, title, id, isArchive, isSoldOut}) => {
+    console.log(isSoldOut);
     return (
       <div className={styles.productPreviewContainer}>
         <Link href={`drop/${id}`}>
           <div>
             {
-              isSoldOut &&
+              // isSoldOut &&
+              (isSoldOut || true) &&
               <div className={styles.soldOut}>
                     <h3>SOLD OUT</h3>
                 </div>
