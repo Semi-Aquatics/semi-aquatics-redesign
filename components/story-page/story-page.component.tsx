@@ -112,7 +112,7 @@ const slideNine = <React.Fragment>
   </div>
 </React.Fragment>
 
-const SLIDE_MAPPING = {
+const SLIDE_MAPPING: any = {
   1: slideOne,
   2: slideTwo,
   3: slideThree,
@@ -128,14 +128,11 @@ const StoryPage: React.FC = () => {
   const [currentSlideNumber, setCurrentSlideNumber] = useState(1);
 
   const moveSlides = (direction: string) => {
-    console.log(currentSlideNumber)
     if (direction === 'up') {
       setCurrentSlideNumber(currentSlideNumber === 1 ? 1 : currentSlideNumber - 1)
     } else {
-      console.log(currentSlideNumber + 1)
       setCurrentSlideNumber(currentSlideNumber === 9 ? 9 : currentSlideNumber + 1)
     }
-    console.log(currentSlideNumber)
   }
 
   return (
