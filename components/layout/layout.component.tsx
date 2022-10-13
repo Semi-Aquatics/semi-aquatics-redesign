@@ -16,7 +16,6 @@ const Layout: React.FC = (props) => {
     const [navbarOpen, setNavbarOpen] = useState(false);
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const typeOfPage = router.pathname.substring(1);
-
     const DROP_DATE = new Date("2022/10/03 17:00:00 EST");
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(DROP_DATE));
     const totalTimeLeft: number = Object.values(timeLeft).reduce((a: any, b: any) => a + b);
@@ -48,10 +47,10 @@ const Layout: React.FC = (props) => {
           {
             <div className={`${styles.spinningLogoContainer} ${totalTimeLeft > 0 ? styles.countdown : ''}`}>
               {
-                totalTimeLeft > 0 ?
+                totalTimeLeft > 0 && typeOfPage !== 'story' ?
                     <CountdownTimer />
                   :
-                    <SpinningLogo />
+                  typeOfPage !== 'story'  && <SpinningLogo />
                 }
               </div>
           }
