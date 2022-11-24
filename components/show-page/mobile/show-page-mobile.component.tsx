@@ -20,8 +20,7 @@ import Link from 'next/link';
 import { BsCircleFill } from 'react-icons/bs';
 
 // TODO: get these from the cms
-const UPCOMING_ITEMS = ['a']
-const SOLD_OUT_ITEMS = ['Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3Njc2ODI5Nzc4Njc=']
+const UPCOMING_ITEMS = ['Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3OTIwNTAxODAxNzE=', 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3OTIwNTAxNDc0MDM=', 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3OTIwNDk3ODY5NTU=', 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3OTIwNTAwMTYzMzE=', 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3OTIwNTAwODE4Njc=']
 
 const ShowPageMobile: React.FC<ShowPageChildProps> = ({ product,
   selected,
@@ -107,8 +106,6 @@ const ShowPageMobile: React.FC<ShowPageChildProps> = ({ product,
             mobile={true}
             onClick={() => handleOnAddToCart(selected)}>
             {
-              SOLD_OUT_ITEMS.includes(product.node.id) ? 'Sold Out' :
-
               selected.node.availableForSale ?
                 "Add to bag"
                 :

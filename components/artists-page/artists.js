@@ -1,7 +1,10 @@
+// TODO: store in DB!!!!
 export const artists = [
   {
     name: 'Pseudodudo', artwork: [{ drop: 1, name: 'OG Logo', id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzQzMzA4OTg0NTY2NTE=', image: 'https://cdn.shopify.com/s/files/1/0276/3305/7867/products/AquaShopApril26.png?v=1587973803' },
-      { drop: 18, name: 'Jumpfrog', id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MDU1MzM5MDQ5NzE=', image: 'https://cdn.shopify.com/s/files/1/0276/3305/7867/products/Untitled-4.png?v=1630287297' }] },
+      { drop: 18, name: 'Jumpfrog', id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MDU1MzM5MDQ5NzE=', image: 'https://cdn.shopify.com/s/files/1/0276/3305/7867/products/Untitled-4.png?v=1630287297' },
+      { drop: 23, name: 'Right to Bear Arms', id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3OTIwNTAxNDc0MDM=', image: 'https://cdn.shopify.com/s/files/1/0276/3305/7867/products/shopPolar.png?v=1669270306' },
+      { drop: 23, name: 'Gade Away', id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3OTIwNTAxODAxNzE=', image: 'https://cdn.shopify.com/s/files/1/0276/3305/7867/products/ShopCroc.png?v=1669270337' }] },
   {
     name: 'Ry Foat', artwork: [{ drop: 7, name: 'Arm the Fish', id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzQ1MzI5OTI0MDk2NzU=', image: 'https://cdn.shopify.com/s/files/1/0276/3305/7867/products/Armthefishshop.png?v=1587591184' },
     { drop: 14, name: 'Thomas the Otter', id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzQ2OTQwMzUzNjU5NjM=', image: 'https://cdn.shopify.com/s/files/1/0276/3305/7867/products/OtterTeeShopify.png?v=1604659673' },
@@ -20,7 +23,8 @@ export const artists = [
     { drop: 21, name: 'Crab', id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3MzI4ODg4NjY4OTE=', image: 'https://cdn.shopify.com/s/files/1/0276/3305/7867/products/CrabShopify.png?v=1655478663'}] },
   { name: 'James Bywood', artwork: [{ drop: 15, name: 'Reclaiming Ennerdale', id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY1NDAxMTkwMTU0OTk=', image: 'https://cdn.shopify.com/s/files/1/0276/3305/7867/products/EnnerdaleShopift.png?v=1615387343'}] },
   { name: 'Gil Rodrigo', artwork: [{ drop: 23, name: 'Sunken City', id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3Njc2ODI5Nzc4Njc=', image: 'https://cdn.shopify.com/s/files/1/0276/3305/7867/products/ShopifySunken.png?v=1663630564'}] },
-  { name: 'Alex Vede', artwork: [{ drop: 21, name: 'Samurai', id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3MzI4ODg0MDgxMzk=', image: 'https://cdn.shopify.com/s/files/1/0276/3305/7867/products/SamuraiShopify.png?v=1655478537'}] },
+  { name: 'Alex Vede', artwork: [{ drop: 21, name: 'Samurai', id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3MzI4ODg0MDgxMzk=', image: 'https://cdn.shopify.com/s/files/1/0276/3305/7867/products/SamuraiShopify.png?v=1655478537'},
+    { drop: 23, name: 'Feeding Frenzy', id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3OTIwNTAwODE4Njc=', image: 'https://cdn.shopify.com/s/files/1/0276/3305/7867/products/ShopFish.png?v=1669270250' }] },
   { name: 'Charka System', artwork: [{ drop: 19, name: 'Trailblazer', id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MDUwMzE1Mzg3NjM=', image: 'https://cdn.shopify.com/s/files/1/0276/3305/7867/products/FrogShop.png?v=1630127115'}] },
   { name: 'MadebyMotel', artwork: [{ drop: 19, name: 'Deep Sea Diver', id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY1ODI4Njc1NTg0NzU=', image: 'https://cdn.shopify.com/s/files/1/0276/3305/7867/products/DiverSHop.png?v=1630127468'}] },
   { name: 'Hvnter', artwork: [{ drop: 20, name: 'Crescent', id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2MzQ3NTYyMTA3NjM=', image: 'https://cdn.shopify.com/s/files/1/0276/3305/7867/products/ColorFixHoodie.png?v=1636005362'}] },
@@ -29,4 +33,6 @@ export const artists = [
   { name: 'Rezaa Afsharr', artwork: [{ drop: 22, name: 'The Search for Water', id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3NDg5Nzc5MjIxMjM=', image: 'https://cdn.shopify.com/s/files/1/0276/3305/7867/products/SearchShopify.png?v=1660284771'}] },
   { name: 'Will Gaynor', artwork: [{ drop: 22, name: 'Overgrown', id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3NDg5NzgwNTMxOTU=', image: 'https://cdn.shopify.com/s/files/1/0276/3305/7867/products/OvergrownShopify.png?v=1660284728'}] },
   { name: 'Jetpack Dinosaur', artwork: [{ drop: 22, name: 'Tea Guru', id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3NDg5NzgxODQyNjc=', image: 'https://cdn.shopify.com/s/files/1/0276/3305/7867/products/TeaguruShopify.png?v=1660284678'}] },
+  { name: 'Nate Hill', artwork: [{ drop: 23, name: 'Cloud Walk', id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3OTIwNTAwMTYzMzE=', image: 'https://cdn.shopify.com/s/files/1/0276/3305/7867/products/CloudWalkShop.png?v=1669270168'}] },
+  { name: 'Madebynelson', artwork: [{ drop: 23, name: 'Dont Worry', id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3OTIwNDk3ODY5NTU=', image: 'https://cdn.shopify.com/s/files/1/0276/3305/7867/products/ShopDontWorry.png?v=1669270113'}] }
 ]

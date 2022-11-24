@@ -14,8 +14,7 @@ import Button from "../../button/button.component";
 import Dropdown from '../../dropdown/dropdown.component';
 
 // TODO: get these from the cms
-const UPCOMING_ITEMS = ['a']
-const SOLD_OUT_ITEMS = ['Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3Njc2ODI5Nzc4Njc=']
+const UPCOMING_ITEMS = ['Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3OTIwNTAxODAxNzE=', 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3OTIwNTAxNDc0MDM=', 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3OTIwNDk3ODY5NTU=', 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3OTIwNTAwMTYzMzE=', 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3OTIwNTAwODE4Njc=']
 
 const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
   product,
@@ -71,7 +70,6 @@ const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
                   mobile={false}
                   onClick={() => handleOnAddToCart(selected)}>
                   {
-                  SOLD_OUT_ITEMS.includes(product.node.id) ? 'Sold Out':
                     selected.node.availableForSale ?
                       "Add to bag"
                       :
