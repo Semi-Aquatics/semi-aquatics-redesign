@@ -7,14 +7,15 @@ import ShowPage from "../../components/show-page/show-page.component";
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
+const UPCOMING_ITEMS = ['Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3OTIwNTAxODAxNzE=', 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3OTIwNTAxNDc0MDM=', 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3OTIwNDk3ODY5NTU=', 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3OTIwNTAwMTYzMzE=', 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3OTIwNTAwODE4Njc=']
+
 
 const Product = (props: { product: any }) => {
   const passwordGuessed = useSelector((state: any) => state.user.passwordGuessed);
   const router = useRouter();
 
   useEffect(() => {
-    console.log('passwordGuessed', passwordGuessed);
-    if(!passwordGuessed) {
+    if(!passwordGuessed && UPCOMING_ITEMS.includes(props.product.node.id)) {
       router.push('/drop');
     }
   }, [])

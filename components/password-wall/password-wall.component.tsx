@@ -7,8 +7,6 @@ interface PasswordWallProps {
   images: string[]
 }
 
-const PASSWORD = 'password';
-
 const PasswordWall: React.FC<PasswordWallProps> = ({ images }) => {
   const [currentGuess, setCurrentGuess] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -16,7 +14,7 @@ const PasswordWall: React.FC<PasswordWallProps> = ({ images }) => {
 
   const handlePasswordGuess = (e: any) => {
     e.preventDefault();
-    if (currentGuess === PASSWORD) {
+    if (currentGuess === process.env.WEBSITE_LOCK_PASSWORD) {
       dispatch(setPasswordGuessed(true));
     } else {
       setErrorMessage('Incorrect password');
@@ -38,7 +36,7 @@ const PasswordWall: React.FC<PasswordWallProps> = ({ images }) => {
       <p>Enter password to continue to drop:</p>
       <div className={styles.inputContainer}>
         <input type="text" value={currentGuess} onChange={(e => setCurrentGuess(e.target.value))} onKeyUp={(e) => e.key === 'Enter' && handlePasswordGuess(e)}/>
-        <button className={styles.submitBtn} onClick={(e) => handlePasswordGuess(e)}>Enter Drop</button>
+        <button className={styles.submitBtn} onClick={(e) => handlePasswordGuess(e)}>Continue</button>
       </div>
       <p className={styles.errorMessage}>{errorMessage}</p>
     </div>
