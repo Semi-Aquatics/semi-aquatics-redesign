@@ -4,8 +4,21 @@ import client from "../../apollo-client";
 import { useRouter } from 'next/router'
 import withLayout from '../../hocs/withLayout'
 import ShowPage from "../../components/show-page/show-page.component";
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+
 
 const Product = (props: { product: any }) => {
+  const passwordGuessed = useSelector((state: any) => state.user.passwordGuessed);
+  const router = useRouter();
+
+  useEffect(() => {
+    console.log('passwordGuessed', passwordGuessed);
+    if(!passwordGuessed) {
+      router.push('/drop');
+    }
+  }, [])
+
   return (
     <ShowPage product={props.product}/>
   )

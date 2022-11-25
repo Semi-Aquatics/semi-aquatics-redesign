@@ -10,9 +10,11 @@ import Sidebar from '../sidebar/sidebar.component';
 import SpinningLogo from '../spinning-logo/spinning-logo.component';
 import CountdownTimer from '../countdown-timer/countdown-timer.component';
 import { calculateTimeLeft } from '../../utils/calculate_time_left';
+// import { setPasswordGuessed } from '../../redux/user/user.actions';
 
 const Layout: React.FC = (props) => {
     const router = useRouter();
+    // setPasswordGuessed(false);
     const [navbarOpen, setNavbarOpen] = useState(false);
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const typeOfPage = router.pathname.substring(1);

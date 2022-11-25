@@ -1,5 +1,7 @@
 import styles from './DropPage.module.scss'
 import ProductPreview from '../product-preview/product-preview.component';
+import PasswordWall from '../password-wall/password-wall.component';
+import { useSelector } from 'react-redux';
 
 interface DropPageProps {
     products: any,
@@ -7,11 +9,15 @@ interface DropPageProps {
 }
 
 const DropPage:React.FC <DropPageProps> = ({products, dropName}) => {
-    return (
-        <div className={styles.dropPageContainer}>
-            <div className={styles.gridder}>
-              <h1 className={styles.dropTitle}>Fall 2022 Drop 2</h1>
-            </div>
+  const passwordGuessed = useSelector((state: any) => state.user.passwordGuessed);
+
+  return (
+    <div className={styles.dropPageContainer}>
+      <div className={styles.gridder}>
+        <h1 className={styles.dropTitle}>Fall 2022 Drop 2</h1>
+      </div>
+        {
+          passwordGuessed ?
             <div className={styles.productsContainer}>
 
               {
@@ -23,11 +29,14 @@ const DropPage:React.FC <DropPageProps> = ({products, dropName}) => {
                   isSoldOut={!product.node.availableForSale}
                   id={product.node.id}
                   isArchive={false}/>
-                  )
-                }
-              </div>
-        </div>
-    );
+                )
+              }
+            </div>
+        :
+          <PasswordWall images={products.edges.map((product: any) => product.node.images.edges[0].node.transformedSrc)}/>
+        }
+    </div>
+  );
 };
 
 export default DropPage;
