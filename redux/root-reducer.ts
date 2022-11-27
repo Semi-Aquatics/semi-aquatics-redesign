@@ -3,7 +3,7 @@ import { persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 // import hardSet from 'redux-persist/lib/stateReconciler/hardSet'
 
-import productReducer from './product/product.reducer';
+import userReducer from './user/user.reducer';
 import cartReducer from './cart/cart.reducer';
 // import cartReducer from './cart/cart.reducer'
 // import styleReducer from './style/style.reducer'
@@ -11,13 +11,12 @@ import cartReducer from './cart/cart.reducer';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['product', 'cart', 'style']
+  whitelist: ['user', 'cart']
 }
 
 const rootReducer = combineReducers({
-  // product: productReducer,
   cart: cartReducer,
-//   style: styleReducer
+  user: userReducer
 });
 
 
