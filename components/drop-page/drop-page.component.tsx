@@ -17,7 +17,7 @@ const DropPage:React.FC <DropPageProps> = ({products, dropName}) => {
         <h1 className={styles.dropTitle}>Fall 2022 Drop 2</h1>
       </div>
         {
-          passwordGuessed ?
+          passwordGuessed || true ?
             <div className={styles.productsContainer}>
 
               {

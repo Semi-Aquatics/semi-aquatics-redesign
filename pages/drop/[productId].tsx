@@ -15,7 +15,7 @@ const Product = (props: { product: any }) => {
   const router = useRouter();
 
   useEffect(() => {
-    if(!passwordGuessed && UPCOMING_ITEMS.includes(props.product.node.id)) {
+    if (!passwordGuessed && UPCOMING_ITEMS.includes(props.product.node.id) && false) {
       router.push('/drop');
     }
   }, [])
