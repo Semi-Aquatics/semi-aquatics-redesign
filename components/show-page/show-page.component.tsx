@@ -55,7 +55,7 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
   }
   const handleOnAddToCart = async (selected: any) => {
     try{
-    if (cookies.cartId && cart.data.cart) {
+      if (cookies.cartId && cart.data.cart && (new Date(cart.data.cart.createdAt) > new Date("2022/11/25 18:00:00 EST"))) {
       const existing_items = getCartCounts(cart);
       const quantity = existing_items[selected.node.id] ? existing_items[selected.node.id] + numberToAdd : numberToAdd;
       // If the product is already in cart, and we are adding more, update the cart
