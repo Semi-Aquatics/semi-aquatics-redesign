@@ -1,3 +1,5 @@
+'use client';
+
 import withLayout from "../hocs/withLayout";
 import styles from "../styles/Home.module.scss";
 import { useIsMobile } from '../hooks/use-is-mobile';
@@ -21,11 +23,3 @@ const Home: React.FC = ({ }) => {
 };
 
 export default withLayout(Home);
-
-// REMOVE IF VIDEO WORKS
-// {
-//   isMobile ?
-//     <div className={styles.imageContainer}>
-//       <img src={homepagePic} alt='semi-aquatics' />
-//     </div>
-//     :
