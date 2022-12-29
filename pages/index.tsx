@@ -8,6 +8,8 @@ const Home: React.FC = ({ }) => {
   const isMobile = useIsMobile();
   const video = isMobile ? require('../public/video-mobile.mp4') : require('../public/video-home.mp4');
 
+  if (typeof(window) === 'undefined') return <p></p>;
+
   return (
     <div className={styles.homeContainer}>
       <div className={styles.videoContainer}>
