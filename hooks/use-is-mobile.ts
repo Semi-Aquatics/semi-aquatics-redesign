@@ -1,8 +1,8 @@
-import { useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export function useIsMobile() {
     const [size, setSize] = useState(0);
-    useLayoutEffect(() => {
+    useEffect(() => {
       function updateSize() {
         setSize(window.innerWidth);
       }
