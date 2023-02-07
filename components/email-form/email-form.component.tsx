@@ -39,7 +39,7 @@ const EmailForm: React.FC<EmailFormProps> = ({ isSidebar }) => {
       return;
     }
 
-    const apiUrl = `https://proxy-semi-aquatics.herokuapp.com/api/subscribe/${email}`;
+    const apiUrl = `https://proxy-semi-aquatics.onrender.com/api/subscribe/${email}`;
     try {
       const response = await axios.post(apiUrl, {})
       await handleSuccessResponse(response);
