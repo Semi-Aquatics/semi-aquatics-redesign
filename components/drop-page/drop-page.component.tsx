@@ -6,7 +6,7 @@ import CountdownTimer from '../countdown-timer/countdown-timer.component';
 
 interface DropPageProps {
     products: any,
-    dropName: strin
+    dropName: string
 }
 
 const DropPage:React.FC <DropPageProps> = ({products, dropName}) => {
