@@ -7,15 +7,10 @@ import { Dispatch, SetStateAction, } from 'react';
 import Link from 'next/link';
 import { useRef } from 'react'
 
-// Queries
-import { getCartQuery } from '../../services/queries/queries';
-
 
 // Hooks
 import { useOnClickOutside } from '../../hooks/use-on-click-outside';
 import EmailForm from '../email-form/email-form.component';
-import { useQuery } from '@apollo/client';
-import { useCookies } from 'react-cookie';
 
 interface SidebarProps {
   sidebarOpen: boolean,
@@ -24,8 +19,6 @@ interface SidebarProps {
 
 const Sidebar: React.FC <SidebarProps> = ({sidebarOpen, setSidebarOpen}) =>  {
     const ref = useRef();
-    const [cookies, setCookie] = useCookies(['cartId']);
-    const cart = useQuery(getCartQuery, { variables: { cartId: cookies.cartId } });
 
     //  icon for sdiebar
     useOnClickOutside(ref, () => setSidebarOpen(false));

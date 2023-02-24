@@ -2,10 +2,11 @@ import styles from './DropPage.module.scss'
 import ProductPreview from '../product-preview/product-preview.component';
 import PasswordWall from '../password-wall/password-wall.component';
 import { useSelector } from 'react-redux';
+import CountdownTimer from '../countdown-timer/countdown-timer.component';
 
 interface DropPageProps {
     products: any,
-    dropName: string
+    dropName: strin
 }
 
 const DropPage:React.FC <DropPageProps> = ({products, dropName}) => {
@@ -15,6 +16,9 @@ const DropPage:React.FC <DropPageProps> = ({products, dropName}) => {
     <div className={styles.dropPageContainer}>
       <div className={styles.gridder}>
         <h1 className={styles.dropTitle}>Winter 2023 Drop 1</h1>
+      </div>
+      <div className={styles.countdownTimerContainer}>
+        <CountdownTimer />
       </div>
         {
           passwordGuessed || true ?
