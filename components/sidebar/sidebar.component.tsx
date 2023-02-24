@@ -40,12 +40,12 @@ const Sidebar: React.FC <SidebarProps> = ({sidebarOpen, setSidebarOpen}) =>  {
                 <Link href="/">
                     <p onClick={() => setSidebarOpen(false)}>Home</p>
                 </Link>
-                {/* <div className={styles.dropLink}> */}
+                <div className={styles.dropLink}>
                   <Link href="/drop">
                       <p onClick={() => setSidebarOpen(false)}>Drop</p>
                   </Link>
-                  {/* <p className={styles.newDrop}>new!</p> */}
-                {/* </div> */}
+                  <p className={styles.newDrop}>new!</p>
+                </div>
                 <Link href="/story">
                     <p onClick={() => setSidebarOpen(false)}>Story</p>
                 </Link>
