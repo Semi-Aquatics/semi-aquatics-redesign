@@ -17,9 +17,6 @@ const DropPage:React.FC <DropPageProps> = ({products, dropName}) => {
       <div className={styles.gridder}>
         <h1 className={styles.dropTitle}>Winter 2023 Drop 1</h1>
       </div>
-      <div className={styles.countdownTimerContainer}>
-        <CountdownTimer />
-      </div>
         {
           passwordGuessed || true ?
             <div className={styles.productsContainer}>

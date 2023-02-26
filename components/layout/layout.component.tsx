@@ -19,15 +19,10 @@ const Layout: React.FC = (props) => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const typeOfPage = router.pathname.substring(1);
 
-    const DROP_DATE = new Date("2022/11/28 18:00:00 EST");
-    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(DROP_DATE));
-    const totalTimeLeft: number = Object.values(timeLeft).reduce((a: any, b: any) => a + b);
-    if (totalTimeLeft > 0) {
-      setTimeout(() => {
-        setTimeLeft(calculateTimeLeft(DROP_DATE));
-      }, 1000);
-    }
+    const DROP_DATE = new Date("2023/03/06 18:00:00 EST");
 
+    const [isTimeLeft, setIsTimeLeft] = useState(true);
+    console.log(isTimeLeft)
     return (
       <div className={styles.layoutContainer}>
             <Head>
@@ -51,10 +46,10 @@ const Layout: React.FC = (props) => {
             {props.children}
           </div>
           {
-            <div className={`${styles.spinningLogoContainer} ${totalTimeLeft > 0 ? styles.countdown : ''}`}>
+          <div className={`${styles.spinningLogoContainer} ${isTimeLeft ? styles.countdown : ''}`}>
               {
-                totalTimeLeft > 0 ?
-                    <CountdownTimer />
+                isTimeLeft ?
+                    <CountdownTimer dropDate={DROP_DATE} setIsTimeLeft={setIsTimeLeft}/>
                   :
                     <SpinningLogo />
                 }
