@@ -22,7 +22,6 @@ const Layout: React.FC = (props) => {
     const DROP_DATE = new Date("2023/03/06 18:00:00 EST");
 
     const [isTimeLeft, setIsTimeLeft] = useState(true);
-    console.log(isTimeLeft)
     return (
       <div className={styles.layoutContainer}>
             <Head>

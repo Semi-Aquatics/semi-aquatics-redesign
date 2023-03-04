@@ -1,7 +1,7 @@
 import { userActionTypes } from './user.types'
 
 const INITIAL_STATE = {
-  passwordGuessed: false
+  passwordGuessed: ''
 }
 const userReducer = (state = INITIAL_STATE, action: { type: string; payload: object }) => {
   switch (action.type) {

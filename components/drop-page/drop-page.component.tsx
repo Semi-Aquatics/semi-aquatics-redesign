@@ -18,7 +18,7 @@ const DropPage:React.FC <DropPageProps> = ({products, dropName}) => {
         <h1 className={styles.dropTitle}>Winter 2023 Drop 1</h1>
       </div>
         {
-          passwordGuessed || true ?
+          passwordGuessed === process.env.WEBSITE_LOCK_PASSWORD ?
             <div className={styles.productsContainer}>
 
               {
@@ -27,7 +27,7 @@ const DropPage:React.FC <DropPageProps> = ({products, dropName}) => {
                   key={product.node.title}
                   image={product.node.images.edges[0].node.transformedSrc}
                   title={product.node.title}
-                  isSoldOut={!product.node.availableForSale || true}
+                  isSoldOut={!product.node.availableForSale}
                   id={product.node.id}
                   isArchive={false}/>
                 )
