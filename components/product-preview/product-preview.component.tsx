@@ -11,12 +11,7 @@ interface ProductPreviewProps {
 }
 
 const ProductPreview:React.FC<ProductPreviewProps> = ({image, title, id, isArchive, isSoldOut, isTimeLeft }) => {
-  const UPCOMING_ITEMS = isTimeLeft ? ["Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4MTkxNTA5MjE4MDM=",
-    "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4MTkxNTA4ODkwMzU=",
-    "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4MTkxNTA3OTA3MzE=",
-    "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4MTkxNTA3NTc5NjM=",
-    "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4MTkxNTA0NjMwNTE="
-] : ['']
+  const UPCOMING_ITEMS = ['']
 
     return (
       <div className={styles.productPreviewContainer}>

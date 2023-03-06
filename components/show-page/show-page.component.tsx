@@ -22,12 +22,7 @@ import ShowPageMobile from './mobile/show-page-mobile.component';
 // hooks
 import { useIsMobile } from '../../hooks/use-is-mobile';
 
-const UPCOMING_ITEMS = ["Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4MTkxNTA5MjE4MDM=",
-  "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4MTkxNTA4ODkwMzU=",
-  "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4MTkxNTA3OTA3MzE=",
-  "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4MTkxNTA3NTc5NjM=",
-  "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4MTkxNTA0NjMwNTE="
-]
+const UPCOMING_ITEMS = ['']
 
 const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
   const [cookies, setCookie] = useCookies(['cartId']);
