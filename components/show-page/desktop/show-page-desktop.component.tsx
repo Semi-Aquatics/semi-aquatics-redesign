@@ -13,9 +13,6 @@ import Link from 'next/link';
 import Button from "../../button/button.component";
 import Dropdown from '../../dropdown/dropdown.component';
 
-// TODO: get these from the cms
-const UPCOMING_ITEMS = ['']
-
 const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
   product,
   selected,
@@ -24,7 +21,8 @@ const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
   numberToAdd,
   handleOnAddToCart,
   slideNumber,
-  setSlideNumber }) => {
+  setSlideNumber,
+  upcomingItems }) => {
   const slides = product.node.images.edges.map((image: any) =>
   (<img src={image.node.transformedSrc} alt={image.node.altText} />)
   )
@@ -73,7 +71,7 @@ const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
                     selected.node.availableForSale ?
                       "Add to bag"
                       :
-                      UPCOMING_ITEMS.includes(product.node.id) ?
+                    upcomingItems.includes(product.node.id) ?
                         "Coming soon"
                         :
                         "Sold Out"

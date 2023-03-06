@@ -19,9 +19,6 @@ import NumberPicker from "../../number-picker/number-picker.component";
 import Link from 'next/link';
 import { BsCircleFill } from 'react-icons/bs';
 
-// TODO: get these from the cms
-const UPCOMING_ITEMS = ['']
-
 const ShowPageMobile: React.FC<ShowPageChildProps> = ({ product,
   selected,
   setSelected,
@@ -29,7 +26,8 @@ const ShowPageMobile: React.FC<ShowPageChildProps> = ({ product,
   numberToAdd,
   handleOnAddToCart,
   slideNumber,
-  setSlideNumber }) => {
+  setSlideNumber,
+  upcomingItems }) => {
   const [descriptionOpen, setDescriptionOpen] = useState(false);
 
   const description = product.node.descriptionHtml;
@@ -109,7 +107,7 @@ const ShowPageMobile: React.FC<ShowPageChildProps> = ({ product,
               selected.node.availableForSale ?
                 "Add to bag"
                 :
-                UPCOMING_ITEMS.includes(product.node.id) ?
+                upcomingItems.includes(product.node.id) ?
                 "Coming soon"
                 :
                 "Sold Out"

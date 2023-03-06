@@ -22,6 +22,12 @@ import ShowPageMobile from './mobile/show-page-mobile.component';
 // hooks
 import { useIsMobile } from '../../hooks/use-is-mobile';
 
+const UPCOMING_ITEMS = ["Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4MTkxNTA5MjE4MDM=",
+  "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4MTkxNTA4ODkwMzU=",
+  "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4MTkxNTA3OTA3MzE=",
+  "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4MTkxNTA3NTc5NjM=",
+  "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4MTkxNTA0NjMwNTE="
+]
 
 const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
   const [cookies, setCookie] = useCookies(['cartId']);
@@ -55,7 +61,7 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
   }
   const handleOnAddToCart = async (selected: any) => {
     try{
-      if (cookies.cartId && cart.data.cart && (new Date(cart.data.cart.createdAt) > new Date("2022/11/25 18:00:00 EST"))) {
+      if (cookies.cartId && cart.data.cart && (new Date(cart.data.cart.createdAt) > new Date("2023/2/25 18:00:00 EST"))) {
       const existing_items = getCartCounts(cart);
       const quantity = existing_items[selected.node.id] ? existing_items[selected.node.id] + numberToAdd : numberToAdd;
       // If the product is already in cart, and we are adding more, update the cart
@@ -131,7 +137,8 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
           setNumberToAdd={setNumberToAdd}
           slideNumber={slideNumber}
           setSlideNumber={setSlideNumber}
-          numberToAdd={numberToAdd} />
+          numberToAdd={numberToAdd}
+          upcomingItems={UPCOMING_ITEMS} />
       :
         <ShowPageDesktop
           product={product}
@@ -141,7 +148,8 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
           setNumberToAdd={setNumberToAdd}
           slideNumber={slideNumber}
           setSlideNumber={setSlideNumber}
-          numberToAdd={numberToAdd} />
+          numberToAdd={numberToAdd}
+          upcomingItems={UPCOMING_ITEMS} />
     }
 
     <ToastContainer
