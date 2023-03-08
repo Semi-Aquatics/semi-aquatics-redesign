@@ -12,6 +12,9 @@ interface ProductPreviewProps {
 
 const ProductPreview:React.FC<ProductPreviewProps> = ({image, title, id, isArchive, isSoldOut, isTimeLeft }) => {
   const UPCOMING_ITEMS = ['']
+  console.log('isSoldOut', isSoldOut)
+  console.log('title', title)
+
 
     return (
       <div className={styles.productPreviewContainer}>
