@@ -24,7 +24,7 @@ const DropPage:React.FC <DropPageProps> = ({products, dropName}) => {
         <CountdownTimer dropDate={DROP_DATE} setIsTimeLeft={setIsTimeLeft}/>
       </div>
         {
-          passwordGuessed === process.env.WEBSITE_LOCK_PASSWORD || !isTimeLeft ?
+          passwordGuessed === process.env.WEBSITE_LOCK_PASSWORD || !isTimeLeft || true ?
             <div className={styles.productsContainer}>
 
               {
