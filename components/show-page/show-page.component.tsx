@@ -25,7 +25,6 @@ import { useIsMobile } from '../../hooks/use-is-mobile';
 
 const UPCOMING_ITEMS = ['']
 
-
 const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
   const [cookies, setCookie] = useCookies(['cartId']);
   const [numberToAdd, setNumberToAdd] = useState(1);

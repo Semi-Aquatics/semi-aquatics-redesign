@@ -5,11 +5,12 @@ import { useRef } from 'react'
 
 interface DropdownProps {
     items: any[],
+    availability: boolean[],
     selectedItem: any,
     selectItem: Dispatch<SetStateAction<any>>
 }
 
-const Dropdown:React.FC <DropdownProps> = ({selectedItem, selectItem, items}) => {
+const Dropdown:React.FC <DropdownProps> = ({selectedItem, selectItem, items, availability}) => {
     const ref = useRef()
     let title =  selectedItem.node ? selectedItem.node.title : selectedItem
     const [isOpen, setIsOpen] = useState(false);
@@ -24,10 +25,10 @@ const Dropdown:React.FC <DropdownProps> = ({selectedItem, selectItem, items}) =>
 
             <div className={isOpen ? styles.ddListOpen : styles.ddListClosed}>
                 {
-                    items.map(item =>
+                    items.map((item, index) =>
                         <div onClick={() => {selectItem(item); setIsOpen(false)}}
                             key={item.node ? item.node.title : item}
-                            className={styles.ddListItem}>
+                            className={`${styles.ddListItem} ${availability[index] ? '' : styles.unavailableItem}`}>
                             {item.node ? item.node.title : item}
                         </div>
                     )

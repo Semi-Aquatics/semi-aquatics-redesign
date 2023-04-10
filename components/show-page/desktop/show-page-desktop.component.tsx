@@ -13,6 +13,9 @@ import Link from 'next/link';
 import Button from "../../button/button.component";
 import Dropdown from '../../dropdown/dropdown.component';
 
+// Helpers
+import { variantAvailability } from '../utils'
+
 const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
   product,
   selected,
@@ -60,7 +63,7 @@ const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
         </div>
         <div className={styles.productAddToCart}>
             <div className={styles.sizeAndNumber}>
-              <Dropdown items={product.node.variants.edges} selectItem={setSelected} selectedItem={selected} />
+              <Dropdown items={product.node.variants.edges} availability={variantAvailability(product)} selectItem={setSelected} selectedItem={selected} />
               <div className={styles.buttonContainer}>
                 <Button soldOut={!selected.node.availableForSale}
                   isSelected={selected !== ''}
