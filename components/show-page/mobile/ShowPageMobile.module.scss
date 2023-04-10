@@ -49,6 +49,9 @@
       }
     }
   }
+  .imageContainerLarge{
+    height: 85%;
+  }
 
   .closed {
     text-align: center;
@@ -122,6 +125,13 @@
         height: 24vh;
         overflow: scroll;
       }
+
+      .descriptionInnerLarge {
+        text-align: left;
+        height: 30vh;
+        overflow: scroll;
+      }
+      
 
       .sizingLink {
         text-decoration: underline;

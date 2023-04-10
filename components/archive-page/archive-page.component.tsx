@@ -17,11 +17,11 @@ const ArchivePage:React.FC <ArchivePageProps> = ({drops}) => {
                             {
                                 drop.products.edges.map((product: any) =>
                                   <ProductPreview
-                                  image={product.node.images.edges[0] ? product.node.images.edges[0].node.transformedSrc : ''}
-                                  title={product.node.title}
-                                  id={product.node.id}
-                                  isSoldOut={!product.node.availableForSale}
-                                  isArchive={true}/>
+                                    image={product.node.images.edges[0] ? product.node.images.edges[0].node.transformedSrc : ''}
+                                    title={product.node.title}
+                                    id={product.node.id}
+                                    isSoldOut={!product.node.availableForSale}
+                                    isArchive={true}/>
                                   )
                             }
                          </div>

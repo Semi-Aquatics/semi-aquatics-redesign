@@ -1,10 +1,12 @@
 import { TimeLeftObj } from '../interfaces/page_interface';
 
-export const calculateTimeLeft = (dropDate: Date): TimeLeftObj => {
+const DROP_DATE = new Date("2023/04/10 18:00:00 EST");
+
+export const calculateTimeLeft = (): TimeLeftObj => {
   const startDate = new Date();
 
   const startDateInUTC = new Date(startDate.getUTCFullYear(), startDate.getUTCMonth(), startDate.getUTCDate(), startDate.getUTCHours(), startDate.getUTCMinutes(), startDate.getUTCSeconds());
-  const endDateInUTC = new Date(dropDate.getUTCFullYear(), dropDate.getUTCMonth(), dropDate.getUTCDate(), dropDate.getUTCHours(), dropDate.getUTCMinutes(), dropDate.getUTCSeconds());
+  const endDateInUTC = new Date(DROP_DATE.getUTCFullYear(), DROP_DATE.getUTCMonth(), DROP_DATE.getUTCDate(), DROP_DATE.getUTCHours(), DROP_DATE.getUTCMinutes(), DROP_DATE.getUTCSeconds());
   // @ts-ignore
   const difference = Date.parse(endDateInUTC) - Date.parse(startDateInUTC);
 
