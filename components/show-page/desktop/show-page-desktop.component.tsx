@@ -14,6 +14,9 @@ import Button from "../../button/button.component";
 import Dropdown from '../../dropdown/dropdown.component';
 import React from 'react';
 
+// Helpers
+import { variantAvailability } from '../utils'
+
 const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
   product,
   selected,
@@ -59,6 +62,7 @@ const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
                 <div onClick={() => numberToAdd == 1 ? '' : setNumberToAdd(numberToAdd - 1)} className={styles.changeQuantityDown}><AiOutlineMinus /></div>
                 {numberToAdd}
                 <div onClick={() => setNumberToAdd(numberToAdd + 1)} className={styles.changeQuantityUp}><AiOutlinePlus /></div>
+
               </div>
             </div>
             }
@@ -67,7 +71,7 @@ const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
               <div className={styles.sizeAndNumber}>
          { isNewProduct &&
             <React.Fragment>
-                <Dropdown items={product.node.variants.edges} selectItem={setSelected} selectedItem={selected} />
+                <Dropdown items={product.node.variants.edges} availability={variantAvailability(product)} selectItem={setSelected} selectedItem={selected} />
                 <div className={styles.buttonContainer}>
                   <Button soldOut={!selected.node.availableForSale}
                     isSelected={selected !== ''}

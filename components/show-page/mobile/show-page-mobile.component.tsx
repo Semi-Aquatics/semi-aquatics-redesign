@@ -20,6 +20,9 @@ import Link from 'next/link';
 import { BsCircleFill } from 'react-icons/bs';
 import React from 'react';
 
+// Helpers
+import { variantAvailability } from '../utils'
+
 const ShowPageMobile: React.FC<ShowPageChildProps> = ({ product,
   selected,
   setSelected,
@@ -99,7 +102,7 @@ const ShowPageMobile: React.FC<ShowPageChildProps> = ({ product,
         isNewProduct &&
       <React.Fragment>
         <div className={styles.sizePickerContainer}>
-          <SizePicker variants={product.node.variants.edges} chosenVariant={selected} setChosenVariant={setSelected} />
+          <SizePicker variants={product.node.variants.edges}  availability={variantAvailability(product)}chosenVariant={selected} setChosenVariant={setSelected} />
         </div>
         <div className={styles.addToCart}>
           <div className={styles.half}>

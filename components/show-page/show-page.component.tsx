@@ -16,6 +16,7 @@ import { cartCreate, cartLinesUpdate, cartLineItemsAdd } from '../../services/qu
 
 // helper functions
 import { getCartCounts, merchandiseIdToLineItemId } from '../../utils/cartHelper';
+import { firstSelectedVariant } from './utils'
 
 // components
 import ShowPageDesktop from './desktop/show-page-desktop.component';
@@ -32,7 +33,7 @@ const UPCOMING_ITEMS = ['']
 const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
   const [cookies, setCookie] = useCookies(['cartId']);
   const [numberToAdd, setNumberToAdd] = useState(1);
-  const [selected, setSelected] = useState(product.node.variants.edges[0]);
+  const [selected, setSelected] = useState(firstSelectedVariant(product));
   const [slideNumber, setSlideNumber] = useState(0);
   const isMobile = useIsMobile();
   const [createCart, createCartData] = useMutation(cartCreate);
