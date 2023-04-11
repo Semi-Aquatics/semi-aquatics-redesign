@@ -3,17 +3,17 @@ import styles from './SizePicker.module.scss';
 
 interface SizePickerProps {
     chosenVariant: string,
+    availability: boolean[],
     setChosenVariant: Dispatch<SetStateAction<any>>,
     variants: any
 }
-const SizePicker:React.FC <SizePickerProps> = ({variants, chosenVariant, setChosenVariant}) => {
+const SizePicker:React.FC <SizePickerProps> = ({variants, chosenVariant, setChosenVariant, availability}) => {
     return (
         <div className={styles.sizePickerContainer}>
             {
-                variants.map((variant: any) =>
+                variants.map((variant: any, index: number) =>
                     <div
-                    className={chosenVariant == variant ? styles.sizeSelected : styles.sizeUnavailable}
-                    // onClick={() => variant.node.availableForSale ? setChosenVariant(variant) : ''}
+                    className={`${chosenVariant == variant ? styles.sizeSelected : styles.sizeNotPicked} ${availability[index] ? '' : styles.unavailableItem} `}
                     onClick={() => setChosenVariant(variant)}
                     key={variant.node.title}>
                         {
