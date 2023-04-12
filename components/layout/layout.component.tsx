@@ -10,7 +10,9 @@ import Sidebar from '../sidebar/sidebar.component';
 import SpinningLogo from '../spinning-logo/spinning-logo.component';
 import CountdownTimer from '../countdown-timer/countdown-timer.component';
 import { calculateTimeLeft } from '../../utils/calculate_time_left';
-// import { setPasswordGuessed } from '../../redux/user/user.actions';
+
+// Hooks
+import { useIsTimeLeft } from '../../hooks/use-is-time-left'
 
 const Layout: React.FC = (props) => {
     const router = useRouter();
@@ -19,9 +21,8 @@ const Layout: React.FC = (props) => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const typeOfPage = router.pathname.substring(1);
 
-    const DROP_DATE = new Date("2023/03/06 18:00:00 EST");
+    const isTimeLeft = useIsTimeLeft();
 
-    const [isTimeLeft, setIsTimeLeft] = useState(true);
     return (
       <div className={styles.layoutContainer}>
             <Head>
@@ -48,7 +49,7 @@ const Layout: React.FC = (props) => {
           <div className={`${styles.spinningLogoContainer} ${isTimeLeft ? styles.countdown : ''}`}>
               {
                 isTimeLeft ?
-                    <CountdownTimer dropDate={DROP_DATE} setIsTimeLeft={setIsTimeLeft}/>
+                    <CountdownTimer />
                   :
                     <SpinningLogo />
                 }

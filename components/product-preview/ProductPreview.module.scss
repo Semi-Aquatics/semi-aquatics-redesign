@@ -41,4 +41,12 @@
     &:focus {
       outline: none !important;
     }
+    @media only screen and (max-width: 768px) {
+      .soldOut{
+        width: 4.5rem;
+        height: 1.5rem;
+        font-size: 10px;
+        margin-bottom: 4px;
+      }
+    }
 }

@@ -12,7 +12,8 @@ export interface ShowPageChildProps {
   numberToAdd: number,
   slideNumber: number,
   setSlideNumber: any,
-  upcomingItems?: any
+  upcomingItems?: any,
+  isNewProduct: boolean,
 }
 
 export interface CountdownTimerProps {

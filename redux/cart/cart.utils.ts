@@ -1,6 +1,4 @@
-///////////////////// ADDING ITEM TO THE CART /////////////////////
 export const addItemToCart = (cartItems: any, itemToAdd: any) => {
-
     const noSize = itemToAdd[0] == null ? true : false
   
     const existingCartItem = cartItems.find(

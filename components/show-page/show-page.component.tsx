@@ -7,6 +7,8 @@ import { useCookies } from 'react-cookie';
 import { useQuery, useMutation, ApolloError } from '@apollo/client';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useSelector } from 'react-redux';
+import { useRouter } from 'next/router';
 
 // queries
 import { getCartQuery } from '../../services/queries/queries';
@@ -19,9 +21,12 @@ import { firstSelectedVariant } from './utils'
 // components
 import ShowPageDesktop from './desktop/show-page-desktop.component';
 import ShowPageMobile from './mobile/show-page-mobile.component';
+import CountdownTimer from '../countdown-timer/countdown-timer.component';
 
 // hooks
 import { useIsMobile } from '../../hooks/use-is-mobile';
+import { useIsTimeLeft } from '../../hooks/use-is-time-left';
+import { useIsNewProduct } from '../../hooks/use-is-new-product';
 
 const UPCOMING_ITEMS = ['']
 
@@ -35,6 +40,11 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
   const [updateCartLineItems, updateCartLineItemsData] = useMutation(cartLinesUpdate);
   const [addCartLineItems, addCartLineItemsData] = useMutation(cartLineItemsAdd);
   const cart = useQuery(getCartQuery, { variables: { cartId: cookies.cartId } });
+  const isTimeLeft = useIsTimeLeft();
+  const isNewProduct = useIsNewProduct(product.node.id);
+  const { push } = useRouter();
+  const passwordGuessed = useSelector((state: any) => state.user.passwordGuessed);
+
   const notify = (message = 'Item added to cart!') => toast(message, {
     position: "top-right",
     autoClose: 5000,
@@ -121,6 +131,9 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
 
   // @brainhubeu/react-carousel uses window, so during ssr this prevents code to break.
   if (typeof window === 'undefined') return <React.Fragment>loading</React.Fragment>;
+  if (passwordGuessed != process.env.WEBSITE_LOCK_PASSWORD && isTimeLeft && isNewProduct) { 
+    push('/drop')
+  };
   return (
     <React.Fragment>
     {
@@ -134,6 +147,7 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
           slideNumber={slideNumber}
           setSlideNumber={setSlideNumber}
           numberToAdd={numberToAdd}
+          isNewProduct={isNewProduct}
           upcomingItems={UPCOMING_ITEMS} />
       :
         <ShowPageDesktop
@@ -145,6 +159,7 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
           slideNumber={slideNumber}
           setSlideNumber={setSlideNumber}
           numberToAdd={numberToAdd}
+          isNewProduct={isNewProduct}
           upcomingItems={UPCOMING_ITEMS} />
     }
 
