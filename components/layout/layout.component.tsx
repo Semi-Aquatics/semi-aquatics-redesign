@@ -18,7 +18,6 @@ const Layout: React.FC = (props) => {
     const [navbarOpen, setNavbarOpen] = useState(false);
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const typeOfPage = router.pathname.substring(1);
-
     const isTimeLeft = useIsTimeLeft();
 
     return (
