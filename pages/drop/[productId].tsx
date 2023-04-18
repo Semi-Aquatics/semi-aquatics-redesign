@@ -6,16 +6,14 @@ import withLayout from '../../hocs/withLayout'
 import ShowPage from "../../components/show-page/show-page.component";
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
-
-const UPCOMING_ITEMS = ['']
-
+import { useIsNewProduct } from '../../hooks/use-is-new-product';
 
 const Product = (props: { product: any }) => {
   const passwordGuessed = useSelector((state: any) => state.user.passwordGuessed);
   const router = useRouter();
 
   useEffect(() => {
-    if (!passwordGuessed && UPCOMING_ITEMS.includes(props.product.node.id) && false) {
+    if (!passwordGuessed && useIsNewProduct(props.product.node.id)) {
       router.push('/drop');
     }
   }, [])

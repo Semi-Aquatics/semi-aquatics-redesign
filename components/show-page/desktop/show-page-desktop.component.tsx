@@ -26,8 +26,8 @@ const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
   handleOnAddToCart,
   slideNumber,
   isNewProduct,
-  setSlideNumber,
-  upcomingItems }) => {
+  setSlideNumber 
+}) => {
   const slides = product.node.images.edges.map((image: any) =>
   (<img src={image.node.transformedSrc} alt={image.node.altText} />)
   )
@@ -82,7 +82,7 @@ const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
                       selected.node.availableForSale ?
                         "Add to bag"
                         :
-                      upcomingItems.includes(product.node.id) ?
+                      isNewProduct ?
                           "Coming soon"
                           :
                           "Sold Out"

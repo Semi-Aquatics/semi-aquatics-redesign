@@ -1,3 +1,4 @@
+import { useIsNewProduct } from '../../hooks/use-is-new-product';
 import styles from './ProductPreview.module.scss'
 import Link from 'next/link'
 
@@ -11,7 +12,7 @@ interface ProductPreviewProps {
 }
 
 const ProductPreview:React.FC<ProductPreviewProps> = ({image, title, id, isArchive, isSoldOut, isTimeLeft }) => {
-  const UPCOMING_ITEMS = ['']
+  const isNewProduct = useIsNewProduct(id)
 
     return (
       <div className={styles.productPreviewContainer}>
@@ -20,7 +21,7 @@ const ProductPreview:React.FC<ProductPreviewProps> = ({image, title, id, isArchi
             {
               isSoldOut &&
               <div className={styles.soldOut}>
-                    <h3>{ UPCOMING_ITEMS.includes(id) ? 'COMING SOON' : 'SOLD OUT'}</h3>
+                    <h3>{ isNewProduct ? 'COMING SOON' : 'SOLD OUT'}</h3>
                 </div>
             }
             <img src={image} alt={title}/>

@@ -28,8 +28,6 @@ import { useIsMobile } from '../../hooks/use-is-mobile';
 import { useIsTimeLeft } from '../../hooks/use-is-time-left';
 import { useIsNewProduct } from '../../hooks/use-is-new-product';
 
-const UPCOMING_ITEMS = ['']
-
 const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
   const [cookies, setCookie] = useCookies(['cartId']);
   const [numberToAdd, setNumberToAdd] = useState(1);
@@ -147,8 +145,7 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
           slideNumber={slideNumber}
           setSlideNumber={setSlideNumber}
           numberToAdd={numberToAdd}
-          isNewProduct={isNewProduct}
-          upcomingItems={UPCOMING_ITEMS} />
+          isNewProduct={isNewProduct} />
       :
         <ShowPageDesktop
           product={product}
@@ -159,8 +156,7 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
           slideNumber={slideNumber}
           setSlideNumber={setSlideNumber}
           numberToAdd={numberToAdd}
-          isNewProduct={isNewProduct}
-          upcomingItems={UPCOMING_ITEMS} />
+          isNewProduct={isNewProduct} />
     }
 
     <ToastContainer

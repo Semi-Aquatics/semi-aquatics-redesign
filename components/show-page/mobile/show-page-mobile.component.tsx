@@ -31,8 +31,8 @@ const ShowPageMobile: React.FC<ShowPageChildProps> = ({ product,
   handleOnAddToCart,
   slideNumber,
   isNewProduct,
-  setSlideNumber,
-  upcomingItems }) => {
+  setSlideNumber
+  }) => {
   const [descriptionOpen, setDescriptionOpen] = useState(!isNewProduct);
 
   const description = product.node.descriptionHtml;
@@ -119,7 +119,7 @@ const ShowPageMobile: React.FC<ShowPageChildProps> = ({ product,
                 selected.node.availableForSale ?
                   "Add to bag"
                   :
-                  upcomingItems.includes(product.node.id) ?
+                  isNewProduct ?
                   "Coming soon"
                   :
                   "Sold Out"
