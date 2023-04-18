@@ -25,6 +25,7 @@ const DropPage:React.FC <DropPageProps> = ({products, dropName}) => {
       <div className={styles.gridder}>
         <h1 className={styles.dropTitle}>Spring 2023 Drop 1</h1>
       </div>
+      <p className={styles.dropDescription}>a portion of the proceeds will be donated to the William G.  Nash Foundation</p>
         {
           passwordGuessed === process.env.WEBSITE_LOCK_PASSWORD || !isTimeLeft ?
             <div className={styles.productsContainer}>
