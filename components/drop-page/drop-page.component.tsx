@@ -28,7 +28,6 @@ const DropPage:React.FC <DropPageProps> = ({products, dropName}) => {
         {
           passwordGuessed === process.env.WEBSITE_LOCK_PASSWORD || !isTimeLeft ?
             <div className={styles.productsContainer}>
-
               {
                 products.edges.map((product: any) =>
                   <ProductPreview
