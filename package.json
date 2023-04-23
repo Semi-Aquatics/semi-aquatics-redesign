@@ -50,13 +50,13 @@
   },
   "devDependencies": {
     "@types/brainhubeu__react-carousel": "",
-    "@types/lodash": "",
+    "@types/lodash": "^4.14.74",
     "@types/node": "",
     "@types/react": "",
     "@types/react-image-magnifiers": "",
     "@types/redux-logger": "",
     "@types/shopify-buy": "",
     "@types/video-react": "",
-    "typescript": "3"
+    "typescript": "^4.9.4"
   }
 }
