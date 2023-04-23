@@ -4,8 +4,8 @@ import styles from './ShowPageDesktop.module.scss';
 import { ShowPageChildProps } from '../../../interfaces/page_interface';
 
 // Packages
-import Carousel from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css';
+import Carousel from "nuka-carousel"
+
 import { AiOutlinePlus, AiOutlineMinus  } from 'react-icons/ai'
 import Link from 'next/link';
 
@@ -33,9 +33,11 @@ const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
       <div className={styles.leftSide}>
         <div className={styles.productCarousel}>
           <Carousel
-            value={slideNumber}
-            onChange={setSlideNumber}
-            slides={slides}>
+            slideIndex={slideNumber}
+            withoutControls={true}
+            afterSlide={(index: any) => setSlideNumber(index)}
+            >
+              {slides}
           </Carousel>
         </div>
       </div>

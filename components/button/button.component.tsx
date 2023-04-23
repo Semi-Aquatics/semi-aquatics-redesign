@@ -3,6 +3,7 @@ import styles from './Button.module.scss'
 interface ButtonProps {
     soldOut: boolean,
     isSelected: boolean,
+    children: any,
     selected: any,
     mobile: boolean,
     onClick: (selected: any) => Promise<void>
