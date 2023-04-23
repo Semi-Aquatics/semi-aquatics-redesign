@@ -43,7 +43,7 @@ const EmailForm: React.FC<EmailFormProps> = ({ isSidebar }) => {
     try {
       const response = await axios.post(apiUrl, {})
       await handleSuccessResponse(response);
-    } catch (error: any) {
+    } catch (error) {
       await handleErrorResponse(error);
     }
   }
