@@ -1,32 +1,34 @@
+import Image from 'next/image'
 import styles from './SizingPage.module.scss';
-// @ts-ignore
-import crewneck from '../../public/sizing-chart-crewneck.jpg'
-// @ts-ignore
-import sweatpants from '../../public/sweatpants-chart.jpg';
-// @ts-ignore
-import shorts from '../../public/sizing-chart-shorts.jpg';
-// @ts-ignore
-import tShirt from '../../public/sizing-chart-tshirt.jpg';
-// @ts-ignore
-import hoodie from '../../public/sizing-chart-hoodie.jpg';
-// @ts-ignore
-import longSleeve from '../../public/sizing-chart-long-sleeve.jpg';
+
 
 const SizingPage: React.FC = () =>  (
     <div className={styles.sizingPageContainer}>
       <h1>Sizing Charts</h1>
       <h3>Crewneck</h3>
-      <img src={crewneck} alt="crewneck chart" />
+      <div className={styles.imgContainer}>
+        <Image fill src={'/sizing-chart-crewneck.jpg'} alt="crewneck chart" />
+      </div>
       <h3>Hoodie</h3>
-      <img src={hoodie} alt="hoodie sizing chart" />
+      <div className={styles.imgContainer}>
+        <Image fill src={'/sizing-chart-hoodie.jpg'} alt="hoodie sizing chart" />
+      </div>
       <h3>Sweatpants</h3>
-      <img src={sweatpants} alt="sweatpants sizing chart" />
+      <div className={styles.imgContainer}>
+        <Image fill src={'/sweatpants-chart.jpg'} alt="sweatpants sizing chart" />
+      </div>
       <h3>Tee</h3>
-      <img src={tShirt} alt="tshirt sizing chart" />
+      <div className={styles.imgContainer}>
+        <Image fill src={'/sizing-chart-tshirt.jpg'} alt="tshirt sizing chart" />
+      </div>
       <h3>Long Sleeve</h3>
-      <img src={longSleeve} alt="long sleeve sizing chart" />
+      <div className={styles.imgContainer}>
+        <Image fill src={'/sizing-chart-long-sleeve.jpg'} alt="long sleeve sizing chart" />
+      </div>
       <h3>Shorts</h3>
-      <img src={shorts} alt="shorts tshirt sizing chart" />
+      <div className={styles.imgContainer}>
+        <Image fill src={'/sizing-chart-shorts.jpg'} alt="shorts tshirt sizing chart" />
+      </div>
     </div>
 );
 
