@@ -3646,7 +3646,7 @@
   dependencies:
     "file-loader" "^4.2.0"
 
-"next@":
+"next@^13.1.1":
   "integrity" "sha512-eByWRxPzKHs2oQz1yE41LX35umhz86ZSZ+mYyXBqn2IBi2hyUqxBA88avywdr4uyH+hCJczegGsDGWbzQA5Rqw=="
   "resolved" "https://registry.npmjs.org/next/-/next-13.3.1.tgz"
   "version" "13.3.1"
