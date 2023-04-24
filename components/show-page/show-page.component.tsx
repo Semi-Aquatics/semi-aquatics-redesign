@@ -7,6 +7,8 @@ import { useCookies } from 'react-cookie';
 import { useQuery, useMutation, ApolloError } from '@apollo/client';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useSelector } from 'react-redux';
+import { useRouter } from 'next/router';
 
 // queries
 import { getCartQuery } from '../../services/queries/queries';
@@ -14,26 +16,33 @@ import { cartCreate, cartLinesUpdate, cartLineItemsAdd } from '../../services/qu
 
 // helper functions
 import { getCartCounts, merchandiseIdToLineItemId } from '../../utils/cartHelper';
+import { firstSelectedVariant } from './utils'
 
 // components
 import ShowPageDesktop from './desktop/show-page-desktop.component';
 import ShowPageMobile from './mobile/show-page-mobile.component';
+import CountdownTimer from '../countdown-timer/countdown-timer.component';
 
 // hooks
 import { useIsMobile } from '../../hooks/use-is-mobile';
-
-const UPCOMING_ITEMS = ['']
+import { useIsTimeLeft } from '../../hooks/use-is-time-left';
+import { useIsNewProduct } from '../../hooks/use-is-new-product';
 
 const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
   const [cookies, setCookie] = useCookies(['cartId']);
   const [numberToAdd, setNumberToAdd] = useState(1);
-  const [selected, setSelected] = useState(product.node.variants.edges[0]);
+  const [selected, setSelected] = useState(firstSelectedVariant(product));
   const [slideNumber, setSlideNumber] = useState(0);
   const isMobile = useIsMobile();
   const [createCart, createCartData] = useMutation(cartCreate);
   const [updateCartLineItems, updateCartLineItemsData] = useMutation(cartLinesUpdate);
   const [addCartLineItems, addCartLineItemsData] = useMutation(cartLineItemsAdd);
   const cart = useQuery(getCartQuery, { variables: { cartId: cookies.cartId } });
+  const isTimeLeft = useIsTimeLeft();
+  const isNewProduct = useIsNewProduct(product.node.id);
+  const { push } = useRouter();
+  const passwordGuessed = useSelector((state: any) => state.user.passwordGuessed);
+
   const notify = (message = 'Item added to cart!') => toast(message, {
     position: "top-right",
     autoClose: 5000,
@@ -117,6 +126,10 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
     console.log('error', e);
     }
   }
+
+  if (passwordGuessed != process.env.WEBSITE_LOCK_PASSWORD && isTimeLeft && isNewProduct) { 
+    push('/drop')
+  };
   
   return (
     <React.Fragment>
@@ -131,7 +144,7 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
           slideNumber={slideNumber}
           setSlideNumber={setSlideNumber}
           numberToAdd={numberToAdd}
-          upcomingItems={UPCOMING_ITEMS} />
+          isNewProduct={isNewProduct} />
       :
         <ShowPageDesktop
           product={product}
@@ -142,7 +155,7 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
           slideNumber={slideNumber}
           setSlideNumber={setSlideNumber}
           numberToAdd={numberToAdd}
-          upcomingItems={UPCOMING_ITEMS} />
+          isNewProduct={isNewProduct} />
     }
 
     <ToastContainer

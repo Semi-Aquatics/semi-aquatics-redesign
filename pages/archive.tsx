@@ -1,17 +1,22 @@
-import { useSelector } from 'react-redux';
-import Layout from '../components/layout/layout.component';
+// Packages
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
+
+// HOCs
 import withLayout from '../hocs/withLayout';
-import styles from '../styles/Archive.module.scss'
-import ArchivePage from '../components/archive-page/archive-page.component';
 
 // Components
-// @ts-ignore
-const Archive: React.FC = ({drops}) => {
-  const sorted_drops = drops.sort((dropA: any, dropB: any) => parseInt(dropB.title.split(' ')[1]) -  parseInt(dropA.title.split(' ')[1]));
+import ArchivePage from '../components/archive-page/archive-page.component';
+
+interface ArchivePageProps {
+  drops: any
+}
+const Archive: React.FC <ArchivePageProps> = ({ drops }) => {
+  const sortedDrops = drops.sort((dropA: any, dropB: any) => parseInt(dropB.title.split(' ')[1]) -  parseInt(dropA.title.split(' ')[1]));
+  const withoutCurrentDrop = drops.slice(-(sortedDrops.length - 1))
+  
   return (
-    <ArchivePage drops={sorted_drops}/>
+    <ArchivePage drops={withoutCurrentDrop}/>
   )
 }
 
