@@ -54,7 +54,7 @@ const Sidebar: React.FC <SidebarProps> = ({sidebarOpen, setSidebarOpen}) =>  {
                     <EmailForm isSidebar={true}/>
                   </div>
                   <div className={styles.flexer} >
-                    <a>
+                    <a target='_blank' href='https://instagram.com/semiaquatics'>
                       <FaInstagram />
                     </a>
                   <a href='mailto:info@semiaquatics.com' className={styles.footerEmail}>info@semiaquatics.com</a>
