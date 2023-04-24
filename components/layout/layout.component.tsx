@@ -1,5 +1,7 @@
 import { useRef, useState } from 'react'
 import Head from 'next/head'
+import Script from 'next/script'
+
 import { useRouter } from 'next/router'
 import Fade from "../../hooks/fade";
 
@@ -38,8 +40,8 @@ const Layout: React.FC = (props) => {
               </Fade>
             }
             <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
-          {/* @ts-ignore */}
           <div>
+          {/* @ts-ignore */}
             {props.children}
           </div>
           {
@@ -53,7 +55,19 @@ const Layout: React.FC = (props) => {
               </div>
           }
           <script src="https://cdn.attn.tv/semiaquatics/dtag.js"></script>
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154479709-1"></script>
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=UA-154479709-1"
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){window.dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'UA-154479709-1');
+            `}
+          </Script>
         </div>
     );
 };

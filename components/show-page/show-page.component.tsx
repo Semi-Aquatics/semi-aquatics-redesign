@@ -127,11 +127,10 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
     }
   }
 
-  // @brainhubeu/react-carousel uses window, so during ssr this prevents code to break.
-  if (typeof window === 'undefined') return <React.Fragment>loading</React.Fragment>;
   if (passwordGuessed != process.env.WEBSITE_LOCK_PASSWORD && isTimeLeft && isNewProduct) { 
     push('/drop')
   };
+  
   return (
     <React.Fragment>
     {

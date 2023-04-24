@@ -5,9 +5,9 @@ import { useState } from 'react';
 import { ShowPageChildProps } from '../../../interfaces/page_interface';
 
 // Packages
-import Carousel from '@brainhubeu/react-carousel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import '@brainhubeu/react-carousel/lib/style.css';
+import Carousel from "nuka-carousel"
+
 import { faAngleDoubleLeft, faAngleLeft, faAngleDoubleRight, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { BiLeftArrow, BiRightArrow } from 'react-icons/bi';
@@ -37,28 +37,22 @@ const ShowPageMobile: React.FC<ShowPageChildProps> = ({ product,
 
   const description = product.node.descriptionHtml;
   const slides = product.node.images.edges.map((image: any) =>
-    (<img src={image.node.transformedSrc} alt={image.node.altText} />)
+    (<div key={image.node.altText} style={{textAlign: 'center'}}>
+        <img src={image.node.transformedSrc} alt={image.node.altText} />
+    </div>
+    )
   )
 
   return(
     <div className={styles.showPageMobile}>
       <div className={`${styles.imageContainer} ${!descriptionOpen || !isNewProduct ? '' : styles.closed}  ${isNewProduct ? '' : styles.imageContainerLarge}`}>
-        <div className={styles.sliderSides}>
-          <div className={styles.changeImage} onClick={() => setSlideNumber(slideNumber === 0 ? 0 : slideNumber - 1)}></div>
-          <div className={styles.changeImage} onClick={() => setSlideNumber(slideNumber === slides.length - 1 ? slides.length - 1 : slideNumber + 1)}></div>
-        </div>
         <div className={styles.productCarousel}>
           <Carousel
-            // @ts-ignore
-            arrowLeft={<FontAwesomeIcon icon={faAngleDoubleLeft} />}
-            arrowLeftDisabled={<FontAwesomeIcon icon={faAngleLeft} />}
-            arrowRight={<FontAwesomeIcon icon={faAngleDoubleRight} />}
-            arrowRightDisabled={<FontAwesomeIcon icon={faAngleRight} />}
-            addArrowClickHandler
-            onChange={setSlideNumber}
-            slides={slides}
-            value={slideNumber}
+            slideIndex={slideNumber}
+            withoutControls={true}
+            afterSlide={(index: any) => setSlideNumber(index)}
           >
+            {slides}
           </Carousel>
 
           <div className={styles.dotsContainer}>
