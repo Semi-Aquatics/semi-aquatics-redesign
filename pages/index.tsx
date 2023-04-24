@@ -7,9 +7,20 @@ import { useEffect, useState } from 'react';
 
 const Home: React.FC = ({ }) => {
   const isMobile = useIsMobile();
+  const [loading, setLoading] = useState(true);
 
   const [video, setVideo] = useState(isMobile ? require('../public/video-mobile.mp4') : require('../public/video-home.mp4'));
-  useEffect(() => setVideo(!isMobile ? require('../public/video-mobile.mp4') : require('../public/video-home.mp4')), [isMobile])
+  useEffect(() => setVideo(isMobile ? require('../public/video-mobile.mp4') : require('../public/video-home.mp4')), [isMobile])
+  
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, .001);
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className={styles.homeContainer}>
