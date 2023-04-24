@@ -67,7 +67,7 @@ const Layout: React.FC = (props) => {
               function gtag(){window.dataLayer.push(arguments);}
               gtag('js', new Date());
 
-              gtag('config', 'GA_MEASUREMENT_ID');
+              gtag('config', 'UA-154479709-1');
             `}
           </Script>
         </div>
