@@ -54,7 +54,7 @@ const Layout: React.FC = (props) => {
                 }
               </div>
           }
-          <script src="https://cdn.attn.tv/semiaquatics/dtag.js"></script>
+          <Script src="https://cdn.attn.tv/semiaquatics/dtag.js" />
           <Script
             src="https://www.googletagmanager.com/gtag/js?id=UA-154479709-1"
             strategy="afterInteractive"
