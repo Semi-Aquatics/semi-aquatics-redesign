@@ -1,4 +1,5 @@
 import { useIsNewProduct } from '../../hooks/use-is-new-product';
+import { useIsTimeLeft } from '../../hooks/use-is-time-left';
 import styles from './ProductPreview.module.scss'
 import Link from 'next/link'
 
@@ -21,7 +22,7 @@ const ProductPreview:React.FC<ProductPreviewProps> = ({image, title, id, isArchi
             {
               isSoldOut &&
               <div className={styles.soldOut}>
-                    <h3>{ isNewProduct ? 'COMING SOON' : 'SOLD OUT'}</h3>
+                    <h3>{ isNewProduct && isTimeLeft ? 'COMING SOON' : 'SOLD OUT'}</h3>
                 </div>
             }
             <img src={image} alt={title}/>

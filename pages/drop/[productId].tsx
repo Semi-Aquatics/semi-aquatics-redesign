@@ -7,13 +7,15 @@ import ShowPage from "../../components/show-page/show-page.component";
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useIsNewProduct } from '../../hooks/use-is-new-product';
+import { useIsTimeLeft } from '../../hooks/use-is-time-left';
 
 const Product = (props: { product: any }) => {
   const passwordGuessed = useSelector((state: any) => state.user.passwordGuessed);
+  const isTimeLeft = useIsTimeLeft();
   const router = useRouter();
 
   useEffect(() => {
-    if (!passwordGuessed && useIsNewProduct(props.product.node.id)) {
+    if (!passwordGuessed && useIsNewProduct(props.product.node.id) && isTimeLeft) {
       router.push('/drop');
     }
   }, [])

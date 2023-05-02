@@ -16,6 +16,7 @@ import React from 'react';
 
 // Helpers
 import { variantAvailability } from '../utils'
+import { useIsTimeLeft } from '../../../hooks/use-is-time-left';
 
 const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
   product,
@@ -31,6 +32,7 @@ const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
   const slides = product.node.images.edges.map((image: any) =>
   (<img src={image.node.transformedSrc} alt={image.node.altText} key={image.node.altText} />)
   )
+  const isTimeLeft = useIsTimeLeft();
   const description = product.node.descriptionHtml;
 
   return (
@@ -84,7 +86,7 @@ const ShowPageDesktop: React.FC<ShowPageChildProps> = ({
                       selected.node.availableForSale ?
                         "Add to bag"
                         :
-                      isNewProduct ?
+                      isNewProduct && isTimeLeft ?
                           "Coming soon"
                           :
                           "Sold Out"
