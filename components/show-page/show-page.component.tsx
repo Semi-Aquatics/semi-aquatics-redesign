@@ -1,4 +1,3 @@
-import styles from './ShowPage.module.scss'
 import { ShowPageProps } from '../../interfaces/page_interface';
 
 // packages
@@ -21,7 +20,6 @@ import { firstSelectedVariant } from './utils'
 // components
 import ShowPageDesktop from './desktop/show-page-desktop.component';
 import ShowPageMobile from './mobile/show-page-mobile.component';
-import CountdownTimer from '../countdown-timer/countdown-timer.component';
 
 // hooks
 import { useIsMobile } from '../../hooks/use-is-mobile';

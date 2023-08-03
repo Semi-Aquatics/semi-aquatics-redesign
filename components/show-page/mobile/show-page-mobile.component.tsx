@@ -5,12 +5,9 @@ import { useState } from 'react';
 import { ShowPageChildProps } from '../../../interfaces/page_interface';
 
 // Packages
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Carousel from "nuka-carousel"
 
-import { faAngleDoubleLeft, faAngleLeft, faAngleDoubleRight, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { MdKeyboardArrowDown } from 'react-icons/md';
-import { BiLeftArrow, BiRightArrow } from 'react-icons/bi';
 
 // Components
 import Button from "../../button/button.component";

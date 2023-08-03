@@ -1,5 +1,5 @@
-import { GetStaticPaths, GetStaticProps, GetServerSideProps } from 'next'
-import { gql, useQuery } from '@apollo/client';
+import { GetServerSideProps } from 'next'
+import { gql } from '@apollo/client';
 import client from "../../apollo-client";
 import { useRouter } from 'next/router'
 import withLayout from '../../hocs/withLayout'
@@ -29,7 +29,7 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const { data } = await client.query({
       query: gql`
       query {
-        node(id: "${context.params.productId}") {
+        node(id: "gid://shopify/Product/${context.params.productId}") {
           ...on Product {
           title
           id
