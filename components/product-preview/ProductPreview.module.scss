@@ -1,9 +1,12 @@
 .productPreviewContainer{
     text-align: center;
     width: 100%;
+    position: relative;
     cursor: pointer;
     .soldOut{
       // TODO: FIX
+      position: absolute;
+      right: 0;
       width: 7rem;
       height: 2rem;
       margin-left: auto;
