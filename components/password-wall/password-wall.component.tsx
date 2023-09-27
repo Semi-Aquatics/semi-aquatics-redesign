@@ -27,18 +27,18 @@ const PasswordWall: React.FC<PasswordWallProps> = ({ images }) => {
   return (
     <div className={styles.PasswordWallContainer}>
       <div className={styles.imageContainer}>
-        {
-          images.map((image, index) => (
-            <img key={index} src={image} alt={`product preview images ${index}`}/>
-          ))
-        }
-      </div>
       <p>Enter password to continue to drop:</p>
       <div className={styles.inputContainer}>
         <input type="text" value={currentGuess} onChange={(e => setCurrentGuess(e.target.value))} onKeyUp={(e) => e.key === 'Enter' && handlePasswordGuess(e)}/>
         <button className={styles.submitBtn} onClick={(e) => handlePasswordGuess(e)}>Continue</button>
       </div>
       <p className={styles.errorMessage}>{errorMessage}</p>
+        {
+          images.map((image, index) => (
+            <img key={index} src={image} alt={`product preview images ${index}`}/>
+          ))
+        }
+      </div>
     </div>
   );
 };
