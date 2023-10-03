@@ -11,14 +11,14 @@ interface FormProps {
 }
 
 const Form:React.FC <FormProps> = ({ handleSubmit, placeholder, value, setValue}) => (
-  <form className={styles.formContainer}>
+  <div className={styles.formContainer}>
     <input type="text" placeholder={placeholder ?? 'Subscribe'} id={styles.input} value={value} onChange={(e) => setValue(e.target.value)}/>
-    <button type='submit' className={styles.submitButton} onClick={handleSubmit}>
+    <div className={styles.submitButton} onClick={handleSubmit}>
       <IconContext.Provider value={{ className: "arrow-right-email" }}>
         <BsArrowRight />
       </IconContext.Provider>
-    </button>
-  </form>
+    </div>
+  </div>
 )
 
 export default Form;

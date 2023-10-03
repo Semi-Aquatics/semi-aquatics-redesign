@@ -15,7 +15,6 @@ const PasswordWall: React.FC<PasswordWallProps> = ({ images }) => {
   const dispatch = useDispatch();
 
   const handlePasswordGuess = (e: any) => {
-    e.preventDefault();
     if (currentGuess === process.env.WEBSITE_LOCK_PASSWORD) {
       dispatch(setPasswordGuessed(currentGuess));
     } else {
