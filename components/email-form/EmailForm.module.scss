@@ -36,23 +36,7 @@
       }
     }
 
-    .messageContainer{
-      height: 25px;
-      .errorMessage{
-        text-align: left;
-        color: red;
-        font-size: 12px;
-        margin-top: 5px;
-        margin-bottom: 0px;
-      }
-      .successMessage {
-        text-align: left;
-        color: green;
-        font-size: 12px;
-        margin-top: 5px;
-        margin-bottom: 0px;
-      }
-    }
+
   }
 
 .sidebarEmailFormContainer{
@@ -84,5 +68,22 @@
     ::placeholder {
       color: #999591;
     }
+  }
+}
+.messageContainer{
+  height: 25px;
+  .errorMessage{
+    text-align: left;
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+  }
+  .successMessage {
+    text-align: left;
+    color: green;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 0px;
   }
 }

@@ -3,11 +3,10 @@ import styles from  './EmailForm.module.scss';
 
 // Packages
 import axios from 'axios';
-import { IconContext } from "react-icons";
-import { BsArrowRight } from 'react-icons/bs';
 import { EmailFormProps } from '../../interfaces/page_interface';
+import Form from '../form/form.component';
 
-const EmailForm: React.FC<EmailFormProps> = ({ isSidebar }) => {
+const EmailForm: React.FC<EmailFormProps> = ({ isSidebar, placeholder }) => {
   const [email, setEmail] = React.useState('');
   const [errorMessage, setErrorMessage] = React.useState('');
   const [successMessage, setSuccessMessage] = React.useState('');
@@ -49,44 +48,31 @@ const EmailForm: React.FC<EmailFormProps> = ({ isSidebar }) => {
   }
 
   return (
-    isSidebar ?
+    <React.Fragment>
+      {
+        isSidebar ?
       <div className={styles.sidebarEmailFormContainer}>
         <form className={styles.emailForm}>
-          <input type="text" placeholder='enter your email' id={styles.emailInput} value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input type="text" placeholder={placeholder ?? 'enter your email'} id={styles.emailInput} value={email} onChange={(e) => setEmail(e.target.value)} />
           <p className={styles.submitButtonText} onClick={handleSubmit}>Subscribe</p>
         </form>
-        <div className={styles.messageContainer}>
-          {
-            errorMessage.length > 0 &&
-            <p className={styles.errorMessage}>{errorMessage}</p>
-          }
-          {
-            successMessage.length > 0 &&
-            <p className={styles.successMessage}>{successMessage}</p>
-          }
-        </div>
       </div>
     :
       <div className={styles.emailFormContainer}>
-        <form className={styles.emailForm}>
-          <input type="text" placeholder='Subscribe' id={styles.emailInput} value={email} onChange={(e) => setEmail(e.target.value)}/>
-          <button type='submit' className={styles.submitButton} onClick={handleSubmit}>
-            <IconContext.Provider value={{ className: "arrow-right-email" }}>
-              <BsArrowRight />
-            </IconContext.Provider>
-          </button>
-        </form>
-        <div className={styles.messageContainer}>
-          {
-            errorMessage.length > 0 &&
-            <p className={styles.errorMessage}>{errorMessage}</p>
-          }
-          {
-            successMessage.length > 0 &&
-            <p className={styles.successMessage}>{successMessage}</p>
-          }
-        </div>
+        <Form handleSubmit={handleSubmit} placeholder={placeholder} value={email} setValue={setEmail} />
       </div>
+    }
+    <div className={styles.messageContainer}>
+      {
+        errorMessage.length > 0 &&
+          <p className={styles.errorMessage}>{errorMessage}</p>
+      }
+      {
+        successMessage.length > 0 &&
+          <p className={styles.successMessage}>{successMessage}</p>
+      }
+    </div>
+    </React.Fragment>
   );
 }
 

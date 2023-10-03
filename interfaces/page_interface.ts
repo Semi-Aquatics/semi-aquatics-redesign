@@ -37,7 +37,8 @@ export interface UpcomingDropPreviewProps {
 }
 
 export interface EmailFormProps {
-  isSidebar: boolean
+  isSidebar: boolean,
+  placeholder?: string,
 }
 
 export type TimeLeftObj = {
