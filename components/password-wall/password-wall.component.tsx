@@ -29,6 +29,7 @@ const PasswordWall: React.FC<PasswordWallProps> = ({ images }) => {
     <div className={styles.PasswordWallContainer}>
       <div className={styles.emailFormContainerPW}>
         <div className={styles.emailFormContainerPWInner}>
+          <p>Available October 9th at 6:00 pm est.</p>
           <p>Join our email list for exclusive discounts and early access codes.</p>
           <EmailForm isSidebar={false} placeholder={'enter email'} />
         </div>
