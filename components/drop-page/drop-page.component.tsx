@@ -23,7 +23,7 @@ const DropPage:React.FC <DropPageProps> = ({products, dropName}) => {
   return (
     <div className={styles.dropPageContainer}>
       <div className={styles.gridder}>
-        <h1 className={styles.dropTitle}>Fall 2023 Collection</h1>
+        <h1 className={styles.dropTitle}>Winter 2023</h1>
       </div>
         {
           passwordGuessed === process.env.WEBSITE_LOCK_PASSWORD || !isTimeLeft ?
