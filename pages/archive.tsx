@@ -29,7 +29,7 @@ export async function getStaticProps(context: { query?: any; store?: any; }) {
                   node {
                   title
                   id
-                  products(first: 5) {
+                  products(first: 20) {
                       edges {
                           node {
                               id
