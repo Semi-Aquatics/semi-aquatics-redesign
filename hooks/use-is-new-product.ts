@@ -22,6 +22,8 @@ const NEW_PRODUCT_IDS: string[] = [
     "6857908027467",
     "6845836492875",
     "6857907798091",
+    "6906819117131",
+    "6906819182667",
 ].map (id => `gid://shopify/Product/${id}`)
 
 export const useIsNewProduct = (id: string) => {
