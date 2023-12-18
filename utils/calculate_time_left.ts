@@ -1,6 +1,6 @@
 import { TimeLeftObj } from '../interfaces/page_interface';
 
-const DROP_DATE = new Date("2023/12/18 17:00:00 EST");
+const DROP_DATE = new Date("2023/12/18 18:00:00 EST");
 
 export const calculateTimeLeft = (): TimeLeftObj => {
   const startDate = new Date();
