@@ -10,7 +10,7 @@ const Artist: React.FC = ({artists}) => {
 
 const baseUri = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://semi-aquatics-cms.onrender.com'
 
-export async function getStaticProps(context: { query?: any; store?: any; }) {
+export async function getServerSideProps() {
   let artists = [];
 
   try {
