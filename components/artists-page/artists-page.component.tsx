@@ -6,8 +6,6 @@ interface ArtistsPageProps {
 }
 
 const ArtistsPage:React.FC <ArtistsPageProps> = ({ artists }) => {
-  console.log(artists)
-
   return (
     <div className={styles.artistsPageContainer}>
     <h1>Our Artists</h1>
