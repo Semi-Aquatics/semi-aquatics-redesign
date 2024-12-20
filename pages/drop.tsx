@@ -3,12 +3,11 @@ import { gql } from "@apollo/client";
 import client from "../apollo-client";
 import DropPage from '../components/drop-page/drop-page.component'
 import withLayout from '../hocs/withLayout';
+import { CollectionT } from '../types';
 
-const Drop = (props: { drop: any }) => {
-    const drop = props.drop;
-
+const Drop = ({ drop }: { drop: CollectionT}) => {
     return (
-      <DropPage products={drop.products} dropName={drop.title}/>
+      <DropPage drop={drop}/>
     );
 };
 

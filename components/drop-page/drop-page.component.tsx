@@ -11,12 +11,15 @@ import CountdownTimer from '../countdown-timer/countdown-timer.component';
 // Hooks
 import { useIsTimeLeft } from '../../hooks/use-is-time-left'
 
+// Types
+import { CollectionT } from '../../types';
+
 interface DropPageProps {
-    products: any,
-    dropName: string
+    drop: CollectionT,
 }
 
-const DropPage:React.FC <DropPageProps> = ({products, dropName}) => {
+const DropPage:React.FC <DropPageProps> = ({ drop }) => {
+  const { products } = drop;
   const passwordGuessed = useSelector((state: any) => state.user.passwordGuessed);
   const isTimeLeft = useIsTimeLeft();
 
@@ -31,7 +34,7 @@ const DropPage:React.FC <DropPageProps> = ({products, dropName}) => {
               {
                 products.edges.map((product: any) =>
                   <ProductPreview
-                  key={product.node.title}
+                  key={product.node.id}
                   image={product.node.images.edges[0].node.transformedSrc}
                   title={product.node.title}
                   isSoldOut={!product.node.availableForSale}

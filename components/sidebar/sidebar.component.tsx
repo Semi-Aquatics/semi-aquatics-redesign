@@ -11,6 +11,7 @@ import { useRef } from 'react'
 // Hooks
 import { useOnClickOutside } from '../../hooks/use-on-click-outside';
 import EmailForm from '../email-form/email-form.component';
+import { useUpcomingDrop } from '../../hooks/use-upcoming-drop';
 
 interface SidebarProps {
   sidebarOpen: boolean,
@@ -19,7 +20,8 @@ interface SidebarProps {
 
 const Sidebar: React.FC <SidebarProps> = ({sidebarOpen, setSidebarOpen}) =>  {
     const ref = useRef();
-
+    const { isNew } = useUpcomingDrop();
+    console.log(isNew)
     //  icon for sdiebar
     useOnClickOutside(ref, () => setSidebarOpen(false));
     return (
