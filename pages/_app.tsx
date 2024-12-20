@@ -4,6 +4,7 @@ import App, { AppProps } from 'next/app';
 // import isServer from 'detect-node';
 import withRedux from '../hocs/withRedux';
 import { ApolloProvider } from "@apollo/client";
+import { DropProvider } from '../contexts/drop-context'
 import client from "../apollo-client";
 import { CookiesProvider } from 'react-cookie';
 import { store, persistor } from '../redux/store'
@@ -17,7 +18,9 @@ const MyApp:React.FC = ({ Component, pageProps }: AppProps) => {
       <PersistGate persistor={persistor}>
       <ApolloProvider client={client}>
         <CookiesProvider>
-          <Component {...pageProps} />
+          <DropProvider>
+            <Component {...pageProps} />
+          </DropProvider>
         </CookiesProvider>
       </ApolloProvider>
       </PersistGate>
