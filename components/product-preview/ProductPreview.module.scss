@@ -1,56 +1,77 @@
-.productPreviewContainer{
-    text-align: center;
+.productPreviewContainer {
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+
+  .soldOut {
+    position: absolute;
+    right: 0;
+    width: 7rem;
+    height: 2rem;
+    margin-left: auto;
+    margin-right: 5%;
+    color: #d2d8db;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #d2d8db;
+
+    h3 {
+      margin: 0;
+    }
+  }
+
+  .imageContainer {
+    background-size: cover;
+    background-color: #f8f8f8;
+    background-position: center;
+    background-repeat: no-repeat;
     width: 100%;
     position: relative;
-    cursor: pointer;
-    .soldOut{
-      // TODO: FIX
-      position: absolute;
-      right: 0;
-      width: 7rem;
-      height: 2rem;
-      margin-left: auto;
-      margin-right: 5%;
-      color: #d2d8db;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 2px solid #d2d8db;
-      h3{
-        margin: 0
-      }
-    }
-
-    .cardTitle{
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 14px;
-    }
-    .cardPrice {
-        font-size: 18px;
-    }
+    overflow: hidden; /* Ensure the image stays within bounds */
+    transition: transform 0.2s ease-in-out;
+  
     img {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out; /* Smooth animation */
     }
-    transition: .5s;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  
+    &:hover img {
+      transform: scale(0.95); /* Shrink the image slightly */
+    }
+  }
+  
 
-    &:focus {
-      outline: none !important;
+  .productImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+  }
+
+  .previewDetails {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.375rem;
+  }
+
+  .cardDetail {
+    margin-top: 0;
+    font-weight: 400;
+    font-size: 14px;
+    width: auto;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .soldOut {
+      font-size: 10px;
+      margin-bottom: 4px;
     }
-    @media only screen and (max-width: 768px) {
-      .soldOut{
-        font-size: 10px;
-        margin-bottom: 4px;
-      }
-      img {
-        margin-top: 2rem;
-      }
+
+    img {
+      margin-top: 2rem;
     }
+  }
 }
