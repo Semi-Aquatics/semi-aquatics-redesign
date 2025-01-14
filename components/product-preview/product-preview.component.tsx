@@ -22,7 +22,8 @@ const ProductPreview: React.FC<ProductPreviewProps> = ({
   price,
   isTimeLeft,
 }) => {
-  const isNewProduct = useIsNewProduct(id);
+  // const isNewProduct = useIsNewProduct(id);
+  const isNewProduct = false
   const deconstructedId = id.split('/').splice(-1)[0];
 
   return (
