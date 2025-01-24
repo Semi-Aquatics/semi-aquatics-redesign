@@ -6,6 +6,7 @@ interface ArchivePageProps {
 }
 
 const ArchivePage:React.FC <ArchivePageProps> = ({drops}) => {
+  console
     return (
         <div className={styles.archivePageContainer}>
           <h1>Archive</h1>
@@ -19,6 +20,7 @@ const ArchivePage:React.FC <ArchivePageProps> = ({drops}) => {
                                   <ProductPreview
                                     image={product.node.images.edges[0] ? product.node.images.edges[0].node.transformedSrc : ''}
                                     title={product.node.title}
+                                    price={product.node.variants.edges[0].node.priceV2.amount}
                                     id={product.node.id}
                                     isSoldOut={!product.node.availableForSale}
                                     isArchive={true}/>
