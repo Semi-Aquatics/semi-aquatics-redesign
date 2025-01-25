@@ -1,0 +1,57 @@
+.artistDetails {
+  padding: 20px;
+  background: #F7F7F7;
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+  .artistNameHeader {
+    display: flex;
+    align-items: center;
+    svg {
+      font-size: 58px;
+      margin-right: 16px;
+      margin-bottom: 0;
+    }
+    .artistName {
+      font-size: 48px;
+      margin: 0;
+      text-align: left;
+      text-transform: uppercase;
+    }
+  }
+
+  .artistDescription {
+    margin-bottom: 20px;
+  }
+  
+  .artistProductsContainer {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 40px;
+  }
+  
+  
+
+  @media screen and (max-width: 768px) {
+    .artistNameHeader {
+      font-size: 32px;
+      font-weight: 500;
+      svg {
+        font-size: 48px;
+      }
+      .artistName {
+        font-size: 36px;
+        margin-bottom: 0;
+      }
+    }
+    
+    .artistDescription {
+      font-size: 16px;
+    }
+
+    .artistProductsContainer {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
