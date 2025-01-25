@@ -16,6 +16,8 @@ interface SidebarProps {
   setSidebarOpen: Dispatch<SetStateAction<boolean>>;
 }
 
+const PRIVACY_POLICY_LINK = '/privacy-policy';
+
 const links = [
   { href: '/', label: 'Home' },
   { href: '/drop', label: 'Drop', isNew: false },
@@ -61,6 +63,9 @@ const Sidebar: React.FC<SidebarProps> = ({ sidebarOpen, setSidebarOpen }) => {
                 info@semiaquatics.com
               </a>
             </div>
+            <Link href={PRIVACY_POLICY_LINK}>
+              <h6>Privacy Policy</h6>
+            </Link>
             <h6 className="footer-item">© {new Date().getFullYear()} Semi Aquatics</h6>
           </div>
         </div>
