@@ -9,7 +9,7 @@
     width: 50vw;
     align-items: center;
     justify-content: center;
-    background-color: rgb(255, 255, 255);
+    background-color: #E7EAE9;
 
     .imageContainer {
       margin: auto;
@@ -123,6 +123,8 @@
         cursor: pointer;
         img{
           width: 4vw;
+          height: 4vw;
+          object-fit: cover;
         }
         &:hover{
           opacity: 100%;

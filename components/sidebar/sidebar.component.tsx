@@ -10,6 +10,7 @@ import { useRef } from 'react';
 // Hooks
 import { useOnClickOutside } from '../../hooks/use-on-click-outside';
 import EmailForm from '../email-form/email-form.component';
+import { HELP_EMAIL_LINK, INSTAGRAM_LINK } from '../../constants/external-links';
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -21,7 +22,6 @@ const links = [
   { href: '/drop', label: 'Drop', isNew: false },
   { href: '/story', label: 'Story' },
   { href: '/artists', label: 'Artists' },
-  { href: '/archive', label: 'Archive' },
 ];
 
 const Sidebar: React.FC<SidebarProps> = ({ sidebarOpen, setSidebarOpen }) => {
@@ -54,10 +54,10 @@ const Sidebar: React.FC<SidebarProps> = ({ sidebarOpen, setSidebarOpen }) => {
               <EmailForm isSidebar />
             </div>
             <div className={styles.flexer}>
-              <a target="_blank" href="https://instagram.com/semiaquatics" rel="noopener noreferrer">
+              <a target="_blank" href={INSTAGRAM_LINK} rel="noopener noreferrer">
                 <FaInstagram />
               </a>
-              <a href="mailto:info@semiaquatics.com" className={styles.footerEmail}>
+              <a href={HELP_EMAIL_LINK} className={styles.footerEmail}>
                 info@semiaquatics.com
               </a>
             </div>

@@ -25,7 +25,7 @@ const DropPage:React.FC <DropPageProps> = ({ drop }) => {
 
   return (
     <div className={styles.dropPageContainer}>
-      <div className={styles.gridder}>
+      <div className={styles.dropHeader}>
         <h1 className={styles.dropTitle}>Winter 2023</h1>
       </div>
         {
@@ -38,6 +38,7 @@ const DropPage:React.FC <DropPageProps> = ({ drop }) => {
                   image={product.node.images.edges[0].node.transformedSrc}
                   title={product.node.title}
                   isSoldOut={!product.node.availableForSale}
+                  price={product.node.variants.edges[0].node.priceV2.amount}
                   id={product.node.id}
                   isArchive={false}
                   isTimeLeft={isTimeLeft}

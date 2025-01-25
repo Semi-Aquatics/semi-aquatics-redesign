@@ -37,7 +37,8 @@ const ShowPage: React.FC<ShowPageProps> = ({ product }) => {
   const [addCartLineItems, addCartLineItemsData] = useMutation(cartLineItemsAdd);
   const cart = useQuery(getCartQuery, { variables: { cartId: cookies.cartId } });
   const isTimeLeft = useIsTimeLeft();
-  const isNewProduct = useIsNewProduct(product.node.id);
+  // const isNewProduct = useIsNewProduct(product.node.id);
+  const isNewProduct = false
   const { push } = useRouter();
   const passwordGuessed = useSelector((state: any) => state.user.passwordGuessed);
 

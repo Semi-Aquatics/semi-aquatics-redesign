@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { ArtistsT } from '../types';
 
 // Define the base URI based on the environment
 const baseUri = process.env.DEV_CMS === 'development' ? 'http://localhost:3000' : 'https://semi-aquatics-cms.onrender.com';
@@ -16,7 +17,7 @@ class Cms {
   }
 
   // Method to fetch artists using fetch API
-  async getArtists() {
+  async getArtists(): Promise<ArtistsT> {
     try {
       const response = await fetch(`${baseUri}/api/artists`);
 
